@@ -1430,6 +1430,43 @@ fn: function (aWidth, aHeight, aFormat) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_cursor",
+smalltalk.method({
+selector: "cursor",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_cursor", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_cursorImage_x_y_",
+smalltalk.method({
+selector: "cursorImage:x:y:",
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_cursorMode_",
+smalltalk.method({
+selector: "cursorMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_curveDetail_",
 smalltalk.method({
 selector: "curveDetail:",
@@ -1822,6 +1859,44 @@ fn: function (aMode, aParam) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_frameCount",
+smalltalk.method({
+selector: "frameCount",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameCount", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_frameRate",
+smalltalk.method({
+selector: "frameRate",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameRate", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_frameRate_",
+smalltalk.method({
+selector: "frameRate:",
+fn: function (aFps) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_frameRate_", [aFps]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_frustumLeft_right_bottom_top_near_far_",
 smalltalk.method({
 selector: "frustumLeft:right:bottom:top:near:far:",
@@ -1973,6 +2048,19 @@ fn: function () {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_isFocused",
+smalltalk.method({
+selector: "isFocused",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.focused;
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_isKeyPressed",
 smalltalk.method({
 selector: "isKeyPressed",
@@ -1993,6 +2081,19 @@ fn: function () {
     var self = this;
     var $1;
     $1 = processing.mousePressed;
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_isOnline",
+smalltalk.method({
+selector: "isOnline",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.online;
     return $1;
 }
 }),
@@ -2301,7 +2402,7 @@ selector: "mouseX",
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.mouseX;
+    $1 = smalltalk.send(self['@processing'], "_mouseX", []);
     return $1;
 }
 }),
@@ -2314,8 +2415,20 @@ selector: "mouseY",
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.mouseY;
+    $1 = smalltalk.send(self['@processing'], "_mouseY", []);
     return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_noCursor",
+smalltalk.method({
+selector: "noCursor",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noCursor", []);
+    return self;
 }
 }),
 smalltalk.PjsSketch);
@@ -2472,7 +2585,7 @@ selector: "pmouseX",
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.pmouseX;
+    $1 = smalltalk.send(self['@processing'], "_pmouseX", []);
     return $1;
 }
 }),
@@ -2843,6 +2956,32 @@ fn: function (aX, aY, aZ) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_screenHeight",
+smalltalk.method({
+selector: "screenHeight",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.height;
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_screenWidth",
+smalltalk.method({
+selector: "screenWidth",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.width;
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_screenX_y_z_",
 smalltalk.method({
 selector: "screenX:y:z:",
@@ -2912,6 +3051,18 @@ selector: "shininess:",
 fn: function (aShine) {
     var self = this;
     smalltalk.send(self['@processing'], "_shininess_", [aShine]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_size_height_",
+smalltalk.method({
+selector: "size:height:",
+fn: function (aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_size_height_", [aWidth, aHeight]);
     return self;
 }
 }),

@@ -1647,6 +1647,110 @@ curveX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 
 	processing curve: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 x4: aX4 y4: aY4 z4: aZ4
 ! !
 
+!PjsSketch methodsFor: 'environmant'!
+
+cursor
+	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
+	image PImage: any variable of type PImage 
+	x int: the horizonal active spot of the cursor 
+	y int: the vertical active spot of the cursor "
+    
+	 ^processing cursor
+ 
+ 	"Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. 
+    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. 
+    It is not possible to load an image as the cursor if you are exporting your program for the Web. 
+    The values for parameters x and y must be less than the dimensions of the image."
+!
+
+cursorImage: aPjsImage x: aX y: aY
+	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
+	image PImage: any variable of type PImage 
+	x int: the horizonal active spot of the cursor 
+	y int: the vertical active spot of the cursor "
+    
+	 processing cursor: aPjsImage pjsImage  x: aX y: aY
+ 
+ 	"Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. 
+    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. 
+    It is not possible to load an image as the cursor if you are exporting your program for the Web. 
+    The values for parameters x and y must be less than the dimensions of the image."
+!
+
+cursorMode: aMode
+	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
+	image PImage: any variable of type PImage 
+	x int: the horizonal active spot of the cursor 
+	y int: the vertical active spot of the cursor "
+    
+	 processing cursor: aMode
+ 
+ 	"Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. 
+    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. 
+    It is not possible to load an image as the cursor if you are exporting your program for the Web. 
+    The values for parameters x and y must be less than the dimensions of the image."
+!
+
+frameCount
+	"The system variable frameCount contains the number of frames displayed since the program started. Inside setup() the value is 0 and and after the first iteration of draw it is 1, etc."
+    
+	^ processing frameCount
+!
+
+frameRate
+	"The system variable frameRate contains the approximate frame rate of the software as it executes. 
+    The initial value is 10 fps and is updated with each frame. The value is averaged (integrated) over several frames. As such, this value won't be valid until after 5-10 frames.."
+    
+	^processing frameRate
+!
+
+frameRate: aFps
+	"fps int: number of frames per second "
+    
+	processing frameRate: aFps
+    
+    "Specifies the number of frames to be displayed every second. 
+    If the processor is not fast enough to maintain the specified rate, it will not be achieved. 
+    For example, the function call frameRate(30) will attempt to refresh 30 times a second. It is recommended to set the frame rate within setup(). 
+    The default rate is 60 frames per second."
+!
+
+isFocused
+	"Confirms if a Processing program is ""focused"", meaning that it is active and will accept input from mouse or keyboard. 
+    This variable is ""true"" if it is focused and ""false"" if not. This variable is often used when you want to warn people they need to click on or roll over an applet before it will work."
+    
+	^< processing.focused >
+!
+
+isOnline
+	"Confirms if a Processing program is running inside a web browser. 
+    This variable is ""true"" if the program is online and ""false"" if not.."
+    
+	^< processing.online >
+!
+
+noCursor
+	"Hides the cursor from view. Will not work when running the program in a web browser."
+    
+	 processing noCursor
+!
+
+screenHeight
+	"System variable which stores the dimensions of the computer screen. 
+    For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. 
+    These dimensions are useful when exporting full-screen applications. ."
+    
+	^< processing.screen.height >
+!
+
+screenWidth
+	"System variable which stores the dimensions of the computer screen. 
+    For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. 
+    These dimensions are useful when exporting full-screen applications. ."
+    
+	^< processing.screen.width >
+! !
+
 !PjsSketch methodsFor: 'image loading and displaying '!
 
 createImageWidth: aWidth height: aHeight format: aFormat
@@ -2333,7 +2437,7 @@ initalizeFunctions
 initialize
 
 	processing := <Processing.instances[0]>.
-
+	
 	self initalizeFunctions.
 ! !
 
@@ -2811,14 +2915,14 @@ mouseX
     
    "The system variable mouseX always contains the current vertical coordinate of the mouse."
 
-	^< processing.mouseX >
+	^ processing mouseX
 !
 
 mouseY 
     
    "The system variable mouseY always contains the current vertical coordinate of the mouse."
 
-	^< processing.mouseY >
+	^ processing mouseY
 !
 
 pmouseX 
@@ -2826,7 +2930,7 @@ pmouseX
    "The system variable pmouseX always contains the previous vertical coordinate of the mouse. 
      This is the vertical position of the mouse in the frame previous to the current frame."
 
-	^< processing.pmouseX >
+	^ processing pmouseX
 !
 
 pmouseY 
@@ -2835,6 +2939,30 @@ pmouseY
      This is the vertical position of the mouse in the frame previous to the current frame."
 
 	^< processing.pmouseY >
+! !
+
+!PjsSketch methodsFor: 'sketch structure'!
+
+size: aWidth height: aHeight 
+
+	"width int: width of the display window in units of pixels 
+	height int: height of the display window in units of pixels "
+
+	processing size: aWidth height: aHeight 
+    
+    "Defines the dimension of the display window in units of pixels. 
+     The size() function must be the first line in setup(). 
+     If size() is not called, the default size of the window is 100x100 pixels. 
+     The system variables width and height are set by the parameters passed to the size() function. 
+	Employ numeric values in the size() statement, and then use the built-in width and height variables 
+     inside your program when you need the dimensions of the display window. 
+	Rendering graphics requires tradeoffs between speed, accuracy, and general usefulness of the available features. 
+    None of the renderers are perfect, so we provide multiple options so that you can decide what tradeoffs make
+     the most sense for your project. We'd prefer all of them to have perfect visual accuracy, 
+     high performance, and support a wide range of features, but that's simply not possible. 
+
+	Again, the size() method must be the first line of the code (or first item inside setup). 
+    Any code that appears before the size() command may run more than once, which can lead to confusing results."
 ! !
 
 !PjsSketch methodsFor: 'sketch transform'!

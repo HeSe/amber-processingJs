@@ -2005,6 +2005,58 @@ referencedClasses: ["PjsImage"]
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_cursor",
+smalltalk.method({
+selector: "cursor",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_cursor", []);
+    return $1;
+},
+args: [],
+source: "cursor\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT \x0a\x09image PImage: any variable of type PImage \x0a\x09x int: the horizonal active spot of the cursor \x0a\x09y int: the vertical active spot of the cursor \x22\x0a    \x0a\x09 ^processing cursor\x0a \x0a \x09\x22Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. \x0a    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. \x0a    It is not possible to load an image as the cursor if you are exporting your program for the Web. \x0a    The values for parameters x and y must be less than the dimensions of the image.\x22",
+messageSends: ["cursor"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_cursorImage_x_y_",
+smalltalk.method({
+selector: "cursorImage:x:y:",
+category: 'environmant',
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+},
+args: ["aPjsImage", "aX", "aY"],
+source: "cursorImage: aPjsImage x: aX y: aY\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT \x0a\x09image PImage: any variable of type PImage \x0a\x09x int: the horizonal active spot of the cursor \x0a\x09y int: the vertical active spot of the cursor \x22\x0a    \x0a\x09 processing cursor: aPjsImage pjsImage  x: aX y: aY\x0a \x0a \x09\x22Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. \x0a    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. \x0a    It is not possible to load an image as the cursor if you are exporting your program for the Web. \x0a    The values for parameters x and y must be less than the dimensions of the image.\x22",
+messageSends: ["cursor:x:y:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_cursorMode_",
+smalltalk.method({
+selector: "cursorMode:",
+category: 'environmant',
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_", [aMode]);
+    return self;
+},
+args: ["aMode"],
+source: "cursorMode: aMode\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT \x0a\x09image PImage: any variable of type PImage \x0a\x09x int: the horizonal active spot of the cursor \x0a\x09y int: the vertical active spot of the cursor \x22\x0a    \x0a\x09 processing cursor: aMode\x0a \x0a \x09\x22Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. \x0a    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. \x0a    It is not possible to load an image as the cursor if you are exporting your program for the Web. \x0a    The values for parameters x and y must be less than the dimensions of the image.\x22",
+messageSends: ["cursor:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_curveDetail_",
 smalltalk.method({
 selector: "curveDetail:",
@@ -2557,6 +2609,59 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_frameCount",
+smalltalk.method({
+selector: "frameCount",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameCount", []);
+    return $1;
+},
+args: [],
+source: "frameCount\x0a\x09\x22The system variable frameCount contains the number of frames displayed since the program started. Inside setup() the value is 0 and and after the first iteration of draw it is 1, etc.\x22\x0a    \x0a\x09^ processing frameCount\x0a ",
+messageSends: ["frameCount"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_frameRate",
+smalltalk.method({
+selector: "frameRate",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameRate", []);
+    return $1;
+},
+args: [],
+source: "frameRate\x0a\x09\x22The system variable frameRate contains the approximate frame rate of the software as it executes. \x0a    The initial value is 10 fps and is updated with each frame. The value is averaged (integrated) over several frames. As such, this value won't be valid until after 5-10 frames..\x22\x0a    \x0a\x09^processing frameRate\x0a ",
+messageSends: ["frameRate"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_frameRate_",
+smalltalk.method({
+selector: "frameRate:",
+category: 'environmant',
+fn: function (aFps) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_frameRate_", [aFps]);
+    return self;
+},
+args: ["aFps"],
+source: "frameRate: aFps\x0a\x09\x22fps int: number of frames per second \x22\x0a    \x0a\x09processing frameRate: aFps\x0a    \x0a    \x22Specifies the number of frames to be displayed every second. \x0a    If the processor is not fast enough to maintain the specified rate, it will not be achieved. \x0a    For example, the function call frameRate(30) will attempt to refresh 30 times a second. It is recommended to set the frame rate within setup(). \x0a    The default rate is 60 frames per second.\x22\x0a ",
+messageSends: ["frameRate:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_frustumLeft_right_bottom_top_near_far_",
 smalltalk.method({
 selector: "frustumLeft:right:bottom:top:near:far:",
@@ -2761,8 +2866,26 @@ fn: function () {
     return self;
 },
 args: [],
-source: "initialize\x0a\x0a\x09processing := <Processing.instances[0]>.\x0a\x0a\x09self initalizeFunctions.",
+source: "initialize\x0a\x0a\x09processing := <Processing.instances[0]>.\x0a\x09\x0a\x09self initalizeFunctions.",
 messageSends: ["initalizeFunctions"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_isFocused",
+smalltalk.method({
+selector: "isFocused",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.focused;
+    return $1;
+},
+args: [],
+source: "isFocused\x0a\x09\x22Confirms if a Processing program is \x22\x22focused\x22\x22, meaning that it is active and will accept input from mouse or keyboard. \x0a    This variable is \x22\x22true\x22\x22 if it is focused and \x22\x22false\x22\x22 if not. This variable is often used when you want to warn people they need to click on or roll over an applet before it will work.\x22\x0a    \x0a\x09^< processing.focused >\x0a ",
+messageSends: [],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2798,6 +2921,24 @@ fn: function () {
 },
 args: [],
 source: "isMousePressed \x0a    \x0a   \x22Variable storing if a mouse button is pressed. \x0a    The value of the system variable mousePressed is true if a mouse button is pressed and false if a button is not pressed.\x22\x0a\x0a\x09^ < processing.mousePressed >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_isOnline",
+smalltalk.method({
+selector: "isOnline",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.online;
+    return $1;
+},
+args: [],
+source: "isOnline\x0a\x09\x22Confirms if a Processing program is running inside a web browser. \x0a    This variable is \x22\x22true\x22\x22 if the program is online and \x22\x22false\x22\x22 if not..\x22\x0a    \x0a\x09^< processing.online >\x0a ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -3227,12 +3368,12 @@ category: 'sketch mouse',
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.mouseX;
+    $1 = smalltalk.send(self['@processing'], "_mouseX", []);
     return $1;
 },
 args: [],
-source: "mouseX \x0a    \x0a   \x22The system variable mouseX always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^< processing.mouseX >\x0a    \x0a   ",
-messageSends: [],
+source: "mouseX \x0a    \x0a   \x22The system variable mouseX always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^ processing mouseX\x0a    \x0a   ",
+messageSends: ["mouseX"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -3245,12 +3386,29 @@ category: 'sketch mouse',
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.mouseY;
+    $1 = smalltalk.send(self['@processing'], "_mouseY", []);
     return $1;
 },
 args: [],
-source: "mouseY \x0a    \x0a   \x22The system variable mouseY always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^< processing.mouseY >\x0a    \x0a   ",
-messageSends: [],
+source: "mouseY \x0a    \x0a   \x22The system variable mouseY always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^ processing mouseY \x0a    \x0a   ",
+messageSends: ["mouseY"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_noCursor",
+smalltalk.method({
+selector: "noCursor",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noCursor", []);
+    return self;
+},
+args: [],
+source: "noCursor\x0a\x09\x22Hides the cursor from view. Will not work when running the program in a web browser.\x22\x0a    \x0a\x09 processing noCursor\x0a ",
+messageSends: ["noCursor"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -3468,12 +3626,12 @@ category: 'sketch mouse',
 fn: function () {
     var self = this;
     var $1;
-    $1 = processing.pmouseX;
+    $1 = smalltalk.send(self['@processing'], "_pmouseX", []);
     return $1;
 },
 args: [],
-source: "pmouseX \x0a    \x0a   \x22The system variable pmouseX always contains the previous vertical coordinate of the mouse. \x0a     This is the vertical position of the mouse in the frame previous to the current frame.\x22\x0a\x0a\x09^< processing.pmouseX >\x0a    \x0a   ",
-messageSends: [],
+source: "pmouseX \x0a    \x0a   \x22The system variable pmouseX always contains the previous vertical coordinate of the mouse. \x0a     This is the vertical position of the mouse in the frame previous to the current frame.\x22\x0a\x0a\x09^ processing pmouseX \x0a    \x0a   ",
+messageSends: ["pmouseX"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -3993,6 +4151,42 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_screenHeight",
+smalltalk.method({
+selector: "screenHeight",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.height;
+    return $1;
+},
+args: [],
+source: "screenHeight\x0a\x09\x22System variable which stores the dimensions of the computer screen. \x0a    For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. \x0a    These dimensions are useful when exporting full-screen applications. .\x22\x0a    \x0a\x09^< processing.screen.height >\x0a ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_screenWidth",
+smalltalk.method({
+selector: "screenWidth",
+category: 'environmant',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.width;
+    return $1;
+},
+args: [],
+source: "screenWidth\x0a\x09\x22System variable which stores the dimensions of the computer screen. \x0a    For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. \x0a    These dimensions are useful when exporting full-screen applications. .\x22\x0a    \x0a\x09^< processing.screen.width >\x0a ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_screenX_y_z_",
 smalltalk.method({
 selector: "screenX:y:z:",
@@ -4093,6 +4287,23 @@ fn: function (aShine) {
 args: ["aShine"],
 source: "shininess: aShine\x0a\x09\x22shine float: degree of shininess  \x22\x0a    \x0a\x09processing shininess: aShine\x0a    \x0a    \x22Sets the amount of gloss in the surface of shapes. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
 messageSends: ["shininess:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_size_height_",
+smalltalk.method({
+selector: "size:height:",
+category: 'sketch structure',
+fn: function (aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_size_height_", [aWidth, aHeight]);
+    return self;
+},
+args: ["aWidth", "aHeight"],
+source: "size: aWidth height: aHeight \x0a\x0a\x09\x22width int: width of the display window in units of pixels \x0a\x09height int: height of the display window in units of pixels \x22\x0a\x0a\x09processing size: aWidth height: aHeight \x0a    \x0a    \x22Defines the dimension of the display window in units of pixels. \x0a     The size() function must be the first line in setup(). \x0a     If size() is not called, the default size of the window is 100x100 pixels. \x0a     The system variables width and height are set by the parameters passed to the size() function. \x0a\x09Employ numeric values in the size() statement, and then use the built-in width and height variables \x0a     inside your program when you need the dimensions of the display window. \x0a\x09Rendering graphics requires tradeoffs between speed, accuracy, and general usefulness of the available features. \x0a    None of the renderers are perfect, so we provide multiple options so that you can decide what tradeoffs make\x0a     the most sense for your project. We'd prefer all of them to have perfect visual accuracy, \x0a     high performance, and support a wide range of features, but that's simply not possible. \x0a\x0a\x09Again, the size() method must be the first line of the code (or first item inside setup). \x0a    Any code that appears before the size() command may run more than once, which can lead to confusing results.\x22",
+messageSends: ["size:height:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
