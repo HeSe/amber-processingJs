@@ -2261,6 +2261,24 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_height",
+smalltalk.method({
+selector: "height",
+category: 'accessing',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_height", []);
+    return $1;
+},
+args: [],
+source: "height\x0a\x0a\x09^processing height",
+messageSends: ["height"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_hue_",
 smalltalk.method({
 selector: "hue:",
@@ -3215,6 +3233,24 @@ fn: function (aX, aY, aZ, anU, aV) {
 args: ["aX", "aY", "aZ", "anU", "aV"],
 source: "vertexX: aX y: aY z: aZ u: anU v: aV\x0a\x09\x22x \x09int or float: x-coordinate of the vertex\x0a\x09y \x09int or float: y-coordinate of the vertex\x0a\x09z \x09int or float: z-coordinate of the vertex\x0a\x09u \x09int or float: horizontal coordinate for the texture mapping\x0a\x09v \x09int or float: vertical coordinate for the texture mapping\x22\x0a    \x0a\x09processing vertex: aX y: aY z: aZ u: anU v: aV\x0a    \x0a    \x22All shapes are constructed by connecting a series of vertices. vertex() is used to \x0a    specify the vertex coordinates for points, lines, triangles, quads, and polygons and is used \x0a    exclusively within the beginShape() and endShape() function.\x0a\x0a\x09Drawing a vertex in 3D using the z parameter requires the P3D or OPENGL parameter in \x0a\x09combination with size as shown in the above example.\x0a\x0a\x09This function is also used to map a texture onto the geometry. \x0a\x09The texture() function declares the texture to apply to the geometry and the u and v coordinates \x0a\x09set define the mapping of this texture to the form. \x0a    By default, the coordinates used for u and v are specified in relation to the image's size in pixels, \x0a    but this relation can be changed with textureMode().\x22",
 messageSends: ["vertex:y:z:u:v:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_width",
+smalltalk.method({
+selector: "width",
+category: 'accessing',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_width", []);
+    return $1;
+},
+args: [],
+source: "width\x0a\x0a\x09^processing width",
+messageSends: ["width"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);

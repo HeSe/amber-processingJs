@@ -8,7 +8,8 @@ PjsSketch subclass: #ProcessingClock
 draw
 
   | now hoursPosition minutesPosition secondsPosition |  
-  processing background: 224.
+  
+  self backgroundGray: 224.
   
   now := Date new.
   
@@ -26,24 +27,25 @@ draw
 !
 
 drawArm: aPosition lengthScale: aLengthScale weight: aWeight
-| myDX myDY |
-processing strokeWeight: aWeight.
-myDX := centerX 
+	| myDX myDY |
+	self  strokeWeight: aWeight.
+
+	myDX := centerX 
 			+ ((Math sin: (aPosition * 2 * Math PI))
 			* aLengthScale * maxArmLength).
-myDY := centerY 
+	myDY := centerY 
 			- ((Math cos: (aPosition * 2 * Math PI))
 			* aLengthScale * maxArmLength).
-
-processing line: centerX y: centerY dX: myDX dy: myDY.
+            
+	self lineX1: centerX  y1: centerY x2: myDX y2: myDY
 !
 
 initialize
 
 	super initialize.
 
-centerX := processing width / 2.
-centerY := processing height / 2.
-maxArmLength := Math min: centerX or: centerY.
+	centerX := self  width / 2.
+	centerY := self height / 2.
+	maxArmLength := Math min: centerX or: centerY.
 ! !
 

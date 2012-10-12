@@ -562,9 +562,19 @@ sphereDetail: aURes vres: aVRes
 
 !PjsSketch methodsFor: 'accessing'!
 
+height
+
+	^processing height
+!
+
 processing
  
  	^processing
+!
+
+width
+
+	^processing width
 ! !
 
 !PjsSketch methodsFor: 'attributes'!

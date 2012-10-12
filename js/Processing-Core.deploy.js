@@ -1611,6 +1611,19 @@ fn: function (aColor) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_height",
+smalltalk.method({
+selector: "height",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_height", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_hue_",
 smalltalk.method({
 selector: "hue:",
@@ -2285,6 +2298,19 @@ fn: function (aX, aY, aZ, anU, aV) {
     var self = this;
     smalltalk.send(self['@processing'], "_vertex_y_z_u_v_", [aX, aY, aZ, anU, aV]);
     return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_width",
+smalltalk.method({
+selector: "width",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_width", []);
+    return $1;
 }
 }),
 smalltalk.PjsSketch);
