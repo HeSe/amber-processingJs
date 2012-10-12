@@ -651,6 +651,167 @@ strokeWeight: aWidth
     This function does not work with the P3D renderer (please see the size() reference for more information)."
 ! !
 
+!PjsSketch methodsFor: 'camera'!
+
+beginCamera
+	"The beginCamera() and endCamera() functions enable advanced customization of the camera space.
+    The functions are useful if you want to more control over camera movement, however for most users, the camera() function will be sufficient.
+	The camera functions will replace any transformations (such as rotate() or translate()) that occur before them in draw(), but 
+    they will not automatically replace the camera transform itself.
+    For this reason, camera functions should be placed at the beginning of draw() (so that transformations happen afterwards), and 
+    the camera() function can be used after beginCamera() if you want to reset the camera before applying transformations.
+	This function sets the matrix mode to the camera matrix so calls such as translate(), rotate(), applyMatrix() and resetMatrix() affect the camera. 
+    beginCamera() should always be used with a following endCamera() and pairs of beginCamera() and endCamera() cannot be nested."
+    
+    	processing beginCamera
+!
+
+camera
+	"eyeX float: x coordinate for the eye 
+	eyeY float: y coordinate for the eye 
+	eyeZ float: z coordinate for the eye 
+	centerX float: x coordinate for the center of the scene 
+	centerY float: y coordinate for the center of the scene 
+	centerZ float: z coordinate for the center of the scene 
+	upX float: usually 0.0, 1.0, or -1.0 
+	upY float: usually 0.0, 1.0, or -1.0 
+	upZ float: usually 0.0, 1.0, or -1.0 "
+    
+    	processing camera
+
+	"Sets the position of the camera through setting the eye position, the center of the scene, and which axis is facing upward. 
+    Moving the eye position and the direction it is pointing (the center of the scene) allows the images to be seen from different angles. 
+    The version without any parameters sets the camera to the default position, pointing to the center of the display window with the Y axis as up. 
+    The default values are camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0). 
+    This function is similar to gluLookAt() in OpenGL, but it first clears the current camera settings."
+!
+
+cameraEyeX: anEyeX eyeY: anEyeY eyeZ: anEyeZ centerX: aCenterX centerY: aCenterY centerZ: aCenterZ upX: anUpX upY: anUpY upZ: anUpZ
+	"eyeX float: x coordinate for the eye 
+	eyeY float: y coordinate for the eye 
+	eyeZ float: z coordinate for the eye 
+	centerX float: x coordinate for the center of the scene 
+	centerY float: y coordinate for the center of the scene 
+	centerZ float: z coordinate for the center of the scene 
+	upX float: usually 0.0, 1.0, or -1.0 
+	upY float: usually 0.0, 1.0, or -1.0 
+	upZ float: usually 0.0, 1.0, or -1.0 "
+    
+    	processing camera: anEyeX eyeY: anEyeY eyeZ: anEyeZ centerX: aCenterX centerY: aCenterY centerZ: aCenterZ upX: anUpX upY: anUpY upZ: anUpZ
+
+	"Sets the position of the camera through setting the eye position, the center of the scene, and which axis is facing upward. 
+    Moving the eye position and the direction it is pointing (the center of the scene) allows the images to be seen from different angles. 
+    The version without any parameters sets the camera to the default position, pointing to the center of the display window with the Y axis as up. 
+    The default values are camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0). 
+    This function is similar to gluLookAt() in OpenGL, but it first clears the current camera settings."
+!
+
+endCamera
+	"The beginCamera() and endCamera() functions enable advanced customization of the camera space. 
+    Please see the reference for beginCamera() for a description of how the functions are used."
+    
+    	processing endCamera
+!
+
+frustumLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar
+	"left float: left coordinate of the clipping plane 
+	right float: right coordinate of the clipping plane 
+	bottom float: bottom coordinate of the clipping plane 
+	top float: top coordinate of the clipping plane 
+	near float: near coordinate of the clipping plane 
+	far float: far coordinate of the clipping plane "
+    
+    	processing frustum: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar
+
+
+	"Sets a perspective matrix defined through the parameters. 
+    Works like glFrustum, except it wipes out the current perspective matrix rather than muliplying itself with it."
+!
+
+ortho
+	"left float: left plane of the clipping volume 
+	right float: right plane of the clipping volume 
+	bottom float: bottom plane of the clipping volume 
+	top float: top plane of the clipping volume 
+	near float: near plane of the clipping volume 
+	far float: far plane of the clipping volume  "
+    
+    	processing ortho
+
+
+	"Sets an orthographic projection and defines a parallel clipping volume. 
+    All objects with the same dimension appear the same size, regardless of whether they are near or far from the camera. 
+    The parameters to this function specify the clipping volume where left and right are the minimum and maximum x values, 
+    top and bottom are the minimum and maximum y values, and near and far are the minimum and maximum z values. 
+    If no parameters are given, the default is used: ortho(0, width, 0, height, -10, 10)."
+!
+
+orthoLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar
+	"left float: left plane of the clipping volume 
+	right float: right plane of the clipping volume 
+	bottom float: bottom plane of the clipping volume 
+	top float: top plane of the clipping volume 
+	near float: near plane of the clipping volume 
+	far float: far plane of the clipping volume  "
+    
+    	processing ortho: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar
+
+
+	"Sets an orthographic projection and defines a parallel clipping volume. 
+    All objects with the same dimension appear the same size, regardless of whether they are near or far from the camera. 
+    The parameters to this function specify the clipping volume where left and right are the minimum and maximum x values, 
+    top and bottom are the minimum and maximum y values, and near and far are the minimum and maximum z values. 
+    If no parameters are given, the default is used: ortho(0, width, 0, height, -10, 10)."
+!
+
+perspective
+	"fov float: field-of-view angle (in radians) for vertical direction 
+	aspect float: ratio of width to height 
+	zNear float: z-position of nearest clipping plane 
+	zFar float: z-position of nearest farthest plane "
+    
+    	processing perspective
+
+
+	"Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones. 
+    The parameters define a viewing volume with the shape of truncated pyramid. 
+    Objects near to the front of the volume appear their actual size, while farther objects appear smaller. 
+    This projection simulates the perspective of the world more accurately than orthographic projection. 
+    The version of perspective without parameters sets the default perspective and the version with four parameters 
+    allows the programmer to set the area precisely. 
+    The default values are: perspective(PI/3.0, width/height, cameraZ/10.0, cameraZ*10.0) where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));."
+!
+
+perspectiveFov: aFov aspect: anAspect zNear: aZNear zFar: aZFar
+	"fov float: field-of-view angle (in radians) for vertical direction 
+	aspect float: ratio of width to height 
+	zNear float: z-position of nearest clipping plane 
+	zFar float: z-position of nearest farthest plane "
+    
+    	processing perspective: aFov aspect: anAspect zNear: aZNear zFar: aZFar
+
+
+	"Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones. 
+    The parameters define a viewing volume with the shape of truncated pyramid. 
+    Objects near to the front of the volume appear their actual size, while farther objects appear smaller. 
+    This projection simulates the perspective of the world more accurately than orthographic projection. 
+    The version of perspective without parameters sets the default perspective and the version with four parameters 
+    allows the programmer to set the area precisely. 
+    The default values are: perspective(PI/3.0, width/height, cameraZ/10.0, cameraZ*10.0) where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));."
+!
+
+printCamera
+	"Prints the current camera matrix to the text window "
+    
+    	processing printCamera
+!
+
+printProjection
+	"Prints the current projection matrix to the text window. "
+    
+    	processing printProjection
+! !
+
 !PjsSketch methodsFor: 'color creating and reading'!
 
 alpha: aColor
@@ -1309,6 +1470,86 @@ strokeValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
     The default maximum value is 255."
 ! !
 
+!PjsSketch methodsFor: 'coordinates'!
+
+modelX: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing modelX: anX y: aY z: aZ
+
+	"Returns the three-dimensional X, Y, Z position in model space. 
+    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) 
+     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. 
+	In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and 
+    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by 
+    the model functions is used to place another box in the same location."
+!
+
+modelY: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing modelY: anX y: aY z: aZ
+
+	"Returns the three-dimensional X, Y, Z position in model space. 
+    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) 
+     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. 
+	In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and 
+    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by 
+    the model functions is used to place another box in the same location."
+!
+
+modelZ: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing modelZ: anX y: aY z: aZ
+
+	"Returns the three-dimensional X, Y, Z position in model space. 
+    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) 
+     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. 
+	In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and 
+    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by 
+    the model functions is used to place another box in the same location."
+!
+
+screenX: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing screenX: anX y: aY z: aZ
+
+	"Takes a three-dimensional X, Y, Z position and returns the X value for where
+     it will appear on a (two-dimensional) screen."
+!
+
+screenY: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing screenY: anX y: aY z: aZ
+
+	"Takes a three-dimensional X, Y, Z position and returns the X value for where
+     it will appear on a (two-dimensional) screen."
+!
+
+screenZ: anX y: aY z: aZ
+	"x int or float: 3D x coordinate to be mapped 
+	y int or float: 3D y coordinate to be mapped 
+	z int or float: 3D z coordinate to be mapped "
+
+    ^ processing screenZ: anX y: aY z: aZ
+
+	"Takes a three-dimensional X, Y, Z position and returns the X value for where
+     it will appear on a (two-dimensional) screen."
+! !
+
 !PjsSketch methodsFor: 'curves'!
 
 bezierDetail: aDetailint
@@ -1875,6 +2116,211 @@ filterMode: aMode param: aParam
 	OPAQUE - sets the alpha channel to entirely opaque.
 	ERODE - reduces the light areas with the amount defined by the level parameter.
 	DILATE - increases the light areas with the amount defined by the level parameter"
+!
+
+get
+	"x int: x-coordinate of the pixel 
+	y int: y-coordinate of the pixel 
+	width int: width of pixel rectangle to get 
+	height int: height of pixel rectangle to get 
+ 	"
+    
+	^PjsImage newImage: (processing get)
+    
+    "Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. 
+    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and 
+    height parameter. If the pixel requested is outside of the image window, black is returned. 
+    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. 
+    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.
+	The imageMode() function changes the way the parameters work. 
+    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.
+	Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. 
+    The equivalent statement to ""get(x, y)"" using pixels[] is ""pixels[y*width+x]"". 
+    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values."
+!
+
+getX: aX y: aY
+	"x int: x-coordinate of the pixel 
+	y int: y-coordinate of the pixel 
+	width int: width of pixel rectangle to get 
+	height int: height of pixel rectangle to get 
+ 	"
+    
+	^ processing get: aX y: aY 
+    
+    "Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. 
+    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and 
+    height parameter. If the pixel requested is outside of the image window, black is returned. 
+    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. 
+    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.
+	The imageMode() function changes the way the parameters work. 
+    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.
+	Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. 
+    The equivalent statement to ""get(x, y)"" using pixels[] is ""pixels[y*width+x]"". 
+    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values."
+!
+
+getX: aX y: aY width: aWidth height: aHeight
+	"x int: x-coordinate of the pixel 
+	y int: y-coordinate of the pixel 
+	width int: width of pixel rectangle to get 
+	height int: height of pixel rectangle to get 
+ 	"
+    
+	^ PjsImage newImage: (processing get: aX y: aY width: aWidth height: aHeight)
+    
+    "Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. 
+    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and 
+    height parameter. If the pixel requested is outside of the image window, black is returned. 
+    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. 
+    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.
+	The imageMode() function changes the way the parameters work. 
+    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.
+	Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. 
+    The equivalent statement to ""get(x, y)"" using pixels[] is ""pixels[y*width+x]"". 
+    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values."
+!
+
+loadPixels
+    
+	 processing loadPixels
+    
+    "Loads the pixel data for the display window (or an image) into the pixels[] array. 
+      This function must always be called before reading from or writing to pixels[]. 
+	 Certain renderers may or may not seem to require loadPixels() or updatePixels(). 
+     However, the rule is that any time you want to manipulate the pixels[] array, you must first call loadPixels(), 
+     and after changes have been made, call updatePixels(). 
+     Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change."
+!
+
+pixelsAt: anIndex
+    
+	^ < processing.pixels[ anIndex ] >
+    
+    "Array containing the values for all the pixels in the display window. 
+      These values are of the color datatype. 
+      This array is the size of the display window. For example, if the image is 100x100 pixels, there will be 10000 values and i
+      f the window is 200x300 pixels, there will be 60000 values. 
+      The index value defines the position of a value within the array. For example, the statment color b = pixels[230] 
+      will set the variable b to be equal to the value at that location in the array. 
+	Before accessing this array, the data must loaded with the loadPixels() functions. 
+    After the array data has been modified, the updatePixels() function must be loaded to update the changes. 
+    Without loadPixels(), running the code may (or will in future releases) result in a NullPointerException.."
+!
+
+pixelsAt: anIndex put: aValue
+    
+	 < processing.pixels[ anIndex ] = aValue >
+    
+    "Array containing the values for all the pixels in the display window. 
+      These values are of the color datatype. 
+      This array is the size of the display window. For example, if the image is 100x100 pixels, there will be 10000 values and i
+      f the window is 200x300 pixels, there will be 60000 values. 
+      The index value defines the position of a value within the array. For example, the statment color b = pixels[230] 
+      will set the variable b to be equal to the value at that location in the array. 
+	Before accessing this array, the data must loaded with the loadPixels() functions. 
+    After the array data has been modified, the updatePixels() function must be loaded to update the changes. 
+    Without loadPixels(), running the code may (or will in future releases) result in a NullPointerException.."
+!
+
+setX: aX y: aY color: aColor
+    
+   " x int: x-coordinate of the pixel 
+	y int: y-coordinate of the pixel 
+	color color: any value of the color datatype 
+	image PImage: any valid variable of type PImage "
+
+	 processing set: aX y: aY color: aColor
+    
+    "Changes the color of any pixel or writes an image directly into the display window. 
+     The x and y parameters specify the pixel to change and the color parameter specifies the color value. 
+     The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). 
+     When setting an image, the x and y parameters define the coordinates for the upper-left corner of 
+     the image (the placement of the image is not affected by the imageMode() function).
+	Setting the color of a single pixel with set(x, y) is easy, but not as fast as putting the data directly into pixels[]. 
+    The equivalent statement to ""set(x, y, #000000)"" using pixels[] is ""pixels[y*width+x] = #000000"". 
+    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before 
+    getting the values and calling updatePixels() to update the window.."
+!
+
+setX: aX y: aY image: aPjsImage
+    
+   " x int: x-coordinate of the pixel 
+	y int: y-coordinate of the pixel 
+	color color: any value of the color datatype 
+	image PImage: any valid variable of type PImage "
+
+	 processing set: aX y: aY image: aPjsImage pjsImage
+    
+    "Changes the color of any pixel or writes an image directly into the display window. 
+     The x and y parameters specify the pixel to change and the color parameter specifies the color value. 
+     The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). 
+     When setting an image, the x and y parameters define the coordinates for the upper-left corner of 
+     the image (the placement of the image is not affected by the imageMode() function).
+	Setting the color of a single pixel with set(x, y) is easy, but not as fast as putting the data directly into pixels[]. 
+    The equivalent statement to ""set(x, y, #000000)"" using pixels[] is ""pixels[y*width+x] = #000000"". 
+    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before 
+    getting the values and calling updatePixels() to update the window.."
+!
+
+updatePixels
+    
+   "Updates the display window (or an image) when data in the pixels[] array has been modified. 
+    Use in conjunction with loadPixels(). 
+    If you're only reading pixels from the array, there's no need to call updatePixels() unless there are changes. 
+	Certain renderers may or may not seem to require loadPixels() or updatePixels(). 
+    However, the rule is that any time you want to manipulate the pixels[] array, you must first call loadPixels(), 
+    and after changes have been made, call updatePixels().
+    Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change. "
+
+	 processing updatePixels
+! !
+
+!PjsSketch methodsFor: 'image saving'!
+
+saveFrame
+	"filename String: any sequence of letters and numbers 
+	ext either ""tif"", ""tga"", ""jpg"", ""png"" "
+    
+     processing saveFrame
+    
+     "Saves a numbered sequence of images, one image each time the function is run. 
+     To save an image that is identical to the display window, run the function at the end of draw() or 
+     within mouse and key events such as mousePressed() and keyPressed(). 
+     If saveFrame() is called without parameters, it will save the files as screen-0000.tif, screen-0001.tif, etc.
+     It is possible to specify the name of the sequence with the filename parameter and make the choice of saving TIFF, TARGA, PNG, or JPEG files with the ext parameter. 
+     These image sequences can be loaded into programs such as Apple's QuickTime software and made into movies. 
+     These files are saved to the sketch's folder, which may be opened by selecting ""Show sketch folder"" from the ""Sketch"" menu. 
+
+All images saved from the main drawing window will be opaque. To save images without a background, use createGraphics().
+"
+!
+
+saveFrame: aFileNameAndExt
+	"filename String: any sequence of letters and numbers 
+	ext either ""tif"", ""tga"", ""jpg"", ""png""
+    Example: filename-####.ext"
+    
+     processing saveFrame: aFileNameAndExt
+    
+     "Saves a numbered sequence of images, one image each time the function is run. 
+     To save an image that is identical to the display window, run the function at the end of draw() or 
+     within mouse and key events such as mousePressed() and keyPressed(). 
+     If saveFrame() is called without parameters, it will save the files as screen-0000.tif, screen-0001.tif, etc.
+     It is possible to specify the name of the sequence with the filename parameter and make the choice of saving TIFF, TARGA, PNG, or JPEG files with the ext parameter. 
+     These image sequences can be loaded into programs such as Apple's QuickTime software and made into movies. 
+     These files are saved to the sketch's folder, which may be opened by selecting ""Show sketch folder"" from the ""Sketch"" menu. 
+
+All images saved from the main drawing window will be opaque. To save images without a background, use createGraphics().
+"
+!
+
+saveImage: aFileName
+	"filename String: any sequence of letters and numbers   "
+    
+     processing save: aFileName
+    
+     "Saves an image from the display window. Images are saved in the PNG format as a Data URI, which can be displayed in the browser in a new window."
 ! !
 
 !PjsSketch methodsFor: 'initialization'!
@@ -1891,11 +2337,698 @@ initialize
 	self initalizeFunctions.
 ! !
 
+!PjsSketch methodsFor: 'lights'!
+
+ambientLightV1: aV1 v2: aV2 v3: aV3 
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value 
+	x int or float: x-coordinate of the light 
+	y int or float: y-coordinate of the light 
+	z int or float: z-coordinate of the light "
+    
+    	processing ambientLight: aV1 v2: aV2 v3: aV3 
+
+	"Adds an ambient light. Ambient light doesn't come from a specific direction, 
+    the rays have light have bounced around so much that objects are evenly lit from all sides. 
+    Ambient lights are almost always used in combination with other types of lights. 
+    Lights need to be included in the draw() to remain persistent in a looping program. 
+    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. 
+    The effect of the parameters is determined by the current color mode."
+!
+
+ambientLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value 
+	x int or float: x-coordinate of the light 
+	y int or float: y-coordinate of the light 
+	z int or float: z-coordinate of the light "
+    
+    	processing ambientLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ
+
+	"Adds an ambient light. Ambient light doesn't come from a specific direction, 
+    the rays have light have bounced around so much that objects are evenly lit from all sides. 
+    Ambient lights are almost always used in combination with other types of lights. 
+    Lights need to be included in the draw() to remain persistent in a looping program. 
+    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. 
+    The effect of the parameters is determined by the current color mode."
+!
+
+directionalV1: aV1 v2: aV2 v3: aV3 nx: aX ny: aY nz: aZ
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value 
+	nx int or float: direction along the x axis 
+	ny int or float: direction along the y axis 
+	nz int or float: direction along the z axis 
+	"
+    
+    	processing directional: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ
+
+	"Adds a directional light. Directional light comes from one direction and is stronger when 
+     hitting a surface squarely and weaker if it hits at a a gentle angle. 
+     After hitting a surface, a directional lights scatters in all directions. 
+     Lights need to be included in the draw() to remain persistent in a looping program. 
+     Placing them in the setup() of a looping program will cause them to only have an effect the first
+     time through the loop. The affect of the v1, v2, and v3 parameters is determined by the current color mode. 
+     The nx, ny, and nz parameters specify the direction the light is facing. 
+     For example, setting ny to -1 will cause the geometry to be lit from below (the light is facing directly upward)."
+!
+
+lightFalloff: aConstant linear: aLinear quadratic: aQuadric
+	"constant int or float: constant value for determining falloff 
+	linear int or float: linear value for determining falloff 
+	quadratic int or float: quadratic value for determining falloff "
+    
+    	processing lightFalloff: aConstant linear: aLinear quadratic: aQuadric
+        
+	"Sets the falloff rates for point lights, spot lights, and ambient lights. 
+    	The parameters are used to determine the falloff with the following equation:
+		d = distance from light position to vertex position
+        falloff = 1 / (CONSTANT + d * LINEAR + (d*d) * QUADRATIC)
+        Like fill(), it affects only the elements which are created after it in the code. 
+        The default value if LightFalloff(1.0, 0.0, 0.0). 
+        Thinking about an ambient light with a falloff can be tricky. It is used, for example, if 
+        you wanted a region of your scene to be lit ambiently one color and another region to be lit ambiently 
+        by another color, you would use an ambient light with location and falloff. 
+        You can think of it as a point light that doesn't care which direction a surface is facing."
+!
+
+lightSpeculartV1: aV1 v2: aV2 v3: aV3 
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value "
+    
+    	processing lightSpecular: aV1 v2: aV2 v3: aV3 
+
+	"Sets the specular color for lights. 
+    Like fill(), it affects only the elements which are created after it in the code. 
+    Specular refers to light which bounces off a surface in a perferred 
+     direction (rather than bouncing in all directions like a diffuse light) and is used for creating highlights. 
+     The specular quality of a light interacts with the specular material qualities set through the specular() and shininess() functions."
+!
+
+lights
+	"Sets the default ambient light, directional light, falloff, and specular values. 
+    The defaults are are ambientLight(128, 128, 128) and directionalLight(128, 128, 128, 0, 0, -1), 
+    lightFalloff()(1, 0, 0), and lightSpecular(0, 0, 0). Lights need to be included in the draw() to 
+    remain persistent in a looping program. 
+    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. "
+    
+    	processing lights
+!
+
+noLights
+	"Disable all lighting. Lighting is turned off by default and enabled with the lights() method. 
+    This function can be used to disable lighting so that 2D geometry 
+    (which does not require lighting) can be drawn after a set of lighted 3D geometry. "
+    
+    	processing noLights
+!
+
+normal: aX ny: aY nz: aZ
+	
+	"nx int or float: direction along the x axis 
+	ny int or float: direction along the y axis 
+	nz int or float: direction along the z axis "
+    
+    	processing normal: aX ny: aY nz: aZ
+
+	"Sets the current normal vector. 
+     This is for drawing three dimensional shapes and surfaces and specifies a vector perpendicular to 
+     the surface of the shape which determines how lighting affects it. 
+    Processing attempts to automatically assign normals to shapes, but since that's imperfect, this is 
+    a better option when you want more control. This function is identical to glNormal3f() in OpenGL."
+!
+
+pointLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value 
+	x int or float: x-coordinate of the light 
+	y int or float: y-coordinate of the light 
+	z int or float: z-coordinate of the light "
+    
+    	processing pointLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ
+
+	"Adds a point light. Lights need to be included in the draw() to remain persistent in a looping program. 
+    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. 
+    The affect of the v1, v2, and v3 parameters is determined by the current color mode. 
+    The x, y, and z parameters set the position of the light."
+!
+
+spotLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration: aCon
+	"v1 int or float: red or hue value 
+	v2 int or float: green or hue value 
+	v3 int or float: green or hue value 
+	nx int or float: x coordinate of the light 
+	ny int or float: y coordinate of the light 
+	nz int or float: z coordinate of the light 
+	angle float: angle of the spotlight cone 
+	concentration float: exponent determining the center bias of the cone   "
+    
+    	processing spotLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration: aCon
+
+	"Adds a spot light. Lights need to be included in the draw() to remain persistent in a looping program. 
+     Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. 
+     The affect of the v1, v2, and v3 parameters is determined by the current color mode. 
+     The x, y, and z parameters specify the position of the light and nx, ny, nz specify the direction or light. 
+     The angle parameter affects angle of the spotlight cone."
+! !
+
+!PjsSketch methodsFor: 'material properties'!
+
+ambient: aValue1 value2: aValue2 value3: aValue3 
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing ambient: aValue1 value2: aValue2 value3: aValue3 
+    
+    "Sets the ambient reflectance for shapes drawn to the screen. 
+    This is combined with the ambient light component of environment. 
+    The color components set through the parameters define the reflectance. 
+    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and 
+    half of the green light to reflect. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+ambientColor: aColor
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing ambient: aColor
+    
+    "Sets the ambient reflectance for shapes drawn to the screen. 
+    This is combined with the ambient light component of environment. 
+    The color components set through the parameters define the reflectance. 
+    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and 
+    half of the green light to reflect. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+ambientGray: aGrayValue
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing ambient: aGrayValue
+    
+    "Sets the ambient reflectance for shapes drawn to the screen. 
+    This is combined with the ambient light component of environment. 
+    The color components set through the parameters define the reflectance. 
+    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and 
+    half of the green light to reflect. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+emissive: aValue1 value2: aValue2 value3: aValue3 
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing emissivet: aValue1 value2: aValue2 value3: aValue3 
+    
+   "Sets the emissive color of the material used for drawing shapes drawn to the screen. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.
+."
+!
+
+emissiveColor: aColor
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing emissive: aColor
+    
+    "Sets the emissive color of the material used for drawing shapes drawn to the screen. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.
+."
+!
+
+emissiveGray: aGrayValue
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing emissive: aGrayValue
+    
+    "Sets the emissive color of the material used for drawing shapes drawn to the screen. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.
+."
+!
+
+shininess: aShine
+	"shine float: degree of shininess  "
+    
+	processing shininess: aShine
+    
+    "Sets the amount of gloss in the surface of shapes. 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+specular: aValue1 value2: aValue2 value3: aValue3 
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing specular: aValue1 value2: aValue2 value3: aValue3 
+    
+      "Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. 
+    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+specularColor: aColor
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing specular: aColor
+    
+       "Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. 
+    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+!
+
+specularGray: aGrayValue
+	"gray int or float: number specifying value between white and black 
+	color color: any value of the color datatype 
+	v1 int or float: red or hue value 
+	v2 int or float: green or saturation value 
+	v3 int or float: green or brightness value "
+    
+	processing specular: aGrayValue
+    
+    "Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. 
+    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). 
+    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
+! !
+
 !PjsSketch methodsFor: 'processing overrides'!
 
 draw
  
  	self subclassResponsibility
+! !
+
+!PjsSketch methodsFor: 'sketch directions'!
+
+directiveCrisp: aBool
+
+	"http://processingjs.org/reference/pjs%20directive/"
+
+	aBool 
+    	ifTrue:[ < p.externals.sketch.options.crispLines = true > ]
+  		ifFalse:[ < p.externals.sketch.options.crispLines = false > ]
+!
+
+directiveFont: aFileName
+
+	"http://processingjs.org/reference/font/"
+
+	  < p.externals.sketch.options.font = aFileName >
+!
+
+directivePauseOnBlur: aBool
+
+	"http://processingjs.org/reference/globalKeyEvents/"
+
+	aBool 
+    	ifTrue:[ < p.externals.sketch.options.globalKeyEvents  = true > ]
+  		ifFalse:[ < p.externals.sketch.options.globalKeyEvents  = false > ]
+!
+
+directivePreload: aFileName
+
+	"http://processingjs.org/reference/pjs%20directive/"
+
+	  < p.externals.sketch.options.preload = aFileName >
+! !
+
+!PjsSketch methodsFor: 'sketch keyboard'!
+
+isKeyPressed 
+    
+   "The boolean system variable keyPressed is true if any key is pressed and false if no keys are pressed."
+
+	^ < processing.keyPressed >
+!
+
+key 
+    
+   "The system variable key always contains the value of the most recently pressed key on the keyboard. 
+   For detecting the arrow keys, the keyCode variable is set to either UP, DOWN, LEFT, or RIGHT."
+
+	^< processing.key >
+!
+
+keyCode 
+    
+   "The system variable keyCode is used to detect special keys such as 
+    the UP, DOWN, LEFT, RIGHT arrow keys and ALT, CONTROL, SHIFT, BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE. 
+     When checking for UP, DOWN, LEFT, RIGHT, ALT, CONTROL, and SHIFT, it's first necessary to check and 
+      see if the key is coded. This is done with the conditional ""if(key == CODED) {}"" as shown in the second example. 
+      The keys included in the ASCII specification (BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE) 
+   do not require checking to see if they key is coded. If you're making cross-platform projects, 
+    note that the ENTER key is commonly used on PCs and Unix and the RETURN key is used instead on Macintosh. 
+    Check for both ENTER and RETURN to make sure your program will work for all platforms."
+
+	^< processing.keyCode >
+!
+
+keyPressed 
+    
+   "The keyPressed() function is called once every time a key is pressed. Because of how operating systems handle key repeats, 
+    holding down a key will cause multiple calls to keyPressed(), the rate is set by the operating system and how each computer is configured.."
+
+	self subclassResponsibility
+!
+
+keyReleased 
+    
+   "The keyReleased() function is called once every time a key is released."
+
+	self subclassResponsibility
+!
+
+keyTyped 
+    
+   "The keyTyped() function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and 
+   Alt are ignored. Because of how operating systems handle key repeats, holding down a key will cause multiple calls to keyTyped(), 
+   the rate is set by the operating system and how each computer is configured."
+
+	self subclassResponsibility
+! !
+
+!PjsSketch methodsFor: 'sketch mouse'!
+
+isMousePressed 
+    
+   "Variable storing if a mouse button is pressed. 
+    The value of the system variable mousePressed is true if a mouse button is pressed and false if a button is not pressed."
+
+	^ < processing.mousePressed >
+!
+
+mouseButton 
+    
+   "Processing automatically tracks if the mouse button is pressed and which button is pressed. 
+    The value of the system variable mouseButton is either LEFT, RIGHT, or CENTER depending on which button is pressed"
+
+	^ processing mouseButton
+!
+
+mouseClicked
+    
+   "The mouseClicked() function is called once after a mouse button has been pressed and then released. "
+
+	 self subclassRespnsubility
+!
+
+mouseDragged
+    
+   "The mouseDragged() function is called once every time the mouse moves and a mouse button is pressed.. "
+
+	 self subclassRespnsubility
+!
+
+mouseMoved
+    
+   "The mouseMoved() function is called every time the mouse moves and a mouse button is not pressed. "
+
+	 self subclassRespnsubility
+!
+
+mouseOut
+    
+   "The mouseOut() function is called when the mouse pointer leaves a sketch. "
+
+	 self subclassRespnsubility
+!
+
+mouseOver
+    
+   "The mouseOver() function is called when the mouse pointer moves over the sketch."
+
+	 self subclassRespnsubility
+!
+
+mousePressed 
+    
+   "The mousePressed() function is called once after every time a mouse button is pressed. 
+   The mouseButton variable (see the related reference entry) can be used used to determine which button has been pressed."
+
+	self subclassResponsibility
+!
+
+mouseReleased 
+    
+   "The mouseReleased() function is called every time a mouse button is released."
+
+	self subclassResponsibility
+!
+
+mouseX 
+    
+   "The system variable mouseX always contains the current vertical coordinate of the mouse."
+
+	^< processing.mouseX >
+!
+
+mouseY 
+    
+   "The system variable mouseY always contains the current vertical coordinate of the mouse."
+
+	^< processing.mouseY >
+!
+
+pmouseX 
+    
+   "The system variable pmouseX always contains the previous vertical coordinate of the mouse. 
+     This is the vertical position of the mouse in the frame previous to the current frame."
+
+	^< processing.pmouseX >
+!
+
+pmouseY 
+    
+   "The system variable pmouseY always contains the previous vertical coordinate of the mouse. 
+     This is the vertical position of the mouse in the frame previous to the current frame."
+
+	^< processing.pmouseY >
+! !
+
+!PjsSketch methodsFor: 'sketch transform'!
+
+applyMatrix:aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15
+	
+    "n00-n15 float: numbers which define the 4x4 matrix to be multiplied "
+    
+	processing applyMatrix: aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15
+    
+    "Multiplies the current matrix by the one specified through the parameters. 
+    This is very slow because it will try to calculate the inverse of the transform, so avoid it whenever possible. 
+    The equivalent function in OpenGL is glMultMatrix()."
+!
+
+popMatrix
+	"Pops the current transformation matrix off the matrix stack. 
+    Understanding pushing and popping requires understanding the concept of a matrix stack. 
+    The pushMatrix() function saves the current coordinate system to the stack and popMatrix() restores
+    the prior coordinate system. pushMatrix() and popMatrix() are used in conjuction with the 
+    other transformation methods and may be embedded to control the scope of the transformations"
+    
+	processing popMatrix
+!
+
+printMatrix
+	"Prints the current matrix to the text window"
+    
+	processing printMatrix
+!
+
+pushMatrix
+	"Pushes the current transformation matrix onto the matrix stack. Understanding pushMatrix() and 
+    popMatrix() requires understanding the concept of a matrix stack. 
+    The pushMatrix() function saves the current coordinate system to the stack and popMatrix() restores
+    the prior coordinate system. pushMatrix() and popMatrix() are used in conjuction with the other 
+    transformation methods and may be embedded to control the scope of the transformations."
+    
+	processing pushMatrix
+!
+
+resetMatrix
+	"Replaces the current matrix with the identity matrix. The equivalent function in OpenGL is glLoadIdentity()."
+    
+	processing resetMatrix
+!
+
+rotate: anAngle
+	"angle float: angle of rotation specified in radians or degrees depending on the current angle mode  "
+    
+	processing rotate: anAngle
+    
+    "Rotates an object the amount specified by the angle parameter.
+    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. 
+    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. 
+    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. 
+    For example, calling rotate(PI/2) and then rotate(PI/2) is the same as rotate(PI). 
+    If rotate() is called within the draw(), the transformation is reset when the loop begins again. 
+    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above."
+!
+
+rotateX: anAngle
+	"angle float: angle of rotation specified in radians "
+    
+	processing rotateX: anAngle
+    
+    "Rotates a shape around the x-axis the amount specified by the angle parameter. 
+    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. 
+    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. 
+    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. 
+    For example, calling rotateX(PI/2) and then rotateX(PI/2) is the same as rotateX(PI). 
+    If rotateX() is called within the draw(), the transformation is reset when the loop begins again. 
+    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above."
+!
+
+rotateY: anAngle
+	"angle float: angle of rotation specified in radians "
+    
+	processing rotateY: anAngle
+    
+    "Rotates a shape around the y-axis the amount specified by the angle parameter. 
+    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. 
+    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. 
+    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. 
+    For example, calling rotateY(PI/2) and then rotateY(PI/2) is the same as rotateY(PI). 
+    If rotateY() is called within the draw(), the transformation is reset when the loop begins again. 
+    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above."
+!
+
+rotateZ: anAngle
+	"angle float: angle of rotation specified in radians "
+    
+	processing rotateZ: anAngle
+    
+    "Rotates a shape around the z-axis the amount specified by the angle parameter. 
+    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. 
+    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. 
+    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. 
+    For example, calling rotateZ(PI/2) and then rotateZ(PI/2) is the same as rotateZ(PI). 
+    If rotateZ() is called within the draw(), the transformation is reset when the loop begins again. 
+    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above."
+!
+
+scaleSize: aSize
+	"size float: percentage to scale the object 
+	x float: percentage to scale the object in the ""x"" axis 
+	y float: percentage to scale the object in the ""y"" axis 
+	z float: percentage to scale the object in the ""z"" axis   "
+    
+	processing scale: aSize
+    
+    "Increasing and decreasing the size of an object by expanding and contracting vertices. 
+    Scale values are specified as decimal percentages. 
+    The function call scale(2.0) increases the dimension of a shape by 200%. 
+    Objects always scale from their relative origin to the coordinate system. 
+    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. 
+    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), 
+    he transformation is reset when the loop begins again. 
+    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. 
+    This function can be further controlled by pushMatrix() and popMatrix()."
+!
+
+scaleX: aX y: aY 
+	"size float: percentage to scale the object 
+	x float: percentage to scale the object in the ""x"" axis 
+	y float: percentage to scale the object in the ""y"" axis 
+	z float: percentage to scale the object in the ""z"" axis   "
+    
+	processing scale: aX y: aY 
+    
+    "Increasing and decreasing the size of an object by expanding and contracting vertices. 
+    Scale values are specified as decimal percentages. 
+    The function call scale(2.0) increases the dimension of a shape by 200%. 
+    Objects always scale from their relative origin to the coordinate system. 
+    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. 
+    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), 
+    he transformation is reset when the loop begins again. 
+    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. 
+    This function can be further controlled by pushMatrix() and popMatrix()."
+!
+
+scaleX: aX y: aY z: aZ
+	"size float: percentage to scale the object 
+	x float: percentage to scale the object in the ""x"" axis 
+	y float: percentage to scale the object in the ""y"" axis 
+	z float: percentage to scale the object in the ""z"" axis   "
+    
+	processing scale: aX y: aY z: aZ
+    
+    "Increasing and decreasing the size of an object by expanding and contracting vertices. 
+    Scale values are specified as decimal percentages. 
+    The function call scale(2.0) increases the dimension of a shape by 200%. 
+    Objects always scale from their relative origin to the coordinate system. 
+    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. 
+    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), 
+    he transformation is reset when the loop begins again. 
+    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. 
+    This function can be further controlled by pushMatrix() and popMatrix()."
+!
+
+translateX: aX y: aY 
+	"x int or float: left/right translation 
+	y int or float: up/down translation 
+	z int or float: forward/back translation 
+  "
+    
+	processing translate:aX y: aY 
+    
+    "Specifies an amount to displace objects within the display window. 
+    The x parameter specifies left/right translation, the y parameter specifies up/down translation, 
+    and the z parameter specifies translations toward/away from the screen. 
+    Using this function with the z parameter requires using the P3D or OPENGL parameter in combination with 
+    size as shown in the above example. Transformations apply to everything that happens after and subsequent calls to 
+    the function accumulates the effect. For example, calling translate(50, 0) and then translate(20, 0) is the same as translate(70, 0). 
+    If translate() is called within draw(), the transformation is reset when the loop begins again. 
+    This function can be further controlled by the pushMatrix() and popMatrix()."
+!
+
+translateX: aX y: aY z: aZ
+	"x int or float: left/right translation 
+	y int or float: up/down translation 
+	z int or float: forward/back translation 
+  "
+    
+	processing translate:aX y: aY z: aZ
+    
+    "Specifies an amount to displace objects within the display window. 
+    The x parameter specifies left/right translation, the y parameter specifies up/down translation, 
+    and the z parameter specifies translations toward/away from the screen. 
+    Using this function with the z parameter requires using the P3D or OPENGL parameter in combination with 
+    size as shown in the above example. Transformations apply to everything that happens after and subsequent calls to 
+    the function accumulates the effect. For example, calling translate(50, 0) and then translate(20, 0) is the same as translate(70, 0). 
+    If translate() is called within draw(), the transformation is reset when the loop begins again. 
+    This function can be further controlled by the pushMatrix() and popMatrix()."
 ! !
 
 !PjsSketch methodsFor: 'vertex'!

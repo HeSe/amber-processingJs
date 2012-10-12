@@ -1196,6 +1196,108 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_ambient_value2_value3_",
+smalltalk.method({
+selector: "ambient:value2:value3:",
+category: 'material properties',
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ambient_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+},
+args: ["aValue1", "aValue2", "aValue3"],
+source: "ambient: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing ambient: aValue1 value2: aValue2 value3: aValue3 \x0a    \x0a    \x22Sets the ambient reflectance for shapes drawn to the screen. \x0a    This is combined with the ambient light component of environment. \x0a    The color components set through the parameters define the reflectance. \x0a    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and \x0a    half of the green light to reflect. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["ambient:value2:value3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_ambientColor_",
+smalltalk.method({
+selector: "ambientColor:",
+category: 'material properties',
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ambient_", [aColor]);
+    return self;
+},
+args: ["aColor"],
+source: "ambientColor: aColor\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing ambient: aColor\x0a    \x0a    \x22Sets the ambient reflectance for shapes drawn to the screen. \x0a    This is combined with the ambient light component of environment. \x0a    The color components set through the parameters define the reflectance. \x0a    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and \x0a    half of the green light to reflect. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["ambient:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_ambientGray_",
+smalltalk.method({
+selector: "ambientGray:",
+category: 'material properties',
+fn: function (aGrayValue) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ambient_", [aGrayValue]);
+    return self;
+},
+args: ["aGrayValue"],
+source: "ambientGray: aGrayValue\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing ambient: aGrayValue\x0a    \x0a    \x22Sets the ambient reflectance for shapes drawn to the screen. \x0a    This is combined with the ambient light component of environment. \x0a    The color components set through the parameters define the reflectance. \x0a    For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and \x0a    half of the green light to reflect. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["ambient:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_ambientLightV1_v2_v3_",
+smalltalk.method({
+selector: "ambientLightV1:v2:v3:",
+category: 'lights',
+fn: function (aV1, aV2, aV3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ambientLight_v2_v3_", [aV1, aV2, aV3]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3"],
+source: "ambientLightV1: aV1 v2: aV2 v3: aV3 \x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x0a\x09x int or float: x-coordinate of the light \x0a\x09y int or float: y-coordinate of the light \x0a\x09z int or float: z-coordinate of the light \x22\x0a    \x0a    \x09processing ambientLight: aV1 v2: aV2 v3: aV3 \x0a\x0a\x09\x22Adds an ambient light. Ambient light doesn't come from a specific direction, \x0a    the rays have light have bounced around so much that objects are evenly lit from all sides. \x0a    Ambient lights are almost always used in combination with other types of lights. \x0a    Lights need to be included in the draw() to remain persistent in a looping program. \x0a    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. \x0a    The effect of the parameters is determined by the current color mode.\x22",
+messageSends: ["ambientLight:v2:v3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_ambientLightV1_v2_v3_x_y_z_",
+smalltalk.method({
+selector: "ambientLightV1:v2:v3:x:y:z:",
+category: 'lights',
+fn: function (aV1, aV2, aV3, aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ambientLight_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3", "aX", "aY", "aZ"],
+source: "ambientLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x0a\x09x int or float: x-coordinate of the light \x0a\x09y int or float: y-coordinate of the light \x0a\x09z int or float: z-coordinate of the light \x22\x0a    \x0a    \x09processing ambientLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x0a\x09\x22Adds an ambient light. Ambient light doesn't come from a specific direction, \x0a    the rays have light have bounced around so much that objects are evenly lit from all sides. \x0a    Ambient lights are almost always used in combination with other types of lights. \x0a    Lights need to be included in the draw() to remain persistent in a looping program. \x0a    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. \x0a    The effect of the parameters is determined by the current color mode.\x22",
+messageSends: ["ambientLight:v2:v3:x:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_applyMatrix_n01_n02_n03_n04_n05_n06_n07_n08_n09_n10_n11_n12_n13_n14_n15_",
+smalltalk.method({
+selector: "applyMatrix:n01:n02:n03:n04:n05:n06:n07:n08:n09:n10:n11:n12:n13:n14:n15:",
+category: 'sketch transform',
+fn: function (aN00, aN01, aN02, aN03, aN04, aN05, aN06, aN07, aN08, aN09, aN10, aN11, aN12, aN13, aN14, aN15) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_applyMatrix_n01_n02_n03_n04_n05_n06_n07_n08_n09_n10_n11_n12_n13_n14_n15_", [aN00, aN01, aN02, aN03, aN04, aN05, aN06, aN07, aN08, aN09, aN10, aN11, aN12, aN13, aN14, aN15]);
+    return self;
+},
+args: ["aN00", "aN01", "aN02", "aN03", "aN04", "aN05", "aN06", "aN07", "aN08", "aN09", "aN10", "aN11", "aN12", "aN13", "aN14", "aN15"],
+source: "applyMatrix:aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15\x0a\x09\x0a    \x22n00-n15 float: numbers which define the 4x4 matrix to be multiplied \x22\x0a    \x0a\x09processing applyMatrix: aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15\x0a    \x0a    \x22Multiplies the current matrix by the one specified through the parameters. \x0a    This is very slow because it will try to calculate the inverse of the transform, so avoid it whenever possible. \x0a    The equivalent function in OpenGL is glMultMatrix().\x22",
+messageSends: ["applyMatrix:n01:n02:n03:n04:n05:n06:n07:n08:n09:n10:n11:n12:n13:n14:n15:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_arcX_y_width_height_start_stop_",
 smalltalk.method({
 selector: "arcX:y:width:height:start:stop:",
@@ -1344,6 +1446,23 @@ fn: function (aHex, anAlpha) {
 args: ["aHex", "anAlpha"],
 source: "backgroundHex: aHex alpha: anAlpha\x0a\x09\x22hex \x09int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00)\x0a    alpha \x09int or float: opacity of the background\x22\x0a    \x0a\x09processing background: aHex alpha: anAlpha\x0a    \x0a    \x22The background() function sets the color used for the background of the Processing window. \x0a    The default background is light gray. In the draw() function, \x0a    the background color is used to clear the display window at the beginning of each frame.\x0a    An image can also be used as the background for a sketch, however its width and height must be the same size as the sketch window.\x0a  \x09Unlike Processing, it is possible to use transparency (alpha) in background colors with the main drawing surface.\x22",
 messageSends: ["background:alpha:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_beginCamera",
+smalltalk.method({
+selector: "beginCamera",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_beginCamera", []);
+    return self;
+},
+args: [],
+source: "beginCamera\x0a\x09\x22The beginCamera() and endCamera() functions enable advanced customization of the camera space.\x0a    The functions are useful if you want to more control over camera movement, however for most users, the camera() function will be sufficient.\x0a\x09The camera functions will replace any transformations (such as rotate() or translate()) that occur before them in draw(), but \x0a    they will not automatically replace the camera transform itself.\x0a    For this reason, camera functions should be placed at the beginning of draw() (so that transformations happen afterwards), and \x0a    the camera() function can be used after beginCamera() if you want to reset the camera before applying transformations.\x0a\x09This function sets the matrix mode to the camera matrix so calls such as translate(), rotate(), applyMatrix() and resetMatrix() affect the camera. \x0a    beginCamera() should always be used with a following endCamera() and pairs of beginCamera() and endCamera() cannot be nested.\x22\x0a    \x0a    \x09processing beginCamera\x0a\x0a",
+messageSends: ["beginCamera"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -1619,6 +1738,40 @@ fn: function (aColor) {
 args: ["aColor"],
 source: "brightness: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x0a    \x0a\x09^processing brightness: aColor\x0a    \x0a   \x22Extracts the brightness value from a color.\x22",
 messageSends: ["brightness:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_camera",
+smalltalk.method({
+selector: "camera",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_camera", []);
+    return self;
+},
+args: [],
+source: "camera\x0a\x09\x22eyeX float: x coordinate for the eye \x0a\x09eyeY float: y coordinate for the eye \x0a\x09eyeZ float: z coordinate for the eye \x0a\x09centerX float: x coordinate for the center of the scene \x0a\x09centerY float: y coordinate for the center of the scene \x0a\x09centerZ float: z coordinate for the center of the scene \x0a\x09upX float: usually 0.0, 1.0, or -1.0 \x0a\x09upY float: usually 0.0, 1.0, or -1.0 \x0a\x09upZ float: usually 0.0, 1.0, or -1.0 \x22\x0a    \x0a    \x09processing camera\x0a\x0a\x09\x22Sets the position of the camera through setting the eye position, the center of the scene, and which axis is facing upward. \x0a    Moving the eye position and the direction it is pointing (the center of the scene) allows the images to be seen from different angles. \x0a    The version without any parameters sets the camera to the default position, pointing to the center of the display window with the Y axis as up. \x0a    The default values are camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0). \x0a    This function is similar to gluLookAt() in OpenGL, but it first clears the current camera settings.\x22",
+messageSends: ["camera"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_cameraEyeX_eyeY_eyeZ_centerX_centerY_centerZ_upX_upY_upZ_",
+smalltalk.method({
+selector: "cameraEyeX:eyeY:eyeZ:centerX:centerY:centerZ:upX:upY:upZ:",
+category: 'camera',
+fn: function (anEyeX, anEyeY, anEyeZ, aCenterX, aCenterY, aCenterZ, anUpX, anUpY, anUpZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_camera_eyeY_eyeZ_centerX_centerY_centerZ_upX_upY_upZ_", [anEyeX, anEyeY, anEyeZ, aCenterX, aCenterY, aCenterZ, anUpX, anUpY, anUpZ]);
+    return self;
+},
+args: ["anEyeX", "anEyeY", "anEyeZ", "aCenterX", "aCenterY", "aCenterZ", "anUpX", "anUpY", "anUpZ"],
+source: "cameraEyeX: anEyeX eyeY: anEyeY eyeZ: anEyeZ centerX: aCenterX centerY: aCenterY centerZ: aCenterZ upX: anUpX upY: anUpY upZ: anUpZ\x0a\x09\x22eyeX float: x coordinate for the eye \x0a\x09eyeY float: y coordinate for the eye \x0a\x09eyeZ float: z coordinate for the eye \x0a\x09centerX float: x coordinate for the center of the scene \x0a\x09centerY float: y coordinate for the center of the scene \x0a\x09centerZ float: z coordinate for the center of the scene \x0a\x09upX float: usually 0.0, 1.0, or -1.0 \x0a\x09upY float: usually 0.0, 1.0, or -1.0 \x0a\x09upZ float: usually 0.0, 1.0, or -1.0 \x22\x0a    \x0a    \x09processing camera: anEyeX eyeY: anEyeY eyeZ: anEyeZ centerX: aCenterX centerY: aCenterY centerZ: aCenterZ upX: anUpX upY: anUpY upZ: anUpZ\x0a\x0a\x09\x22Sets the position of the camera through setting the eye position, the center of the scene, and which axis is facing upward. \x0a    Moving the eye position and the direction it is pointing (the center of the scene) allows the images to be seen from different angles. \x0a    The version without any parameters sets the camera to the default position, pointing to the center of the display window with the Y axis as up. \x0a    The default values are camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0). \x0a    This function is similar to gluLookAt() in OpenGL, but it first clears the current camera settings.\x22",
+messageSends: ["camera:eyeY:eyeZ:centerX:centerY:centerZ:upX:upY:upZ:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -1988,6 +2141,99 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_directionalV1_v2_v3_nx_ny_nz_",
+smalltalk.method({
+selector: "directionalV1:v2:v3:nx:ny:nz:",
+category: 'lights',
+fn: function (aV1, aV2, aV3, aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_directional_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3", "aX", "aY", "aZ"],
+source: "directionalV1: aV1 v2: aV2 v3: aV3 nx: aX ny: aY nz: aZ\x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x0a\x09nx int or float: direction along the x axis \x0a\x09ny int or float: direction along the y axis \x0a\x09nz int or float: direction along the z axis \x0a\x09\x22\x0a    \x0a    \x09processing directional: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x0a\x09\x22Adds a directional light. Directional light comes from one direction and is stronger when \x0a     hitting a surface squarely and weaker if it hits at a a gentle angle. \x0a     After hitting a surface, a directional lights scatters in all directions. \x0a     Lights need to be included in the draw() to remain persistent in a looping program. \x0a     Placing them in the setup() of a looping program will cause them to only have an effect the first\x0a     time through the loop. The affect of the v1, v2, and v3 parameters is determined by the current color mode. \x0a     The nx, ny, and nz parameters specify the direction the light is facing. \x0a     For example, setting ny to -1 will cause the geometry to be lit from below (the light is facing directly upward).\x22",
+messageSends: ["directional:v2:v3:x:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_directiveCrisp_",
+smalltalk.method({
+selector: "directiveCrisp:",
+category: 'sketch directions',
+fn: function (aBool) {
+    var self = this;
+    if (smalltalk.assert(aBool)) {
+        p.externals.sketch.options.crispLines = true;
+    } else {
+        p.externals.sketch.options.crispLines = false;
+    }
+    return self;
+},
+args: ["aBool"],
+source: "directiveCrisp: aBool\x0a\x0a\x09\x22http://processingjs.org/reference/pjs%20directive/\x22\x0a\x0a\x09aBool \x0a    \x09ifTrue:[ < p.externals.sketch.options.crispLines = true > ]\x0a  \x09\x09ifFalse:[ < p.externals.sketch.options.crispLines = false > ]",
+messageSends: ["ifTrue:ifFalse:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_directiveFont_",
+smalltalk.method({
+selector: "directiveFont:",
+category: 'sketch directions',
+fn: function (aFileName) {
+    var self = this;
+    p.externals.sketch.options.font = aFileName;
+    return self;
+},
+args: ["aFileName"],
+source: "directiveFont: aFileName\x0a\x0a\x09\x22http://processingjs.org/reference/font/\x22\x0a\x0a\x09  < p.externals.sketch.options.font = aFileName > \x0a  \x09",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_directivePauseOnBlur_",
+smalltalk.method({
+selector: "directivePauseOnBlur:",
+category: 'sketch directions',
+fn: function (aBool) {
+    var self = this;
+    if (smalltalk.assert(aBool)) {
+        p.externals.sketch.options.globalKeyEvents = true;
+    } else {
+        p.externals.sketch.options.globalKeyEvents = false;
+    }
+    return self;
+},
+args: ["aBool"],
+source: "directivePauseOnBlur: aBool\x0a\x0a\x09\x22http://processingjs.org/reference/globalKeyEvents/\x22\x0a\x0a\x09aBool \x0a    \x09ifTrue:[ < p.externals.sketch.options.globalKeyEvents  = true > ]\x0a  \x09\x09ifFalse:[ < p.externals.sketch.options.globalKeyEvents  = false > ]",
+messageSends: ["ifTrue:ifFalse:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_directivePreload_",
+smalltalk.method({
+selector: "directivePreload:",
+category: 'sketch directions',
+fn: function (aFileName) {
+    var self = this;
+    p.externals.sketch.options.preload = aFileName;
+    return self;
+},
+args: ["aFileName"],
+source: "directivePreload: aFileName\x0a\x0a\x09\x22http://processingjs.org/reference/pjs%20directive/\x22\x0a\x0a\x09  < p.externals.sketch.options.preload = aFileName > \x0a  \x09",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_draw",
 smalltalk.method({
 selector: "draw",
@@ -2034,6 +2280,74 @@ fn: function (aX, aY, aWidth, aHeight) {
 args: ["aX", "aY", "aWidth", "aHeight"],
 source: "ellipseX: aX y: aY width: aWidth height: aHeight \x0a\x0a\x09processing ellipse: aX y: aY width: aWidth height: aHeight ",
 messageSends: ["ellipse:y:width:height:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_emissive_value2_value3_",
+smalltalk.method({
+selector: "emissive:value2:value3:",
+category: 'material properties',
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissivet_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+},
+args: ["aValue1", "aValue2", "aValue3"],
+source: "emissive: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing emissivet: aValue1 value2: aValue2 value3: aValue3 \x0a    \x0a   \x22Sets the emissive color of the material used for drawing shapes drawn to the screen. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x0a.\x22",
+messageSends: ["emissivet:value2:value3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_emissiveColor_",
+smalltalk.method({
+selector: "emissiveColor:",
+category: 'material properties',
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissive_", [aColor]);
+    return self;
+},
+args: ["aColor"],
+source: "emissiveColor: aColor\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing emissive: aColor\x0a    \x0a    \x22Sets the emissive color of the material used for drawing shapes drawn to the screen. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x0a.\x22",
+messageSends: ["emissive:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_emissiveGray_",
+smalltalk.method({
+selector: "emissiveGray:",
+category: 'material properties',
+fn: function (aGrayValue) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissive_", [aGrayValue]);
+    return self;
+},
+args: ["aGrayValue"],
+source: "emissiveGray: aGrayValue\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing emissive: aGrayValue\x0a    \x0a    \x22Sets the emissive color of the material used for drawing shapes drawn to the screen. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x0a.\x22",
+messageSends: ["emissive:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_endCamera",
+smalltalk.method({
+selector: "endCamera",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_endCamera", []);
+    return self;
+},
+args: [],
+source: "endCamera\x0a\x09\x22The beginCamera() and endCamera() functions enable advanced customization of the camera space. \x0a    Please see the reference for beginCamera() for a description of how the functions are used.\x22\x0a    \x0a    \x09processing endCamera\x0a\x0a",
+messageSends: ["endCamera"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2243,6 +2557,77 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_frustumLeft_right_bottom_top_near_far_",
+smalltalk.method({
+selector: "frustumLeft:right:bottom:top:near:far:",
+category: 'camera',
+fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_frustum_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
+    return self;
+},
+args: ["aLeft", "aRight", "aBottom", "aTop", "aNear", "aFar"],
+source: "frustumLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar\x0a\x09\x22left float: left coordinate of the clipping plane \x0a\x09right float: right coordinate of the clipping plane \x0a\x09bottom float: bottom coordinate of the clipping plane \x0a\x09top float: top coordinate of the clipping plane \x0a\x09near float: near coordinate of the clipping plane \x0a\x09far float: far coordinate of the clipping plane \x22\x0a    \x0a    \x09processing frustum: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar\x0a\x0a\x0a\x09\x22Sets a perspective matrix defined through the parameters. \x0a    Works like glFrustum, except it wipes out the current perspective matrix rather than muliplying itself with it.\x22\x0a",
+messageSends: ["frustum:right:bottom:top:near:far:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_get",
+smalltalk.method({
+selector: "get",
+category: 'image pixels',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get", [])]);
+    return $1;
+},
+args: [],
+source: "get\x0a\x09\x22x int: x-coordinate of the pixel \x0a\x09y int: y-coordinate of the pixel \x0a\x09width int: width of pixel rectangle to get \x0a\x09height int: height of pixel rectangle to get \x0a \x09\x22\x0a    \x0a\x09^PjsImage newImage: (processing get)\x0a    \x0a    \x22Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. \x0a    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and \x0a    height parameter. If the pixel requested is outside of the image window, black is returned. \x0a    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. \x0a    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.\x0a\x09The imageMode() function changes the way the parameters work. \x0a    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.\x0a\x09Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. \x0a    The equivalent statement to \x22\x22get(x, y)\x22\x22 using pixels[] is \x22\x22pixels[y*width+x]\x22\x22. \x0a    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values.\x22",
+messageSends: ["newImage:", "get"],
+referencedClasses: ["PjsImage"]
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_getX_y_",
+smalltalk.method({
+selector: "getX:y:",
+category: 'image pixels',
+fn: function (aX, aY) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_get_y_", [aX, aY]);
+    return $1;
+},
+args: ["aX", "aY"],
+source: "getX: aX y: aY\x0a\x09\x22x int: x-coordinate of the pixel \x0a\x09y int: y-coordinate of the pixel \x0a\x09width int: width of pixel rectangle to get \x0a\x09height int: height of pixel rectangle to get \x0a \x09\x22\x0a    \x0a\x09^ processing get: aX y: aY \x0a    \x0a    \x22Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. \x0a    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and \x0a    height parameter. If the pixel requested is outside of the image window, black is returned. \x0a    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. \x0a    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.\x0a\x09The imageMode() function changes the way the parameters work. \x0a    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.\x0a\x09Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. \x0a    The equivalent statement to \x22\x22get(x, y)\x22\x22 using pixels[] is \x22\x22pixels[y*width+x]\x22\x22. \x0a    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values.\x22",
+messageSends: ["get:y:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_getX_y_width_height_",
+smalltalk.method({
+selector: "getX:y:width:height:",
+category: 'image pixels',
+fn: function (aX, aY, aWidth, aHeight) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get_y_width_height_", [aX, aY, aWidth, aHeight])]);
+    return $1;
+},
+args: ["aX", "aY", "aWidth", "aHeight"],
+source: "getX: aX y: aY width: aWidth height: aHeight\x0a\x09\x22x int: x-coordinate of the pixel \x0a\x09y int: y-coordinate of the pixel \x0a\x09width int: width of pixel rectangle to get \x0a\x09height int: height of pixel rectangle to get \x0a \x09\x22\x0a    \x0a\x09^ PjsImage newImage: (processing get: aX y: aY width: aWidth height: aHeight)\x0a    \x0a    \x22Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. \x0a    Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional width and \x0a    height parameter. If the pixel requested is outside of the image window, black is returned. \x0a    The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. \x0a    For example, even though you may have drawn a shape with colorMode(HSB), the numbers returned will be in RGB.\x0a\x09The imageMode() function changes the way the parameters work. \x0a    For example, a call to imageMode(CORNERS) will change the width and height parameters to define the x and y values of the opposite corner of the image.\x0a\x09Getting the color of a single pixel with get(x, y) is easy, but not as fast as grabbing the data directly from pixels[]. \x0a    The equivalent statement to \x22\x22get(x, y)\x22\x22 using pixels[] is \x22\x22pixels[y*width+x]\x22\x22. \x0a    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before getting the values.\x22",
+messageSends: ["newImage:", "get:y:width:height:"],
+referencedClasses: ["PjsImage"]
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_green_",
 smalltalk.method({
 selector: "green:",
@@ -2383,6 +2768,129 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_isKeyPressed",
+smalltalk.method({
+selector: "isKeyPressed",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.keyPressed;
+    return $1;
+},
+args: [],
+source: "isKeyPressed \x0a    \x0a   \x22The boolean system variable keyPressed is true if any key is pressed and false if no keys are pressed.\x22\x0a\x0a\x09^ < processing.keyPressed >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_isMousePressed",
+smalltalk.method({
+selector: "isMousePressed",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.mousePressed;
+    return $1;
+},
+args: [],
+source: "isMousePressed \x0a    \x0a   \x22Variable storing if a mouse button is pressed. \x0a    The value of the system variable mousePressed is true if a mouse button is pressed and false if a button is not pressed.\x22\x0a\x0a\x09^ < processing.mousePressed >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_key",
+smalltalk.method({
+selector: "key",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.key;
+    return $1;
+},
+args: [],
+source: "key \x0a    \x0a   \x22The system variable key always contains the value of the most recently pressed key on the keyboard. \x0a   For detecting the arrow keys, the keyCode variable is set to either UP, DOWN, LEFT, or RIGHT.\x22\x0a\x0a\x09^< processing.key >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_keyCode",
+smalltalk.method({
+selector: "keyCode",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.keyCode;
+    return $1;
+},
+args: [],
+source: "keyCode \x0a    \x0a   \x22The system variable keyCode is used to detect special keys such as \x0a    the UP, DOWN, LEFT, RIGHT arrow keys and ALT, CONTROL, SHIFT, BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE. \x0a     When checking for UP, DOWN, LEFT, RIGHT, ALT, CONTROL, and SHIFT, it's first necessary to check and \x0a      see if the key is coded. This is done with the conditional \x22\x22if(key == CODED) {}\x22\x22 as shown in the second example. \x0a      The keys included in the ASCII specification (BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE) \x0a   do not require checking to see if they key is coded. If you're making cross-platform projects, \x0a    note that the ENTER key is commonly used on PCs and Unix and the RETURN key is used instead on Macintosh. \x0a    Check for both ENTER and RETURN to make sure your program will work for all platforms.\x22\x0a\x0a\x09^< processing.keyCode >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_keyPressed",
+smalltalk.method({
+selector: "keyPressed",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+},
+args: [],
+source: "keyPressed \x0a    \x0a   \x22The keyPressed() function is called once every time a key is pressed. Because of how operating systems handle key repeats, \x0a    holding down a key will cause multiple calls to keyPressed(), the rate is set by the operating system and how each computer is configured..\x22\x0a\x0a\x09self subclassResponsibility\x0a    \x0a   ",
+messageSends: ["subclassResponsibility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_keyReleased",
+smalltalk.method({
+selector: "keyReleased",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+},
+args: [],
+source: "keyReleased \x0a    \x0a   \x22The keyReleased() function is called once every time a key is released.\x22\x0a\x0a\x09self subclassResponsibility\x0a    \x0a   ",
+messageSends: ["subclassResponsibility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_keyTyped",
+smalltalk.method({
+selector: "keyTyped",
+category: 'sketch keyboard',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+},
+args: [],
+source: "keyTyped \x0a    \x0a   \x22The keyTyped() function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and \x0a   Alt are ignored. Because of how operating systems handle key repeats, holding down a key will cause multiple calls to keyTyped(), \x0a   the rate is set by the operating system and how each computer is configured.\x22\x0a\x0a\x09self subclassResponsibility\x0a    \x0a   ",
+messageSends: ["subclassResponsibility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_lerpColor1_color2_amt_",
 smalltalk.method({
 selector: "lerpColor1:color2:amt:",
@@ -2396,6 +2904,57 @@ fn: function (aColor1, aColor2, aAMT) {
 args: ["aColor1", "aColor2", "aAMT"],
 source: "lerpColor1: aColor1 color2: aColor2 amt: aAMT\x0a\x09\x22c1 \x09color: interpolate from this color\x0a\x09c2 \x09color: interpolate to this color\x0a\x09amt \x09float: between 0.0 and 1.0\x22\x0a    \x0a\x09^processing lerpColor: aColor1 color2: aColor2 amt: aAMT\x0a    \x0a   \x22Calculates a color or colors between two color at a specific increment. \x0a   The amt parameter is the amount to interpolate between the two values where 0.0 equal to the first point, \x0a   0.1 is very near the first point, 0.5 is half-way in between, etc.\x22",
 messageSends: ["lerpColor:color2:amt:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_lightFalloff_linear_quadratic_",
+smalltalk.method({
+selector: "lightFalloff:linear:quadratic:",
+category: 'lights',
+fn: function (aConstant, aLinear, aQuadric) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lightFalloff_linear_quadratic_", [aConstant, aLinear, aQuadric]);
+    return self;
+},
+args: ["aConstant", "aLinear", "aQuadric"],
+source: "lightFalloff: aConstant linear: aLinear quadratic: aQuadric\x0a\x09\x22constant int or float: constant value for determining falloff \x0a\x09linear int or float: linear value for determining falloff \x0a\x09quadratic int or float: quadratic value for determining falloff \x22\x0a    \x0a    \x09processing lightFalloff: aConstant linear: aLinear quadratic: aQuadric\x0a        \x0a\x09\x22Sets the falloff rates for point lights, spot lights, and ambient lights. \x0a    \x09The parameters are used to determine the falloff with the following equation:\x0a\x09\x09d = distance from light position to vertex position\x0a        falloff = 1 / (CONSTANT + d * LINEAR + (d*d) * QUADRATIC)\x0a        Like fill(), it affects only the elements which are created after it in the code. \x0a        The default value if LightFalloff(1.0, 0.0, 0.0). \x0a        Thinking about an ambient light with a falloff can be tricky. It is used, for example, if \x0a        you wanted a region of your scene to be lit ambiently one color and another region to be lit ambiently \x0a        by another color, you would use an ambient light with location and falloff. \x0a        You can think of it as a point light that doesn't care which direction a surface is facing.\x22",
+messageSends: ["lightFalloff:linear:quadratic:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_lightSpeculartV1_v2_v3_",
+smalltalk.method({
+selector: "lightSpeculartV1:v2:v3:",
+category: 'lights',
+fn: function (aV1, aV2, aV3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lightSpecular_v2_v3_", [aV1, aV2, aV3]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3"],
+source: "lightSpeculartV1: aV1 v2: aV2 v3: aV3 \x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x22\x0a    \x0a    \x09processing lightSpecular: aV1 v2: aV2 v3: aV3 \x0a\x0a\x09\x22Sets the specular color for lights. \x0a    Like fill(), it affects only the elements which are created after it in the code. \x0a    Specular refers to light which bounces off a surface in a perferred \x0a     direction (rather than bouncing in all directions like a diffuse light) and is used for creating highlights. \x0a     The specular quality of a light interacts with the specular material qualities set through the specular() and shininess() functions.\x22",
+messageSends: ["lightSpecular:v2:v3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_lights",
+smalltalk.method({
+selector: "lights",
+category: 'lights',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lights", []);
+    return self;
+},
+args: [],
+source: "lights\x0a\x09\x22Sets the default ambient light, directional light, falloff, and specular values. \x0a    The defaults are are ambientLight(128, 128, 128) and directionalLight(128, 128, 128, 0, 0, -1), \x0a    lightFalloff()(1, 0, 0), and lightSpecular(0, 0, 0). Lights need to be included in the draw() to \x0a    remain persistent in a looping program. \x0a    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. \x22\x0a    \x0a    \x09processing lights\x0a\x0a",
+messageSends: ["lights"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2453,6 +3012,250 @@ referencedClasses: ["PjsImage"]
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_loadPixels",
+smalltalk.method({
+selector: "loadPixels",
+category: 'image pixels',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_loadPixels", []);
+    return self;
+},
+args: [],
+source: "loadPixels\x0a    \x0a\x09 processing loadPixels\x0a    \x0a    \x22Loads the pixel data for the display window (or an image) into the pixels[] array. \x0a      This function must always be called before reading from or writing to pixels[]. \x0a\x09 Certain renderers may or may not seem to require loadPixels() or updatePixels(). \x0a     However, the rule is that any time you want to manipulate the pixels[] array, you must first call loadPixels(), \x0a     and after changes have been made, call updatePixels(). \x0a     Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change.\x22",
+messageSends: ["loadPixels"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_modelX_y_z_",
+smalltalk.method({
+selector: "modelX:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelX_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "modelX: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing modelX: anX y: aY z: aZ\x0a\x0a\x09\x22Returns the three-dimensional X, Y, Z position in model space. \x0a    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) \x0a     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. \x0a\x09In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and \x0a    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by \x0a    the model functions is used to place another box in the same location.\x22\x0a",
+messageSends: ["modelX:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_modelY_y_z_",
+smalltalk.method({
+selector: "modelY:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelY_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "modelY: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing modelY: anX y: aY z: aZ\x0a\x0a\x09\x22Returns the three-dimensional X, Y, Z position in model space. \x0a    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) \x0a     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. \x0a\x09In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and \x0a    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by \x0a    the model functions is used to place another box in the same location.\x22\x0a",
+messageSends: ["modelY:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_modelZ_y_z_",
+smalltalk.method({
+selector: "modelZ:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelZ_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "modelZ: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing modelZ: anX y: aY z: aZ\x0a\x0a\x09\x22Returns the three-dimensional X, Y, Z position in model space. \x0a    This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) \x0a     The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in use. \x0a\x09In the example, the modelX(), modelY(), and modelZ() methods record the location of a box in space after being placed using a series of translate and \x0a    rotate commands. After popMatrix() is called, those transformations no longer apply, but the (x, y, z) coordinate returned by \x0a    the model functions is used to place another box in the same location.\x22\x0a",
+messageSends: ["modelZ:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseButton",
+smalltalk.method({
+selector: "mouseButton",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_mouseButton", []);
+    return $1;
+},
+args: [],
+source: "mouseButton \x0a    \x0a   \x22Processing automatically tracks if the mouse button is pressed and which button is pressed. \x0a    The value of the system variable mouseButton is either LEFT, RIGHT, or CENTER depending on which button is pressed\x22\x0a\x0a\x09^ processing mouseButton \x0a    \x0a   ",
+messageSends: ["mouseButton"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseClicked",
+smalltalk.method({
+selector: "mouseClicked",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+},
+args: [],
+source: "mouseClicked\x0a    \x0a   \x22The mouseClicked() function is called once after a mouse button has been pressed and then released. \x22\x0a\x0a\x09 self subclassRespnsubility\x0a    \x0a   ",
+messageSends: ["subclassRespnsubility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseDragged",
+smalltalk.method({
+selector: "mouseDragged",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+},
+args: [],
+source: "mouseDragged\x0a    \x0a   \x22The mouseDragged() function is called once every time the mouse moves and a mouse button is pressed.. \x22\x0a\x0a\x09 self subclassRespnsubility\x0a    \x0a   ",
+messageSends: ["subclassRespnsubility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseMoved",
+smalltalk.method({
+selector: "mouseMoved",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+},
+args: [],
+source: "mouseMoved\x0a    \x0a   \x22The mouseMoved() function is called every time the mouse moves and a mouse button is not pressed. \x22\x0a\x0a\x09 self subclassRespnsubility\x0a    \x0a   ",
+messageSends: ["subclassRespnsubility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseOut",
+smalltalk.method({
+selector: "mouseOut",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+},
+args: [],
+source: "mouseOut\x0a    \x0a   \x22The mouseOut() function is called when the mouse pointer leaves a sketch. \x22\x0a\x0a\x09 self subclassRespnsubility\x0a    \x0a   ",
+messageSends: ["subclassRespnsubility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseOver",
+smalltalk.method({
+selector: "mouseOver",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+},
+args: [],
+source: "mouseOver\x0a    \x0a   \x22The mouseOver() function is called when the mouse pointer moves over the sketch.\x22\x0a\x0a\x09 self subclassRespnsubility\x0a    \x0a   ",
+messageSends: ["subclassRespnsubility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mousePressed",
+smalltalk.method({
+selector: "mousePressed",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+},
+args: [],
+source: "mousePressed \x0a    \x0a   \x22The mousePressed() function is called once after every time a mouse button is pressed. \x0a   The mouseButton variable (see the related reference entry) can be used used to determine which button has been pressed.\x22\x0a\x0a\x09self subclassResponsibility\x0a    \x0a   ",
+messageSends: ["subclassResponsibility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseReleased",
+smalltalk.method({
+selector: "mouseReleased",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+},
+args: [],
+source: "mouseReleased \x0a    \x0a   \x22The mouseReleased() function is called every time a mouse button is released.\x22\x0a\x0a\x09self subclassResponsibility\x0a    \x0a   ",
+messageSends: ["subclassResponsibility"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseX",
+smalltalk.method({
+selector: "mouseX",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.mouseX;
+    return $1;
+},
+args: [],
+source: "mouseX \x0a    \x0a   \x22The system variable mouseX always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^< processing.mouseX >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_mouseY",
+smalltalk.method({
+selector: "mouseY",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.mouseY;
+    return $1;
+},
+args: [],
+source: "mouseY \x0a    \x0a   \x22The system variable mouseY always contains the current vertical coordinate of the mouse.\x22\x0a\x0a\x09^< processing.mouseY >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_noFill",
 smalltalk.method({
 selector: "noFill",
@@ -2465,6 +3268,23 @@ fn: function () {
 args: [],
 source: "noFill\x0a\x09\x22Disables filling geometry. If both noStroke() and noFill() are called, nothing will be drawn to the screen.\x22\x0a    \x0a\x09processing noFill",
 messageSends: ["noFill"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_noLights",
+smalltalk.method({
+selector: "noLights",
+category: 'lights',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noLights", []);
+    return self;
+},
+args: [],
+source: "noLights\x0a\x09\x22Disable all lighting. Lighting is turned off by default and enabled with the lights() method. \x0a    This function can be used to disable lighting so that 2D geometry \x0a    (which does not require lighting) can be drawn after a set of lighted 3D geometry. \x22\x0a    \x0a    \x09processing noLights\x0a\x0a",
+messageSends: ["noLights"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2521,6 +3341,179 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_normal_ny_nz_",
+smalltalk.method({
+selector: "normal:ny:nz:",
+category: 'lights',
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_normal_ny_nz_", [aX, aY, aZ]);
+    return self;
+},
+args: ["aX", "aY", "aZ"],
+source: "normal: aX ny: aY nz: aZ\x0a\x09\x0a\x09\x22nx int or float: direction along the x axis \x0a\x09ny int or float: direction along the y axis \x0a\x09nz int or float: direction along the z axis \x22\x0a    \x0a    \x09processing normal: aX ny: aY nz: aZ\x0a\x0a\x09\x22Sets the current normal vector. \x0a     This is for drawing three dimensional shapes and surfaces and specifies a vector perpendicular to \x0a     the surface of the shape which determines how lighting affects it. \x0a    Processing attempts to automatically assign normals to shapes, but since that's imperfect, this is \x0a    a better option when you want more control. This function is identical to glNormal3f() in OpenGL.\x22",
+messageSends: ["normal:ny:nz:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_ortho",
+smalltalk.method({
+selector: "ortho",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ortho", []);
+    return self;
+},
+args: [],
+source: "ortho\x0a\x09\x22left float: left plane of the clipping volume \x0a\x09right float: right plane of the clipping volume \x0a\x09bottom float: bottom plane of the clipping volume \x0a\x09top float: top plane of the clipping volume \x0a\x09near float: near plane of the clipping volume \x0a\x09far float: far plane of the clipping volume  \x22\x0a    \x0a    \x09processing ortho\x0a\x0a\x0a\x09\x22Sets an orthographic projection and defines a parallel clipping volume. \x0a    All objects with the same dimension appear the same size, regardless of whether they are near or far from the camera. \x0a    The parameters to this function specify the clipping volume where left and right are the minimum and maximum x values, \x0a    top and bottom are the minimum and maximum y values, and near and far are the minimum and maximum z values. \x0a    If no parameters are given, the default is used: ortho(0, width, 0, height, -10, 10).\x22\x0a",
+messageSends: ["ortho"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_orthoLeft_right_bottom_top_near_far_",
+smalltalk.method({
+selector: "orthoLeft:right:bottom:top:near:far:",
+category: 'camera',
+fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ortho_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
+    return self;
+},
+args: ["aLeft", "aRight", "aBottom", "aTop", "aNear", "aFar"],
+source: "orthoLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar\x0a\x09\x22left float: left plane of the clipping volume \x0a\x09right float: right plane of the clipping volume \x0a\x09bottom float: bottom plane of the clipping volume \x0a\x09top float: top plane of the clipping volume \x0a\x09near float: near plane of the clipping volume \x0a\x09far float: far plane of the clipping volume  \x22\x0a    \x0a    \x09processing ortho: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear far: aFar\x0a\x0a\x0a\x09\x22Sets an orthographic projection and defines a parallel clipping volume. \x0a    All objects with the same dimension appear the same size, regardless of whether they are near or far from the camera. \x0a    The parameters to this function specify the clipping volume where left and right are the minimum and maximum x values, \x0a    top and bottom are the minimum and maximum y values, and near and far are the minimum and maximum z values. \x0a    If no parameters are given, the default is used: ortho(0, width, 0, height, -10, 10).\x22\x0a",
+messageSends: ["ortho:right:bottom:top:near:far:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_perspective",
+smalltalk.method({
+selector: "perspective",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_perspective", []);
+    return self;
+},
+args: [],
+source: "perspective\x0a\x09\x22fov float: field-of-view angle (in radians) for vertical direction \x0a\x09aspect float: ratio of width to height \x0a\x09zNear float: z-position of nearest clipping plane \x0a\x09zFar float: z-position of nearest farthest plane \x22\x0a    \x0a    \x09processing perspective\x0a\x0a\x0a\x09\x22Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones. \x0a    The parameters define a viewing volume with the shape of truncated pyramid. \x0a    Objects near to the front of the volume appear their actual size, while farther objects appear smaller. \x0a    This projection simulates the perspective of the world more accurately than orthographic projection. \x0a    The version of perspective without parameters sets the default perspective and the version with four parameters \x0a    allows the programmer to set the area precisely. \x0a    The default values are: perspective(PI/3.0, width/height, cameraZ/10.0, cameraZ*10.0) where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));.\x22\x0a",
+messageSends: ["perspective"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_perspectiveFov_aspect_zNear_zFar_",
+smalltalk.method({
+selector: "perspectiveFov:aspect:zNear:zFar:",
+category: 'camera',
+fn: function (aFov, anAspect, aZNear, aZFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_perspective_aspect_zNear_zFar_", [aFov, anAspect, aZNear, aZFar]);
+    return self;
+},
+args: ["aFov", "anAspect", "aZNear", "aZFar"],
+source: "perspectiveFov: aFov aspect: anAspect zNear: aZNear zFar: aZFar\x0a\x09\x22fov float: field-of-view angle (in radians) for vertical direction \x0a\x09aspect float: ratio of width to height \x0a\x09zNear float: z-position of nearest clipping plane \x0a\x09zFar float: z-position of nearest farthest plane \x22\x0a    \x0a    \x09processing perspective: aFov aspect: anAspect zNear: aZNear zFar: aZFar\x0a\x0a\x0a\x09\x22Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones. \x0a    The parameters define a viewing volume with the shape of truncated pyramid. \x0a    Objects near to the front of the volume appear their actual size, while farther objects appear smaller. \x0a    This projection simulates the perspective of the world more accurately than orthographic projection. \x0a    The version of perspective without parameters sets the default perspective and the version with four parameters \x0a    allows the programmer to set the area precisely. \x0a    The default values are: perspective(PI/3.0, width/height, cameraZ/10.0, cameraZ*10.0) where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));.\x22\x0a",
+messageSends: ["perspective:aspect:zNear:zFar:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pixelsAt_",
+smalltalk.method({
+selector: "pixelsAt:",
+category: 'image pixels',
+fn: function (anIndex) {
+    var self = this;
+    var $1;
+    $1 = processing.pixels[anIndex];
+    return $1;
+},
+args: ["anIndex"],
+source: "pixelsAt: anIndex\x0a    \x0a\x09^ < processing.pixels[ anIndex ] >\x0a    \x0a    \x22Array containing the values for all the pixels in the display window. \x0a      These values are of the color datatype. \x0a      This array is the size of the display window. For example, if the image is 100x100 pixels, there will be 10000 values and i\x0a      f the window is 200x300 pixels, there will be 60000 values. \x0a      The index value defines the position of a value within the array. For example, the statment color b = pixels[230] \x0a      will set the variable b to be equal to the value at that location in the array. \x0a\x09Before accessing this array, the data must loaded with the loadPixels() functions. \x0a    After the array data has been modified, the updatePixels() function must be loaded to update the changes. \x0a    Without loadPixels(), running the code may (or will in future releases) result in a NullPointerException..\x22",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pixelsAt_put_",
+smalltalk.method({
+selector: "pixelsAt:put:",
+category: 'image pixels',
+fn: function (anIndex, aValue) {
+    var self = this;
+    processing.pixels[anIndex] = aValue;
+    return self;
+},
+args: ["anIndex", "aValue"],
+source: "pixelsAt: anIndex put: aValue\x0a    \x0a\x09 < processing.pixels[ anIndex ] = aValue >\x0a    \x0a    \x22Array containing the values for all the pixels in the display window. \x0a      These values are of the color datatype. \x0a      This array is the size of the display window. For example, if the image is 100x100 pixels, there will be 10000 values and i\x0a      f the window is 200x300 pixels, there will be 60000 values. \x0a      The index value defines the position of a value within the array. For example, the statment color b = pixels[230] \x0a      will set the variable b to be equal to the value at that location in the array. \x0a\x09Before accessing this array, the data must loaded with the loadPixels() functions. \x0a    After the array data has been modified, the updatePixels() function must be loaded to update the changes. \x0a    Without loadPixels(), running the code may (or will in future releases) result in a NullPointerException..\x22",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pmouseX",
+smalltalk.method({
+selector: "pmouseX",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.pmouseX;
+    return $1;
+},
+args: [],
+source: "pmouseX \x0a    \x0a   \x22The system variable pmouseX always contains the previous vertical coordinate of the mouse. \x0a     This is the vertical position of the mouse in the frame previous to the current frame.\x22\x0a\x0a\x09^< processing.pmouseX >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pmouseY",
+smalltalk.method({
+selector: "pmouseY",
+category: 'sketch mouse',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.pmouseY;
+    return $1;
+},
+args: [],
+source: "pmouseY \x0a    \x0a   \x22The system variable pmouseY always contains the previous vertical coordinate of the mouse. \x0a     This is the vertical position of the mouse in the frame previous to the current frame.\x22\x0a\x0a\x09^< processing.pmouseY >\x0a    \x0a   ",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pointLightV1_v2_v3_x_y_z_",
+smalltalk.method({
+selector: "pointLightV1:v2:v3:x:y:z:",
+category: 'lights',
+fn: function (aV1, aV2, aV3, aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_pointLight_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3", "aX", "aY", "aZ"],
+source: "pointLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x0a\x09x int or float: x-coordinate of the light \x0a\x09y int or float: y-coordinate of the light \x0a\x09z int or float: z-coordinate of the light \x22\x0a    \x0a    \x09processing pointLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x0a\x09\x22Adds a point light. Lights need to be included in the draw() to remain persistent in a looping program. \x0a    Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. \x0a    The affect of the v1, v2, and v3 parameters is determined by the current color mode. \x0a    The x, y, and z parameters set the position of the light.\x22",
+messageSends: ["pointLight:v2:v3:x:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_pointX_y_",
 smalltalk.method({
 selector: "pointX:y:",
@@ -2555,6 +3548,74 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_popMatrix",
+smalltalk.method({
+selector: "popMatrix",
+category: 'sketch transform',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_popMatrix", []);
+    return self;
+},
+args: [],
+source: "popMatrix\x0a\x09\x22Pops the current transformation matrix off the matrix stack. \x0a    Understanding pushing and popping requires understanding the concept of a matrix stack. \x0a    The pushMatrix() function saves the current coordinate system to the stack and popMatrix() restores\x0a    the prior coordinate system. pushMatrix() and popMatrix() are used in conjuction with the \x0a    other transformation methods and may be embedded to control the scope of the transformations\x22\x0a    \x0a\x09processing popMatrix\x0a    ",
+messageSends: ["popMatrix"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_printCamera",
+smalltalk.method({
+selector: "printCamera",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printCamera", []);
+    return self;
+},
+args: [],
+source: "printCamera\x0a\x09\x22Prints the current camera matrix to the text window \x22\x0a    \x0a    \x09processing printCamera\x0a",
+messageSends: ["printCamera"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_printMatrix",
+smalltalk.method({
+selector: "printMatrix",
+category: 'sketch transform',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printMatrix", []);
+    return self;
+},
+args: [],
+source: "printMatrix\x0a\x09\x22Prints the current matrix to the text window\x22\x0a    \x0a\x09processing printMatrix\x0a    ",
+messageSends: ["printMatrix"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_printProjection",
+smalltalk.method({
+selector: "printProjection",
+category: 'camera',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printProjection", []);
+    return self;
+},
+args: [],
+source: "printProjection\x0a\x09\x22Prints the current projection matrix to the text window. \x22\x0a    \x0a    \x09processing printProjection\x0a",
+messageSends: ["printProjection"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_processing",
 smalltalk.method({
 selector: "processing",
@@ -2566,6 +3627,23 @@ fn: function () {
 args: [],
 source: "processing\x0a \x0a \x09^processing",
 messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_pushMatrix",
+smalltalk.method({
+selector: "pushMatrix",
+category: 'sketch transform',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_pushMatrix", []);
+    return self;
+},
+args: [],
+source: "pushMatrix\x0a\x09\x22Pushes the current transformation matrix onto the matrix stack. Understanding pushMatrix() and \x0a    popMatrix() requires understanding the concept of a matrix stack. \x0a    The pushMatrix() function saves the current coordinate system to the stack and popMatrix() restores\x0a    the prior coordinate system. pushMatrix() and popMatrix() are used in conjuction with the other \x0a    transformation methods and may be embedded to control the scope of the transformations.\x22\x0a    \x0a\x09processing pushMatrix\x0a    ",
+messageSends: ["pushMatrix"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2710,6 +3788,91 @@ referencedClasses: ["PjsImage"]
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_resetMatrix",
+smalltalk.method({
+selector: "resetMatrix",
+category: 'sketch transform',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_resetMatrix", []);
+    return self;
+},
+args: [],
+source: "resetMatrix\x0a\x09\x22Replaces the current matrix with the identity matrix. The equivalent function in OpenGL is glLoadIdentity().\x22\x0a    \x0a\x09processing resetMatrix\x0a    ",
+messageSends: ["resetMatrix"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_rotate_",
+smalltalk.method({
+selector: "rotate:",
+category: 'sketch transform',
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotate_", [anAngle]);
+    return self;
+},
+args: ["anAngle"],
+source: "rotate: anAngle\x0a\x09\x22angle float: angle of rotation specified in radians or degrees depending on the current angle mode  \x22\x0a    \x0a\x09processing rotate: anAngle\x0a    \x0a    \x22Rotates an object the amount specified by the angle parameter.\x0a    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. \x0a    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. \x0a    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. \x0a    For example, calling rotate(PI/2) and then rotate(PI/2) is the same as rotate(PI). \x0a    If rotate() is called within the draw(), the transformation is reset when the loop begins again. \x0a    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.\x22",
+messageSends: ["rotate:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_rotateX_",
+smalltalk.method({
+selector: "rotateX:",
+category: 'sketch transform',
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateX_", [anAngle]);
+    return self;
+},
+args: ["anAngle"],
+source: "rotateX: anAngle\x0a\x09\x22angle float: angle of rotation specified in radians \x22\x0a    \x0a\x09processing rotateX: anAngle\x0a    \x0a    \x22Rotates a shape around the x-axis the amount specified by the angle parameter. \x0a    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. \x0a    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. \x0a    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. \x0a    For example, calling rotateX(PI/2) and then rotateX(PI/2) is the same as rotateX(PI). \x0a    If rotateX() is called within the draw(), the transformation is reset when the loop begins again. \x0a    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.\x22",
+messageSends: ["rotateX:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_rotateY_",
+smalltalk.method({
+selector: "rotateY:",
+category: 'sketch transform',
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateY_", [anAngle]);
+    return self;
+},
+args: ["anAngle"],
+source: "rotateY: anAngle\x0a\x09\x22angle float: angle of rotation specified in radians \x22\x0a    \x0a\x09processing rotateY: anAngle\x0a    \x0a    \x22Rotates a shape around the y-axis the amount specified by the angle parameter. \x0a    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. \x0a    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. \x0a    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. \x0a    For example, calling rotateY(PI/2) and then rotateY(PI/2) is the same as rotateY(PI). \x0a    If rotateY() is called within the draw(), the transformation is reset when the loop begins again. \x0a    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.\x22",
+messageSends: ["rotateY:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_rotateZ_",
+smalltalk.method({
+selector: "rotateZ:",
+category: 'sketch transform',
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateZ_", [anAngle]);
+    return self;
+},
+args: ["anAngle"],
+source: "rotateZ: anAngle\x0a\x09\x22angle float: angle of rotation specified in radians \x22\x0a    \x0a\x09processing rotateZ: anAngle\x0a    \x0a    \x22Rotates a shape around the z-axis the amount specified by the angle parameter. \x0a    Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the radians() function. \x0a    Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. \x0a    Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. \x0a    For example, calling rotateZ(PI/2) and then rotateZ(PI/2) is the same as rotateZ(PI). \x0a    If rotateZ() is called within the draw(), the transformation is reset when the loop begins again. \x0a    This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.\x22",
+messageSends: ["rotateZ:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_saturation_",
 smalltalk.method({
 selector: "saturation:",
@@ -2728,6 +3891,213 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_saveFrame",
+smalltalk.method({
+selector: "saveFrame",
+category: 'image saving',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_saveFrame", []);
+    return self;
+},
+args: [],
+source: "saveFrame\x0a\x09\x22filename String: any sequence of letters and numbers \x0a\x09ext either \x22\x22tif\x22\x22, \x22\x22tga\x22\x22, \x22\x22jpg\x22\x22, \x22\x22png\x22\x22 \x22\x0a    \x0a     processing saveFrame\x0a    \x0a     \x22Saves a numbered sequence of images, one image each time the function is run. \x0a     To save an image that is identical to the display window, run the function at the end of draw() or \x0a     within mouse and key events such as mousePressed() and keyPressed(). \x0a     If saveFrame() is called without parameters, it will save the files as screen-0000.tif, screen-0001.tif, etc.\x0a     It is possible to specify the name of the sequence with the filename parameter and make the choice of saving TIFF, TARGA, PNG, or JPEG files with the ext parameter. \x0a     These image sequences can be loaded into programs such as Apple's QuickTime software and made into movies. \x0a     These files are saved to the sketch's folder, which may be opened by selecting \x22\x22Show sketch folder\x22\x22 from the \x22\x22Sketch\x22\x22 menu. \x0a\x0aAll images saved from the main drawing window will be opaque. To save images without a background, use createGraphics().\x0a\x22",
+messageSends: ["saveFrame"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_saveFrame_",
+smalltalk.method({
+selector: "saveFrame:",
+category: 'image saving',
+fn: function (aFileNameAndExt) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_saveFrame_", [aFileNameAndExt]);
+    return self;
+},
+args: ["aFileNameAndExt"],
+source: "saveFrame: aFileNameAndExt\x0a\x09\x22filename String: any sequence of letters and numbers \x0a\x09ext either \x22\x22tif\x22\x22, \x22\x22tga\x22\x22, \x22\x22jpg\x22\x22, \x22\x22png\x22\x22\x0a    Example: filename-####.ext\x22\x0a    \x0a     processing saveFrame: aFileNameAndExt\x0a    \x0a     \x22Saves a numbered sequence of images, one image each time the function is run. \x0a     To save an image that is identical to the display window, run the function at the end of draw() or \x0a     within mouse and key events such as mousePressed() and keyPressed(). \x0a     If saveFrame() is called without parameters, it will save the files as screen-0000.tif, screen-0001.tif, etc.\x0a     It is possible to specify the name of the sequence with the filename parameter and make the choice of saving TIFF, TARGA, PNG, or JPEG files with the ext parameter. \x0a     These image sequences can be loaded into programs such as Apple's QuickTime software and made into movies. \x0a     These files are saved to the sketch's folder, which may be opened by selecting \x22\x22Show sketch folder\x22\x22 from the \x22\x22Sketch\x22\x22 menu. \x0a\x0aAll images saved from the main drawing window will be opaque. To save images without a background, use createGraphics().\x0a\x22",
+messageSends: ["saveFrame:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_saveImage_",
+smalltalk.method({
+selector: "saveImage:",
+category: 'image saving',
+fn: function (aFileName) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_save_", [aFileName]);
+    return self;
+},
+args: ["aFileName"],
+source: "saveImage: aFileName\x0a\x09\x22filename String: any sequence of letters and numbers   \x22\x0a    \x0a     processing save: aFileName\x0a    \x0a     \x22Saves an image from the display window. Images are saved in the PNG format as a Data URI, which can be displayed in the browser in a new window.\x22",
+messageSends: ["save:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_scaleSize_",
+smalltalk.method({
+selector: "scaleSize:",
+category: 'sketch transform',
+fn: function (aSize) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_", [aSize]);
+    return self;
+},
+args: ["aSize"],
+source: "scaleSize: aSize\x0a\x09\x22size float: percentage to scale the object \x0a\x09x float: percentage to scale the object in the \x22\x22x\x22\x22 axis \x0a\x09y float: percentage to scale the object in the \x22\x22y\x22\x22 axis \x0a\x09z float: percentage to scale the object in the \x22\x22z\x22\x22 axis   \x22\x0a    \x0a\x09processing scale: aSize\x0a    \x0a    \x22Increasing and decreasing the size of an object by expanding and contracting vertices. \x0a    Scale values are specified as decimal percentages. \x0a    The function call scale(2.0) increases the dimension of a shape by 200%. \x0a    Objects always scale from their relative origin to the coordinate system. \x0a    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. \x0a    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), \x0a    he transformation is reset when the loop begins again. \x0a    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. \x0a    This function can be further controlled by pushMatrix() and popMatrix().\x22",
+messageSends: ["scale:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_scaleX_y_",
+smalltalk.method({
+selector: "scaleX:y:",
+category: 'sketch transform',
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_y_", [aX, aY]);
+    return self;
+},
+args: ["aX", "aY"],
+source: "scaleX: aX y: aY \x0a\x09\x22size float: percentage to scale the object \x0a\x09x float: percentage to scale the object in the \x22\x22x\x22\x22 axis \x0a\x09y float: percentage to scale the object in the \x22\x22y\x22\x22 axis \x0a\x09z float: percentage to scale the object in the \x22\x22z\x22\x22 axis   \x22\x0a    \x0a\x09processing scale: aX y: aY \x0a    \x0a    \x22Increasing and decreasing the size of an object by expanding and contracting vertices. \x0a    Scale values are specified as decimal percentages. \x0a    The function call scale(2.0) increases the dimension of a shape by 200%. \x0a    Objects always scale from their relative origin to the coordinate system. \x0a    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. \x0a    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), \x0a    he transformation is reset when the loop begins again. \x0a    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. \x0a    This function can be further controlled by pushMatrix() and popMatrix().\x22",
+messageSends: ["scale:y:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_scaleX_y_z_",
+smalltalk.method({
+selector: "scaleX:y:z:",
+category: 'sketch transform',
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_y_z_", [aX, aY, aZ]);
+    return self;
+},
+args: ["aX", "aY", "aZ"],
+source: "scaleX: aX y: aY z: aZ\x0a\x09\x22size float: percentage to scale the object \x0a\x09x float: percentage to scale the object in the \x22\x22x\x22\x22 axis \x0a\x09y float: percentage to scale the object in the \x22\x22y\x22\x22 axis \x0a\x09z float: percentage to scale the object in the \x22\x22z\x22\x22 axis   \x22\x0a    \x0a\x09processing scale: aX y: aY z: aZ\x0a    \x0a    \x22Increasing and decreasing the size of an object by expanding and contracting vertices. \x0a    Scale values are specified as decimal percentages. \x0a    The function call scale(2.0) increases the dimension of a shape by 200%. \x0a    Objects always scale from their relative origin to the coordinate system. \x0a    Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. \x0a    For example, calling scale(2.0) and then scale(1.5) is the same as scale(3.0). If scale() is called within draw(), \x0a    he transformation is reset when the loop begins again. \x0a    Using this function with the z parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. \x0a    This function can be further controlled by pushMatrix() and popMatrix().\x22",
+messageSends: ["scale:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_screenX_y_z_",
+smalltalk.method({
+selector: "screenX:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenX_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "screenX: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing screenX: anX y: aY z: aZ\x0a\x0a\x09\x22Takes a three-dimensional X, Y, Z position and returns the X value for where\x0a     it will appear on a (two-dimensional) screen.\x22\x0a",
+messageSends: ["screenX:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_screenY_y_z_",
+smalltalk.method({
+selector: "screenY:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenY_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "screenY: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing screenY: anX y: aY z: aZ\x0a\x0a\x09\x22Takes a three-dimensional X, Y, Z position and returns the X value for where\x0a     it will appear on a (two-dimensional) screen.\x22\x0a",
+messageSends: ["screenY:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_screenZ_y_z_",
+smalltalk.method({
+selector: "screenZ:y:z:",
+category: 'coordinates',
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenZ_y_z_", [anX, aY, aZ]);
+    return $1;
+},
+args: ["anX", "aY", "aZ"],
+source: "screenZ: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to be mapped \x0a\x09y int or float: 3D y coordinate to be mapped \x0a\x09z int or float: 3D z coordinate to be mapped \x22\x0a\x0a    ^ processing screenZ: anX y: aY z: aZ\x0a\x0a\x09\x22Takes a three-dimensional X, Y, Z position and returns the X value for where\x0a     it will appear on a (two-dimensional) screen.\x22\x0a",
+messageSends: ["screenZ:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_setX_y_color_",
+smalltalk.method({
+selector: "setX:y:color:",
+category: 'image pixels',
+fn: function (aX, aY, aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_set_y_color_", [aX, aY, aColor]);
+    return self;
+},
+args: ["aX", "aY", "aColor"],
+source: "setX: aX y: aY color: aColor\x0a    \x0a   \x22 x int: x-coordinate of the pixel \x0a\x09y int: y-coordinate of the pixel \x0a\x09color color: any value of the color datatype \x0a\x09image PImage: any valid variable of type PImage \x22\x0a\x0a\x09 processing set: aX y: aY color: aColor\x0a    \x0a    \x22Changes the color of any pixel or writes an image directly into the display window. \x0a     The x and y parameters specify the pixel to change and the color parameter specifies the color value. \x0a     The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). \x0a     When setting an image, the x and y parameters define the coordinates for the upper-left corner of \x0a     the image (the placement of the image is not affected by the imageMode() function).\x0a\x09Setting the color of a single pixel with set(x, y) is easy, but not as fast as putting the data directly into pixels[]. \x0a    The equivalent statement to \x22\x22set(x, y, #000000)\x22\x22 using pixels[] is \x22\x22pixels[y*width+x] = #000000\x22\x22. \x0a    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before \x0a    getting the values and calling updatePixels() to update the window..\x22",
+messageSends: ["set:y:color:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_setX_y_image_",
+smalltalk.method({
+selector: "setX:y:image:",
+category: 'image pixels',
+fn: function (aX, aY, aPjsImage) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_set_y_image_", [aX, aY, smalltalk.send(aPjsImage, "_pjsImage", [])]);
+    return self;
+},
+args: ["aX", "aY", "aPjsImage"],
+source: "setX: aX y: aY image: aPjsImage\x0a    \x0a   \x22 x int: x-coordinate of the pixel \x0a\x09y int: y-coordinate of the pixel \x0a\x09color color: any value of the color datatype \x0a\x09image PImage: any valid variable of type PImage \x22\x0a\x0a\x09 processing set: aX y: aY image: aPjsImage pjsImage\x0a    \x0a    \x22Changes the color of any pixel or writes an image directly into the display window. \x0a     The x and y parameters specify the pixel to change and the color parameter specifies the color value. \x0a     The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). \x0a     When setting an image, the x and y parameters define the coordinates for the upper-left corner of \x0a     the image (the placement of the image is not affected by the imageMode() function).\x0a\x09Setting the color of a single pixel with set(x, y) is easy, but not as fast as putting the data directly into pixels[]. \x0a    The equivalent statement to \x22\x22set(x, y, #000000)\x22\x22 using pixels[] is \x22\x22pixels[y*width+x] = #000000\x22\x22. \x0a    The (BETA) version of Processing requires calling loadPixels() to load the display window data into the pixels[] array before \x0a    getting the values and calling updatePixels() to update the window..\x22",
+messageSends: ["set:y:image:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_shininess_",
+smalltalk.method({
+selector: "shininess:",
+category: 'material properties',
+fn: function (aShine) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_shininess_", [aShine]);
+    return self;
+},
+args: ["aShine"],
+source: "shininess: aShine\x0a\x09\x22shine float: degree of shininess  \x22\x0a    \x0a\x09processing shininess: aShine\x0a    \x0a    \x22Sets the amount of gloss in the surface of shapes. \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["shininess:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_smooth",
 smalltalk.method({
 selector: "smooth",
@@ -2740,6 +4110,57 @@ fn: function () {
 args: [],
 source: "smooth\x0a\x09\x22Draws all geometry with smooth (anti-aliased) edges. \x0a    This will slow down the frame rate of the application, but will enhance the visual refinement.\x0a\x09Starting with release 0124, when using the default (JAVA2D) renderer, smooth() will also improve image quality of resized images.\x22\x0a    \x0a\x09processing smooth",
 messageSends: ["smooth"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_specular_value2_value3_",
+smalltalk.method({
+selector: "specular:value2:value3:",
+category: 'material properties',
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+},
+args: ["aValue1", "aValue2", "aValue3"],
+source: "specular: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing specular: aValue1 value2: aValue2 value3: aValue3 \x0a    \x0a      \x22Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. \x0a    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["specular:value2:value3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_specularColor_",
+smalltalk.method({
+selector: "specularColor:",
+category: 'material properties',
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_", [aColor]);
+    return self;
+},
+args: ["aColor"],
+source: "specularColor: aColor\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing specular: aColor\x0a    \x0a       \x22Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. \x0a    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["specular:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_specularGray_",
+smalltalk.method({
+selector: "specularGray:",
+category: 'material properties',
+fn: function (aGrayValue) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_", [aGrayValue]);
+    return self;
+},
+args: ["aGrayValue"],
+source: "specularGray: aGrayValue\x0a\x09\x22gray int or float: number specifying value between white and black \x0a\x09color color: any value of the color datatype \x0a\x09v1 int or float: red or hue value \x0a\x09v2 int or float: green or saturation value \x0a\x09v3 int or float: green or brightness value \x22\x0a    \x0a\x09processing specular: aGrayValue\x0a    \x0a    \x22Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. \x0a    Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). \x0a    Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes.\x22",
+messageSends: ["specular:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2791,6 +4212,23 @@ fn: function (aURes, aVRes) {
 args: ["aURes", "aVRes"],
 source: "sphereDetail: aURes vres: aVRes\x0a\x09\x22ures \x09int: number of segments used longitudinally per full circle revolution\x0a\x09 vres \x09int: number of segments used latitudinally from top to bottom\x22\x0a    \x0a\x09processing sphereDetail: aURes vres: aVRes",
 messageSends: ["sphereDetail:vres:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_spotLightV1_v2_v3_x_y_z_angle_concentration_",
+smalltalk.method({
+selector: "spotLightV1:v2:v3:x:y:z:angle:concentration:",
+category: 'lights',
+fn: function (aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_spotLight_v2_v3_x_y_z_angle_concentration_", [aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon]);
+    return self;
+},
+args: ["aV1", "aV2", "aV3", "aX", "aY", "aZ", "anAngle", "aCon"],
+source: "spotLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration: aCon\x0a\x09\x22v1 int or float: red or hue value \x0a\x09v2 int or float: green or hue value \x0a\x09v3 int or float: green or hue value \x0a\x09nx int or float: x coordinate of the light \x0a\x09ny int or float: y coordinate of the light \x0a\x09nz int or float: z coordinate of the light \x0a\x09angle float: angle of the spotlight cone \x0a\x09concentration float: exponent determining the center bias of the cone   \x22\x0a    \x0a    \x09processing spotLight: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration: aCon\x0a\x0a\x09\x22Adds a spot light. Lights need to be included in the draw() to remain persistent in a looping program. \x0a     Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop. \x0a     The affect of the v1, v2, and v3 parameters is determined by the current color mode. \x0a     The x, y, and z parameters specify the position of the light and nx, ny, nz specify the direction or light. \x0a     The angle parameter affects angle of the spotlight cone.\x22",
+messageSends: ["spotLight:v2:v3:x:y:z:angle:concentration:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -3153,6 +4591,40 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_translateX_y_",
+smalltalk.method({
+selector: "translateX:y:",
+category: 'sketch transform',
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_translate_y_", [aX, aY]);
+    return self;
+},
+args: ["aX", "aY"],
+source: "translateX: aX y: aY \x0a\x09\x22x int or float: left/right translation \x0a\x09y int or float: up/down translation \x0a\x09z int or float: forward/back translation \x0a  \x22\x0a    \x0a\x09processing translate:aX y: aY \x0a    \x0a    \x22Specifies an amount to displace objects within the display window. \x0a    The x parameter specifies left/right translation, the y parameter specifies up/down translation, \x0a    and the z parameter specifies translations toward/away from the screen. \x0a    Using this function with the z parameter requires using the P3D or OPENGL parameter in combination with \x0a    size as shown in the above example. Transformations apply to everything that happens after and subsequent calls to \x0a    the function accumulates the effect. For example, calling translate(50, 0) and then translate(20, 0) is the same as translate(70, 0). \x0a    If translate() is called within draw(), the transformation is reset when the loop begins again. \x0a    This function can be further controlled by the pushMatrix() and popMatrix().\x22",
+messageSends: ["translate:y:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_translateX_y_z_",
+smalltalk.method({
+selector: "translateX:y:z:",
+category: 'sketch transform',
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_translate_y_z_", [aX, aY, aZ]);
+    return self;
+},
+args: ["aX", "aY", "aZ"],
+source: "translateX: aX y: aY z: aZ\x0a\x09\x22x int or float: left/right translation \x0a\x09y int or float: up/down translation \x0a\x09z int or float: forward/back translation \x0a  \x22\x0a    \x0a\x09processing translate:aX y: aY z: aZ\x0a    \x0a    \x22Specifies an amount to displace objects within the display window. \x0a    The x parameter specifies left/right translation, the y parameter specifies up/down translation, \x0a    and the z parameter specifies translations toward/away from the screen. \x0a    Using this function with the z parameter requires using the P3D or OPENGL parameter in combination with \x0a    size as shown in the above example. Transformations apply to everything that happens after and subsequent calls to \x0a    the function accumulates the effect. For example, calling translate(50, 0) and then translate(20, 0) is the same as translate(70, 0). \x0a    If translate() is called within draw(), the transformation is reset when the loop begins again. \x0a    This function can be further controlled by the pushMatrix() and popMatrix().\x22",
+messageSends: ["translate:y:z:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_triangleX1_y1_x2_y2_x3_y3_",
 smalltalk.method({
 selector: "triangleX1:y1:x2:y2:x3:y3:",
@@ -3165,6 +4637,23 @@ fn: function (aX1, aY1, aX2, aY2, aX3, aY3) {
 args: ["aX1", "aY1", "aX2", "aY2", "aX3", "aY3"],
 source: "triangleX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3\x0a\x0a\x09processing triangle: aX1 y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3",
 messageSends: ["triangle:y1:x2:y2:x3:y3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_updatePixels",
+smalltalk.method({
+selector: "updatePixels",
+category: 'image pixels',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_updatePixels", []);
+    return self;
+},
+args: [],
+source: "updatePixels\x0a    \x0a   \x22Updates the display window (or an image) when data in the pixels[] array has been modified. \x0a    Use in conjunction with loadPixels(). \x0a    If you're only reading pixels from the array, there's no need to call updatePixels() unless there are changes. \x0a\x09Certain renderers may or may not seem to require loadPixels() or updatePixels(). \x0a    However, the rule is that any time you want to manipulate the pixels[] array, you must first call loadPixels(), \x0a    and after changes have been made, call updatePixels().\x0a    Even if the renderer may not seem to use this function in the current Processing release, this will always be subject to change. \x22\x0a\x0a\x09 processing updatePixels\x0a    \x0a   ",
+messageSends: ["updatePixels"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
