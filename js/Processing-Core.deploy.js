@@ -841,19 +841,7 @@ smalltalk.PjsShape);
 
 
 
-smalltalk.addClass('PjsSketch', smalltalk.Object, ['processing'], 'Processing-Core');
-smalltalk.addMethod(
-"_activateFunctions",
-smalltalk.method({
-selector: "activateFunctions",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
+smalltalk.addClass('PjsSketchObject', smalltalk.Object, ['processing'], 'Processing-Core');
 smalltalk.addMethod(
 "_alpha_",
 smalltalk.method({
@@ -865,7 +853,7 @@ fn: function (aColor) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambient_value2_value3_",
@@ -877,7 +865,7 @@ fn: function (aValue1, aValue2, aValue3) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientColor_",
@@ -889,7 +877,7 @@ fn: function (aColor) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientGray_",
@@ -901,7 +889,7 @@ fn: function (aGrayValue) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientLightV1_v2_v3_",
@@ -913,7 +901,7 @@ fn: function (aV1, aV2, aV3) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientLightV1_v2_v3_x_y_z_",
@@ -925,7 +913,7 @@ fn: function (aV1, aV2, aV3, aX, aY, aZ) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_applyMatrix_n01_n02_n03_n04_n05_n06_n07_n08_n09_n10_n11_n12_n13_n14_n15_",
@@ -937,7 +925,7 @@ fn: function (aN00, aN01, aN02, aN03, aN04, aN05, aN06, aN07, aN08, aN09, aN10, 
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_arcX_y_width_height_start_stop_",
@@ -949,7 +937,7 @@ fn: function (aX, aY, aWidth, aHeight, aStart, aStop) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_background_value2_value3_",
@@ -961,7 +949,7 @@ fn: function (aValue1, aValue2, aValue3) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_background_value2_value3_alpha_",
@@ -973,7 +961,7 @@ fn: function (aValue1, aValue2, aValue3, anAlpha) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundColor_",
@@ -985,7 +973,7 @@ fn: function (aColor) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundColor_alpha_",
@@ -997,7 +985,7 @@ fn: function (aColor, anAlpha) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundGray_",
@@ -1009,7 +997,7 @@ fn: function (aGrayValue) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundGray_alpha_",
@@ -1021,7 +1009,7 @@ fn: function (aGrayValue, anAlpha) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundHex_",
@@ -1033,7 +1021,7 @@ fn: function (aHex) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundHex_alpha_",
@@ -1045,7 +1033,7 @@ fn: function (aHex, anAlpha) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginCamera",
@@ -1057,7 +1045,7 @@ fn: function () {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginShape",
@@ -1069,7 +1057,7 @@ fn: function () {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginShape_",
@@ -1081,7 +1069,7 @@ fn: function (aMode) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierDetail_",
@@ -1093,7 +1081,7 @@ fn: function (aDetailint) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierPointA_b_c_d_t_",
@@ -1105,7 +1093,7 @@ fn: function (anA, aB, aC, aD, aT) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierTangentA_b_c_d_t_",
@@ -1117,7 +1105,7 @@ fn: function (anA, aB, aC, aD, aT) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierVertexCx1_cy1_cx2_cy2_x2_y2_",
@@ -1129,7 +1117,7 @@ fn: function (aCx1, aCy1, aCx2, aCy2, aX2, aY2) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierVertexCx1_cy1_cz1_cx2_cy2_cz2_x2_y2_z2_",
@@ -1141,7 +1129,7 @@ fn: function (aCx1, aCy1, aCz1, aCx2, aCy2, aCz2, aX2, aY2, aZ2) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierX1_y1_cx1_cy1_cx2_cy2_x2_y2_",
@@ -1153,7 +1141,7 @@ fn: function (aX1, aY1, aCx1, aCy1, aCx2, aCy2, aX2, aY2) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierX1_y1_z1_cx1_cy1_cz1_cx2_cy2_cz2_x2_y2_z2_",
@@ -1165,7 +1153,7 @@ fn: function (aX1, aY1, aZ1, aCx1, aCy1, aCz1, aCx2, aCy2, aCz2, aX2, aY2, aZ2) 
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendColor1_color2_mode_",
@@ -1178,7 +1166,7 @@ fn: function (aColor1, aColor2, aMode) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendImage_x_y_width_height_dx_dy_dwidth_dheight_mode_",
@@ -1190,7 +1178,7 @@ fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMod
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendX_y_width_height_dx_dy_dwidth_dheight_mode_",
@@ -1202,7 +1190,7 @@ fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blue_",
@@ -1215,7 +1203,7 @@ fn: function (aColor) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_box_",
@@ -1227,7 +1215,7 @@ fn: function (aSizeIntOrFloat) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_boxWidth_height_depth_",
@@ -1239,7 +1227,7 @@ fn: function (aWidth, aHeight, aDepth) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_brightness_",
@@ -1252,7 +1240,7 @@ fn: function (aColor) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_camera",
@@ -1264,7 +1252,7 @@ fn: function () {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_cameraEyeX_eyeY_eyeZ_centerX_centerY_centerZ_upX_upY_upZ_",
@@ -1276,7 +1264,7 @@ fn: function (anEyeX, anEyeY, anEyeZ, aCenterX, aCenterY, aCenterZ, anUpX, anUpY
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorGray_",
@@ -1289,7 +1277,7 @@ fn: function (aGray) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorGray_alpha_",
@@ -1302,7 +1290,7 @@ fn: function (aGray, anAlpha) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorHex_",
@@ -1315,7 +1303,7 @@ fn: function (aHex) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorHex_alpha_",
@@ -1328,7 +1316,7 @@ fn: function (aHex, anAlpha) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_",
@@ -1340,7 +1328,7 @@ fn: function (aMode) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range1_range2_range3_",
@@ -1352,7 +1340,7 @@ fn: function (aMode, aRange1, aRange2, aRange3) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range1_range2_range3_range4_",
@@ -1364,7 +1352,7 @@ fn: function (aMode, aRange1, aRange2, aRange3, aRange4) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range_",
@@ -1376,7 +1364,7 @@ fn: function (aMode, aRange) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorValue1_value2_value3_",
@@ -1389,7 +1377,7 @@ fn: function (aValue1, aValue2, aValue3) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorValue1_value2_value3_alpha_",
@@ -1402,7 +1390,7 @@ fn: function (aValue1, aValue2, aValue3, anAlpha) {
     return $1;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_copyImage_x_y_width_height_dx_dy_dwidth_dheight_",
@@ -1414,7 +1402,7 @@ fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_copyX_y_width_height_dx_dy_dwidth_dheight_",
@@ -1426,7 +1414,7 @@ fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
     return self;
 }
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_createImageWidth_height_format_",
@@ -1437,6 +1425,2104 @@ fn: function (aWidth, aHeight, aFormat) {
     var $1;
     $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_createImage_height_format_", [aWidth, aHeight, aFormat])]);
     return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_cursor",
+smalltalk.method({
+selector: "cursor",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_cursor", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_cursorImage_x_y_",
+smalltalk.method({
+selector: "cursorImage:x:y:",
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_cursorMode_",
+smalltalk.method({
+selector: "cursorMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_cursor_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveDetail_",
+smalltalk.method({
+selector: "curveDetail:",
+fn: function (aDetailint) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curverDetail_", [aDetailint]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curvePointA_b_c_d_t_",
+smalltalk.method({
+selector: "curvePointA:b:c:d:t:",
+fn: function (anA, aB, aC, aD, aT) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curvePoint_b_c_d_t_", [anA, aB, aC, aD, aT]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveTangentA_b_c_d_t_",
+smalltalk.method({
+selector: "curveTangentA:b:c:d:t:",
+fn: function (anA, aB, aC, aD, aT) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curveTangent_b_c_d_t_", [anA, aB, aC, aD, aT]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveTightness_",
+smalltalk.method({
+selector: "curveTightness:",
+fn: function (anIntOrFloat) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curveTightness_", [anIntOrFloat]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveVertexX_y_",
+smalltalk.method({
+selector: "curveVertexX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curveVertex_y_", [aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveVertexX_y_z_",
+smalltalk.method({
+selector: "curveVertexX:y:z:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curveVertex_y_z_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveX1_y1_x2_y2_x3_y3_x4_y4_",
+smalltalk.method({
+selector: "curveX1:y1:x2:y2:x3:y3:x4:y4:",
+fn: function (aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curve_y1_x2_y2_x3_y3_x4_y4_", [aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_curveX1_y1_z1_x2_y2_z2_x3_y3_z3_x4_y4_z4_",
+smalltalk.method({
+selector: "curveX1:y1:z1:x2:y2:z2:x3:y3:z3:x4:y4:z4:",
+fn: function (aX1, aY1, aZ1, aX2, aY2, aZ2, aX3, aY3, aZ3, aX4, aY4, aZ4) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_curve_y1_z1_x2_y2_z2_x3_y3_z3_x4_y4_z4_", [aX1, aY1, aZ1, aX2, aY2, aZ2, aX3, aY3, aZ3, aX4, aY4, aZ4]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_directionalV1_v2_v3_nx_ny_nz_",
+smalltalk.method({
+selector: "directionalV1:v2:v3:nx:ny:nz:",
+fn: function (aV1, aV2, aV3, aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_directional_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_directiveCrisp_",
+smalltalk.method({
+selector: "directiveCrisp:",
+fn: function (aBool) {
+    var self = this;
+    if (smalltalk.assert(aBool)) {
+        p.externals.sketch.options.crispLines = true;
+    } else {
+        p.externals.sketch.options.crispLines = false;
+    }
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_directiveFont_",
+smalltalk.method({
+selector: "directiveFont:",
+fn: function (aFileName) {
+    var self = this;
+    p.externals.sketch.options.font = aFileName;
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_directivePauseOnBlur_",
+smalltalk.method({
+selector: "directivePauseOnBlur:",
+fn: function (aBool) {
+    var self = this;
+    if (smalltalk.assert(aBool)) {
+        p.externals.sketch.options.globalKeyEvents = true;
+    } else {
+        p.externals.sketch.options.globalKeyEvents = false;
+    }
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_directivePreload_",
+smalltalk.method({
+selector: "directivePreload:",
+fn: function (aFileName) {
+    var self = this;
+    p.externals.sketch.options.preload = aFileName;
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_draw",
+smalltalk.method({
+selector: "draw",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_ellipseMode_",
+smalltalk.method({
+selector: "ellipseMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ellipseMode_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_ellipseX_y_width_height_",
+smalltalk.method({
+selector: "ellipseX:y:width:height:",
+fn: function (aX, aY, aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ellipse_y_width_height_", [aX, aY, aWidth, aHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_emissive_value2_value3_",
+smalltalk.method({
+selector: "emissive:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissivet_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_emissiveColor_",
+smalltalk.method({
+selector: "emissiveColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissive_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_emissiveGray_",
+smalltalk.method({
+selector: "emissiveGray:",
+fn: function (aGrayValue) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_emissive_", [aGrayValue]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_endCamera",
+smalltalk.method({
+selector: "endCamera",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_endCamera", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_endShape",
+smalltalk.method({
+selector: "endShape",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_endShape", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_endShape_",
+smalltalk.method({
+selector: "endShape:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_endShape_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillColor_",
+smalltalk.method({
+selector: "fillColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillColor_alpha_",
+smalltalk.method({
+selector: "fillColor:alpha:",
+fn: function (aColor, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_alpha_", [aColor, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillGray_",
+smalltalk.method({
+selector: "fillGray:",
+fn: function (aGray) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_", [aGray]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillGray_alpha_",
+smalltalk.method({
+selector: "fillGray:alpha:",
+fn: function (aGray, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_alpha_", [aGray, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillHex_",
+smalltalk.method({
+selector: "fillHex:",
+fn: function (aHex) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_", [aHex]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillHex_alpha_",
+smalltalk.method({
+selector: "fillHex:alpha:",
+fn: function (aHex, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_alpha_", [aHex, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillValue1_value2_value3_",
+smalltalk.method({
+selector: "fillValue1:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_fillValue1_value2_value3_alpha_",
+smalltalk.method({
+selector: "fillValue1:value2:value3:alpha:",
+fn: function (aValue1, aValue2, aValue3, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_fill_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_filterMode_",
+smalltalk.method({
+selector: "filterMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_filterMode_param_",
+smalltalk.method({
+selector: "filterMode:param:",
+fn: function (aMode, aParam) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_param_", [aMode, aParam]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_frameCount",
+smalltalk.method({
+selector: "frameCount",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameCount", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_frameRate",
+smalltalk.method({
+selector: "frameRate",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_frameRate", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_frameRate_",
+smalltalk.method({
+selector: "frameRate:",
+fn: function (aFps) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_frameRate_", [aFps]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_frustumLeft_right_bottom_top_near_far_",
+smalltalk.method({
+selector: "frustumLeft:right:bottom:top:near:far:",
+fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_frustum_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_get",
+smalltalk.method({
+selector: "get",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get", [])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_getX_y_",
+smalltalk.method({
+selector: "getX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_get_y_", [aX, aY]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_getX_y_width_height_",
+smalltalk.method({
+selector: "getX:y:width:height:",
+fn: function (aX, aY, aWidth, aHeight) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get_y_width_height_", [aX, aY, aWidth, aHeight])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_green_",
+smalltalk.method({
+selector: "green:",
+fn: function (aColor) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_green_", [aColor]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_height",
+smalltalk.method({
+selector: "height",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_height", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_hue_",
+smalltalk.method({
+selector: "hue:",
+fn: function (aColor) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_hue_", [aColor]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_image_x_y_",
+smalltalk.method({
+selector: "image:x:y:",
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_image_x_y_width_height_",
+smalltalk.method({
+selector: "image:x:y:width:height:",
+fn: function (aPjsImage, aX, aY, aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_width_height_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_imageMode_",
+smalltalk.method({
+selector: "imageMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_imageMode_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_initialize",
+smalltalk.method({
+selector: "initialize",
+fn: function () {
+    var self = this;
+    self['@processing'] = Processing.instances[0];
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_isFocused",
+smalltalk.method({
+selector: "isFocused",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.focused;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_isKeyPressed",
+smalltalk.method({
+selector: "isKeyPressed",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.keyPressed;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_isMousePressed",
+smalltalk.method({
+selector: "isMousePressed",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.mousePressed;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_isOnline",
+smalltalk.method({
+selector: "isOnline",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.online;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_key",
+smalltalk.method({
+selector: "key",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.key;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_keyCode",
+smalltalk.method({
+selector: "keyCode",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.keyCode;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_keyPressed",
+smalltalk.method({
+selector: "keyPressed",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_keyReleased",
+smalltalk.method({
+selector: "keyReleased",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_keyTyped",
+smalltalk.method({
+selector: "keyTyped",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lerpColor1_color2_amt_",
+smalltalk.method({
+selector: "lerpColor1:color2:amt:",
+fn: function (aColor1, aColor2, aAMT) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_lerpColor_color2_amt_", [aColor1, aColor2, aAMT]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lightFalloff_linear_quadratic_",
+smalltalk.method({
+selector: "lightFalloff:linear:quadratic:",
+fn: function (aConstant, aLinear, aQuadric) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lightFalloff_linear_quadratic_", [aConstant, aLinear, aQuadric]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lightSpeculartV1_v2_v3_",
+smalltalk.method({
+selector: "lightSpeculartV1:v2:v3:",
+fn: function (aV1, aV2, aV3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lightSpecular_v2_v3_", [aV1, aV2, aV3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lights",
+smalltalk.method({
+selector: "lights",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_lights", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lineX1_y1_x2_y2_",
+smalltalk.method({
+selector: "lineX1:y1:x2:y2:",
+fn: function (aX1, aY1, aX2, aY2) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_line_y1_x2_y2_", [aX1, aY1, aX2, aY2]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_lineX1_y1_z1_x2_y2_z2_",
+smalltalk.method({
+selector: "lineX1:y1:z1:x2:y2:z2:",
+fn: function (aX1, aY1, aZ1, aX2, aY2, aZ2) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_line_y1_z1_x2_y2_z2_", [aX1, aY1, aZ1, aX2, aY2, aZ2]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_loadImage_",
+smalltalk.method({
+selector: "loadImage:",
+fn: function (aFileName) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_loadImage_", [aFileName])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_loadPixels",
+smalltalk.method({
+selector: "loadPixels",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_loadPixels", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_modelX_y_z_",
+smalltalk.method({
+selector: "modelX:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelX_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_modelY_y_z_",
+smalltalk.method({
+selector: "modelY:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelY_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_modelZ_y_z_",
+smalltalk.method({
+selector: "modelZ:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_modelZ_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseButton",
+smalltalk.method({
+selector: "mouseButton",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_mouseButton", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseClicked",
+smalltalk.method({
+selector: "mouseClicked",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseDragged",
+smalltalk.method({
+selector: "mouseDragged",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseMoved",
+smalltalk.method({
+selector: "mouseMoved",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseOut",
+smalltalk.method({
+selector: "mouseOut",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseOver",
+smalltalk.method({
+selector: "mouseOver",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassRespnsubility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mousePressed",
+smalltalk.method({
+selector: "mousePressed",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseReleased",
+smalltalk.method({
+selector: "mouseReleased",
+fn: function () {
+    var self = this;
+    smalltalk.send(self, "_subclassResponsibility", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseX",
+smalltalk.method({
+selector: "mouseX",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_mouseX", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_mouseY",
+smalltalk.method({
+selector: "mouseY",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_mouseY", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noCursor",
+smalltalk.method({
+selector: "noCursor",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noCursor", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noFill",
+smalltalk.method({
+selector: "noFill",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noFill", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noLights",
+smalltalk.method({
+selector: "noLights",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noLights", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noSmooth",
+smalltalk.method({
+selector: "noSmooth",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noSmooth", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noStroke",
+smalltalk.method({
+selector: "noStroke",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noStroke", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_noTint",
+smalltalk.method({
+selector: "noTint",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noTint", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_normal_ny_nz_",
+smalltalk.method({
+selector: "normal:ny:nz:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_normal_ny_nz_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_ortho",
+smalltalk.method({
+selector: "ortho",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ortho", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_orthoLeft_right_bottom_top_near_far_",
+smalltalk.method({
+selector: "orthoLeft:right:bottom:top:near:far:",
+fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_ortho_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_perspective",
+smalltalk.method({
+selector: "perspective",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_perspective", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_perspectiveFov_aspect_zNear_zFar_",
+smalltalk.method({
+selector: "perspectiveFov:aspect:zNear:zFar:",
+fn: function (aFov, anAspect, aZNear, aZFar) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_perspective_aspect_zNear_zFar_", [aFov, anAspect, aZNear, aZFar]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pixelsAt_",
+smalltalk.method({
+selector: "pixelsAt:",
+fn: function (anIndex) {
+    var self = this;
+    var $1;
+    $1 = processing.pixels[anIndex];
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pixelsAt_put_",
+smalltalk.method({
+selector: "pixelsAt:put:",
+fn: function (anIndex, aValue) {
+    var self = this;
+    processing.pixels[anIndex] = aValue;
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pmouseX",
+smalltalk.method({
+selector: "pmouseX",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_pmouseX", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pmouseY",
+smalltalk.method({
+selector: "pmouseY",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.pmouseY;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pointLightV1_v2_v3_x_y_z_",
+smalltalk.method({
+selector: "pointLightV1:v2:v3:x:y:z:",
+fn: function (aV1, aV2, aV3, aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_pointLight_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pointX_y_",
+smalltalk.method({
+selector: "pointX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_point_y_", [aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pointX_y_z_",
+smalltalk.method({
+selector: "pointX:y:z:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_point_y_z_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_popMatrix",
+smalltalk.method({
+selector: "popMatrix",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_popMatrix", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_printCamera",
+smalltalk.method({
+selector: "printCamera",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printCamera", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_printMatrix",
+smalltalk.method({
+selector: "printMatrix",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printMatrix", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_printProjection",
+smalltalk.method({
+selector: "printProjection",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_printProjection", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_processing",
+smalltalk.method({
+selector: "processing",
+fn: function () {
+    var self = this;
+    return self['@processing'];
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_pushMatrix",
+smalltalk.method({
+selector: "pushMatrix",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_pushMatrix", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_quadX1_y1_x2_y2_x3_y3_x4_y4_",
+smalltalk.method({
+selector: "quadX1:y1:x2:y2:x3:y3:x4:y4:",
+fn: function (aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_quad_y1_x2_y2_x3_y3_x4_y4_", [aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rectMode_",
+smalltalk.method({
+selector: "rectMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rectMode_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rectX_y_width_height_",
+smalltalk.method({
+selector: "rectX:y:width:height:",
+fn: function (aX, aY, aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rect_y_width_height_", [aX, aY, aWidth, aHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rectX_y_width_height_radius_",
+smalltalk.method({
+selector: "rectX:y:width:height:radius:",
+fn: function (aX, aY, aWidth, aHeight, aRadius) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rect_y_width_height_radius_", [aX, aY, aWidth, aHeight, aRadius]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rectX_y_width_height_tlradius_trradius_brradius_blradius_",
+smalltalk.method({
+selector: "rectX:y:width:height:tlradius:trradius:brradius:blradius:",
+fn: function (aX, aY, aWidth, aHeight, aTLRadius, aTRRadius, aBRRadius, aBLRadius) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rect_y_width_height_tlradius_trradius_brradius_blradius_", [aX, aY, aWidth, aHeight, aTLRadius, aTRRadius, aBRRadius, aBLRadius]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_red_",
+smalltalk.method({
+selector: "red:",
+fn: function (aColor) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_red_", [aColor]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_requestImage_",
+smalltalk.method({
+selector: "requestImage:",
+fn: function (aFilename) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_", [aFilename])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_requestImage_extension_",
+smalltalk.method({
+selector: "requestImage:extension:",
+fn: function (aFilename, aExtension) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_extension_", [aFilename, aExtension])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_resetMatrix",
+smalltalk.method({
+selector: "resetMatrix",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_resetMatrix", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rotate_",
+smalltalk.method({
+selector: "rotate:",
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotate_", [anAngle]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rotateX_",
+smalltalk.method({
+selector: "rotateX:",
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateX_", [anAngle]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rotateY_",
+smalltalk.method({
+selector: "rotateY:",
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateY_", [anAngle]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_rotateZ_",
+smalltalk.method({
+selector: "rotateZ:",
+fn: function (anAngle) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_rotateZ_", [anAngle]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_saturation_",
+smalltalk.method({
+selector: "saturation:",
+fn: function (aColor) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_saturation_", [aColor]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_saveFrame",
+smalltalk.method({
+selector: "saveFrame",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_saveFrame", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_saveFrame_",
+smalltalk.method({
+selector: "saveFrame:",
+fn: function (aFileNameAndExt) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_saveFrame_", [aFileNameAndExt]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_saveImage_",
+smalltalk.method({
+selector: "saveImage:",
+fn: function (aFileName) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_save_", [aFileName]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_scaleSize_",
+smalltalk.method({
+selector: "scaleSize:",
+fn: function (aSize) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_", [aSize]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_scaleX_y_",
+smalltalk.method({
+selector: "scaleX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_y_", [aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_scaleX_y_z_",
+smalltalk.method({
+selector: "scaleX:y:z:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_scale_y_z_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_screenHeight",
+smalltalk.method({
+selector: "screenHeight",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.height;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_screenWidth",
+smalltalk.method({
+selector: "screenWidth",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = processing.screen.width;
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_screenX_y_z_",
+smalltalk.method({
+selector: "screenX:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenX_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_screenY_y_z_",
+smalltalk.method({
+selector: "screenY:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenY_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_screenZ_y_z_",
+smalltalk.method({
+selector: "screenZ:y:z:",
+fn: function (anX, aY, aZ) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_screenZ_y_z_", [anX, aY, aZ]);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_setX_y_color_",
+smalltalk.method({
+selector: "setX:y:color:",
+fn: function (aX, aY, aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_set_y_color_", [aX, aY, aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_setX_y_image_",
+smalltalk.method({
+selector: "setX:y:image:",
+fn: function (aX, aY, aPjsImage) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_set_y_image_", [aX, aY, smalltalk.send(aPjsImage, "_pjsImage", [])]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_shininess_",
+smalltalk.method({
+selector: "shininess:",
+fn: function (aShine) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_shininess_", [aShine]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_size_height_",
+smalltalk.method({
+selector: "size:height:",
+fn: function (aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_size_height_", [aWidth, aHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_smooth",
+smalltalk.method({
+selector: "smooth",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_smooth", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_specular_value2_value3_",
+smalltalk.method({
+selector: "specular:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_specularColor_",
+smalltalk.method({
+selector: "specularColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_specularGray_",
+smalltalk.method({
+selector: "specularGray:",
+fn: function (aGrayValue) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_specular_", [aGrayValue]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_sphere_",
+smalltalk.method({
+selector: "sphere:",
+fn: function (aRadius) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_sphere_", [aRadius]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_sphereDetail_",
+smalltalk.method({
+selector: "sphereDetail:",
+fn: function (aRes) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_sphereDetail_", [aRes]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_sphereDetail_vres_",
+smalltalk.method({
+selector: "sphereDetail:vres:",
+fn: function (aURes, aVRes) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_sphereDetail_vres_", [aURes, aVRes]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_spotLightV1_v2_v3_x_y_z_angle_concentration_",
+smalltalk.method({
+selector: "spotLightV1:v2:v3:x:y:z:angle:concentration:",
+fn: function (aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_spotLight_v2_v3_x_y_z_angle_concentration_", [aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeCap_",
+smalltalk.method({
+selector: "strokeCap:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_strokeCap_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeColor_",
+smalltalk.method({
+selector: "strokeColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeColor_alpha_",
+smalltalk.method({
+selector: "strokeColor:alpha:",
+fn: function (aColor, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_alpha_", [aColor, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeGray_",
+smalltalk.method({
+selector: "strokeGray:",
+fn: function (aGray) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_", [aGray]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeGray_alpha_",
+smalltalk.method({
+selector: "strokeGray:alpha:",
+fn: function (aGray, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_alpha_", [aGray, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeHex_",
+smalltalk.method({
+selector: "strokeHex:",
+fn: function (aHex) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_", [aHex]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeHex_alpha_",
+smalltalk.method({
+selector: "strokeHex:alpha:",
+fn: function (aHex, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_alpha_", [aHex, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeJoin_",
+smalltalk.method({
+selector: "strokeJoin:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_strokeJoin_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeValue1_value2_value3_",
+smalltalk.method({
+selector: "strokeValue1:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeValue1_value2_value3_alpha_",
+smalltalk.method({
+selector: "strokeValue1:value2:value3:alpha:",
+fn: function (aValue1, aValue2, aValue3, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_stroke_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_strokeWeight_",
+smalltalk.method({
+selector: "strokeWeight:",
+fn: function (aWidth) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_strokeWeight_", [aWidth]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_texture_",
+smalltalk.method({
+selector: "texture:",
+fn: function (aPjsImage) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_texture_", [smalltalk.send(aPjsImage, "_pjsImage", [])]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_textureMode_",
+smalltalk.method({
+selector: "textureMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_textureMode_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintColor_",
+smalltalk.method({
+selector: "tintColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintColor_alpha_",
+smalltalk.method({
+selector: "tintColor:alpha:",
+fn: function (aColor, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aColor, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintGray_",
+smalltalk.method({
+selector: "tintGray:",
+fn: function (aGray) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aGray]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintGray_alpha_",
+smalltalk.method({
+selector: "tintGray:alpha:",
+fn: function (aGray, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aGray, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintHex_",
+smalltalk.method({
+selector: "tintHex:",
+fn: function (aHex) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aHex]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintHex_alpha_",
+smalltalk.method({
+selector: "tintHex:alpha:",
+fn: function (aHex, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aHex, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_alpha_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:alpha:",
+fn: function (aValue1, aValue2, aValue3, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_translateX_y_",
+smalltalk.method({
+selector: "translateX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_translate_y_", [aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_translateX_y_z_",
+smalltalk.method({
+selector: "translateX:y:z:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_translate_y_z_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_triangleX1_y1_x2_y2_x3_y3_",
+smalltalk.method({
+selector: "triangleX1:y1:x2:y2:x3:y3:",
+fn: function (aX1, aY1, aX2, aY2, aX3, aY3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_triangle_y1_x2_y2_x3_y3_", [aX1, aY1, aX2, aY2, aX3, aY3]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_updatePixels",
+smalltalk.method({
+selector: "updatePixels",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_updatePixels", []);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_vertexX_y_",
+smalltalk.method({
+selector: "vertexX:y:",
+fn: function (aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_vertex_y_", [aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_vertexX_y_u_v_",
+smalltalk.method({
+selector: "vertexX:y:u:v:",
+fn: function (aX, aY, anU, aV) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_vertex_y_u_v_", [aX, aY, anU, aV]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_vertexX_y_z_",
+smalltalk.method({
+selector: "vertexX:y:z:",
+fn: function (aX, aY, aZ) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_vertex_y_z_", [aX, aY, aZ]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_vertexX_y_z_u_v_",
+smalltalk.method({
+selector: "vertexX:y:z:u:v:",
+fn: function (aX, aY, aZ, anU, aV) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_vertex_y_z_u_v_", [aX, aY, aZ, anU, aV]);
+    return self;
+}
+}),
+smalltalk.PjsSketchObject);
+
+smalltalk.addMethod(
+"_width",
+smalltalk.method({
+selector: "width",
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_width", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketchObject);
+
+
+
+smalltalk.addClass('PjsSketch', smalltalk.PjsSketchObject, [], 'Processing-Core');
+smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    return self;
 }
 }),
 smalltalk.PjsSketch);
@@ -1454,2076 +3540,18 @@ fn: function () {
 }),
 smalltalk.PjsSketch);
 
-smalltalk.addMethod(
-"_cursorImage_x_y_",
-smalltalk.method({
-selector: "cursorImage:x:y:",
-fn: function (aPjsImage, aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_cursor_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
 
 smalltalk.addMethod(
-"_cursorMode_",
+"_overrideFunctions",
 smalltalk.method({
-selector: "cursorMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_cursor_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveDetail_",
-smalltalk.method({
-selector: "curveDetail:",
-fn: function (aDetailint) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curverDetail_", [aDetailint]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curvePointA_b_c_d_t_",
-smalltalk.method({
-selector: "curvePointA:b:c:d:t:",
-fn: function (anA, aB, aC, aD, aT) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curvePoint_b_c_d_t_", [anA, aB, aC, aD, aT]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveTangentA_b_c_d_t_",
-smalltalk.method({
-selector: "curveTangentA:b:c:d:t:",
-fn: function (anA, aB, aC, aD, aT) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curveTangent_b_c_d_t_", [anA, aB, aC, aD, aT]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveTightness_",
-smalltalk.method({
-selector: "curveTightness:",
-fn: function (anIntOrFloat) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curveTightness_", [anIntOrFloat]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveVertexX_y_",
-smalltalk.method({
-selector: "curveVertexX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curveVertex_y_", [aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveVertexX_y_z_",
-smalltalk.method({
-selector: "curveVertexX:y:z:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curveVertex_y_z_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveX1_y1_x2_y2_x3_y3_x4_y4_",
-smalltalk.method({
-selector: "curveX1:y1:x2:y2:x3:y3:x4:y4:",
-fn: function (aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curve_y1_x2_y2_x3_y3_x4_y4_", [aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_curveX1_y1_z1_x2_y2_z2_x3_y3_z3_x4_y4_z4_",
-smalltalk.method({
-selector: "curveX1:y1:z1:x2:y2:z2:x3:y3:z3:x4:y4:z4:",
-fn: function (aX1, aY1, aZ1, aX2, aY2, aZ2, aX3, aY3, aZ3, aX4, aY4, aZ4) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_curve_y1_z1_x2_y2_z2_x3_y3_z3_x4_y4_z4_", [aX1, aY1, aZ1, aX2, aY2, aZ2, aX3, aY3, aZ3, aX4, aY4, aZ4]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_directionalV1_v2_v3_nx_ny_nz_",
-smalltalk.method({
-selector: "directionalV1:v2:v3:nx:ny:nz:",
-fn: function (aV1, aV2, aV3, aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_directional_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_directiveCrisp_",
-smalltalk.method({
-selector: "directiveCrisp:",
-fn: function (aBool) {
-    var self = this;
-    if (smalltalk.assert(aBool)) {
-        p.externals.sketch.options.crispLines = true;
-    } else {
-        p.externals.sketch.options.crispLines = false;
-    }
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_directiveFont_",
-smalltalk.method({
-selector: "directiveFont:",
-fn: function (aFileName) {
-    var self = this;
-    p.externals.sketch.options.font = aFileName;
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_directivePauseOnBlur_",
-smalltalk.method({
-selector: "directivePauseOnBlur:",
-fn: function (aBool) {
-    var self = this;
-    if (smalltalk.assert(aBool)) {
-        p.externals.sketch.options.globalKeyEvents = true;
-    } else {
-        p.externals.sketch.options.globalKeyEvents = false;
-    }
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_directivePreload_",
-smalltalk.method({
-selector: "directivePreload:",
-fn: function (aFileName) {
-    var self = this;
-    p.externals.sketch.options.preload = aFileName;
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_draw",
-smalltalk.method({
-selector: "draw",
+selector: "overrideFunctions",
 fn: function () {
     var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
+    processing.draw = function () {};
     return self;
 }
 }),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_ellipseMode_",
-smalltalk.method({
-selector: "ellipseMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_ellipseMode_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_ellipseX_y_width_height_",
-smalltalk.method({
-selector: "ellipseX:y:width:height:",
-fn: function (aX, aY, aWidth, aHeight) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_ellipse_y_width_height_", [aX, aY, aWidth, aHeight]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_emissive_value2_value3_",
-smalltalk.method({
-selector: "emissive:value2:value3:",
-fn: function (aValue1, aValue2, aValue3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_emissivet_value2_value3_", [aValue1, aValue2, aValue3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_emissiveColor_",
-smalltalk.method({
-selector: "emissiveColor:",
-fn: function (aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_emissive_", [aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_emissiveGray_",
-smalltalk.method({
-selector: "emissiveGray:",
-fn: function (aGrayValue) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_emissive_", [aGrayValue]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_endCamera",
-smalltalk.method({
-selector: "endCamera",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_endCamera", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_endShape",
-smalltalk.method({
-selector: "endShape",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_endShape", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_endShape_",
-smalltalk.method({
-selector: "endShape:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_endShape_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillColor_",
-smalltalk.method({
-selector: "fillColor:",
-fn: function (aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_", [aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillColor_alpha_",
-smalltalk.method({
-selector: "fillColor:alpha:",
-fn: function (aColor, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_alpha_", [aColor, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillGray_",
-smalltalk.method({
-selector: "fillGray:",
-fn: function (aGray) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_", [aGray]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillGray_alpha_",
-smalltalk.method({
-selector: "fillGray:alpha:",
-fn: function (aGray, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_alpha_", [aGray, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillHex_",
-smalltalk.method({
-selector: "fillHex:",
-fn: function (aHex) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_", [aHex]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillHex_alpha_",
-smalltalk.method({
-selector: "fillHex:alpha:",
-fn: function (aHex, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_alpha_", [aHex, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillValue1_value2_value3_",
-smalltalk.method({
-selector: "fillValue1:value2:value3:",
-fn: function (aValue1, aValue2, aValue3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_value2_value3_", [aValue1, aValue2, aValue3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_fillValue1_value2_value3_alpha_",
-smalltalk.method({
-selector: "fillValue1:value2:value3:alpha:",
-fn: function (aValue1, aValue2, aValue3, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_fill_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_filterMode_",
-smalltalk.method({
-selector: "filterMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_filter_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_filterMode_param_",
-smalltalk.method({
-selector: "filterMode:param:",
-fn: function (aMode, aParam) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_filter_param_", [aMode, aParam]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_frameCount",
-smalltalk.method({
-selector: "frameCount",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_frameCount", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_frameRate",
-smalltalk.method({
-selector: "frameRate",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_frameRate", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_frameRate_",
-smalltalk.method({
-selector: "frameRate:",
-fn: function (aFps) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_frameRate_", [aFps]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_frustumLeft_right_bottom_top_near_far_",
-smalltalk.method({
-selector: "frustumLeft:right:bottom:top:near:far:",
-fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_frustum_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_get",
-smalltalk.method({
-selector: "get",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get", [])]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_getX_y_",
-smalltalk.method({
-selector: "getX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_get_y_", [aX, aY]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_getX_y_width_height_",
-smalltalk.method({
-selector: "getX:y:width:height:",
-fn: function (aX, aY, aWidth, aHeight) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_get_y_width_height_", [aX, aY, aWidth, aHeight])]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_green_",
-smalltalk.method({
-selector: "green:",
-fn: function (aColor) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_green_", [aColor]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_height",
-smalltalk.method({
-selector: "height",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_height", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_hue_",
-smalltalk.method({
-selector: "hue:",
-fn: function (aColor) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_hue_", [aColor]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_image_x_y_",
-smalltalk.method({
-selector: "image:x:y:",
-fn: function (aPjsImage, aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_image_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_image_x_y_width_height_",
-smalltalk.method({
-selector: "image:x:y:width:height:",
-fn: function (aPjsImage, aX, aY, aWidth, aHeight) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_image_x_y_width_height_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeight]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_imageMode_",
-smalltalk.method({
-selector: "imageMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_imageMode_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_initialize",
-smalltalk.method({
-selector: "initialize",
-fn: function () {
-    var self = this;
-    self['@processing'] = Processing.instances[0];
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_isFocused",
-smalltalk.method({
-selector: "isFocused",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.focused;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_isKeyPressed",
-smalltalk.method({
-selector: "isKeyPressed",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.keyPressed;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_isMousePressed",
-smalltalk.method({
-selector: "isMousePressed",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.mousePressed;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_isOnline",
-smalltalk.method({
-selector: "isOnline",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.online;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_key",
-smalltalk.method({
-selector: "key",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.key;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_keyCode",
-smalltalk.method({
-selector: "keyCode",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.keyCode;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_keyPressed",
-smalltalk.method({
-selector: "keyPressed",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_keyReleased",
-smalltalk.method({
-selector: "keyReleased",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_keyTyped",
-smalltalk.method({
-selector: "keyTyped",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lerpColor1_color2_amt_",
-smalltalk.method({
-selector: "lerpColor1:color2:amt:",
-fn: function (aColor1, aColor2, aAMT) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_lerpColor_color2_amt_", [aColor1, aColor2, aAMT]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lightFalloff_linear_quadratic_",
-smalltalk.method({
-selector: "lightFalloff:linear:quadratic:",
-fn: function (aConstant, aLinear, aQuadric) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_lightFalloff_linear_quadratic_", [aConstant, aLinear, aQuadric]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lightSpeculartV1_v2_v3_",
-smalltalk.method({
-selector: "lightSpeculartV1:v2:v3:",
-fn: function (aV1, aV2, aV3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_lightSpecular_v2_v3_", [aV1, aV2, aV3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lights",
-smalltalk.method({
-selector: "lights",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_lights", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lineX1_y1_x2_y2_",
-smalltalk.method({
-selector: "lineX1:y1:x2:y2:",
-fn: function (aX1, aY1, aX2, aY2) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_line_y1_x2_y2_", [aX1, aY1, aX2, aY2]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_lineX1_y1_z1_x2_y2_z2_",
-smalltalk.method({
-selector: "lineX1:y1:z1:x2:y2:z2:",
-fn: function (aX1, aY1, aZ1, aX2, aY2, aZ2) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_line_y1_z1_x2_y2_z2_", [aX1, aY1, aZ1, aX2, aY2, aZ2]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_loadImage_",
-smalltalk.method({
-selector: "loadImage:",
-fn: function (aFileName) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_loadImage_", [aFileName])]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_loadPixels",
-smalltalk.method({
-selector: "loadPixels",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_loadPixels", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_modelX_y_z_",
-smalltalk.method({
-selector: "modelX:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_modelX_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_modelY_y_z_",
-smalltalk.method({
-selector: "modelY:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_modelY_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_modelZ_y_z_",
-smalltalk.method({
-selector: "modelZ:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_modelZ_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseButton",
-smalltalk.method({
-selector: "mouseButton",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_mouseButton", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseClicked",
-smalltalk.method({
-selector: "mouseClicked",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassRespnsubility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseDragged",
-smalltalk.method({
-selector: "mouseDragged",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassRespnsubility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseMoved",
-smalltalk.method({
-selector: "mouseMoved",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassRespnsubility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseOut",
-smalltalk.method({
-selector: "mouseOut",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassRespnsubility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseOver",
-smalltalk.method({
-selector: "mouseOver",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassRespnsubility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mousePressed",
-smalltalk.method({
-selector: "mousePressed",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseReleased",
-smalltalk.method({
-selector: "mouseReleased",
-fn: function () {
-    var self = this;
-    smalltalk.send(self, "_subclassResponsibility", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseX",
-smalltalk.method({
-selector: "mouseX",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_mouseX", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_mouseY",
-smalltalk.method({
-selector: "mouseY",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_mouseY", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noCursor",
-smalltalk.method({
-selector: "noCursor",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noCursor", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noFill",
-smalltalk.method({
-selector: "noFill",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noFill", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noLights",
-smalltalk.method({
-selector: "noLights",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noLights", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noSmooth",
-smalltalk.method({
-selector: "noSmooth",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noSmooth", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noStroke",
-smalltalk.method({
-selector: "noStroke",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noStroke", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_noTint",
-smalltalk.method({
-selector: "noTint",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_noTint", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_normal_ny_nz_",
-smalltalk.method({
-selector: "normal:ny:nz:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_normal_ny_nz_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_ortho",
-smalltalk.method({
-selector: "ortho",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_ortho", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_orthoLeft_right_bottom_top_near_far_",
-smalltalk.method({
-selector: "orthoLeft:right:bottom:top:near:far:",
-fn: function (aLeft, aRight, aBottom, aTop, aNear, aFar) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_ortho_right_bottom_top_near_far_", [aLeft, aRight, aBottom, aTop, aNear, aFar]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_perspective",
-smalltalk.method({
-selector: "perspective",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_perspective", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_perspectiveFov_aspect_zNear_zFar_",
-smalltalk.method({
-selector: "perspectiveFov:aspect:zNear:zFar:",
-fn: function (aFov, anAspect, aZNear, aZFar) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_perspective_aspect_zNear_zFar_", [aFov, anAspect, aZNear, aZFar]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pixelsAt_",
-smalltalk.method({
-selector: "pixelsAt:",
-fn: function (anIndex) {
-    var self = this;
-    var $1;
-    $1 = processing.pixels[anIndex];
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pixelsAt_put_",
-smalltalk.method({
-selector: "pixelsAt:put:",
-fn: function (anIndex, aValue) {
-    var self = this;
-    processing.pixels[anIndex] = aValue;
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pmouseX",
-smalltalk.method({
-selector: "pmouseX",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_pmouseX", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pmouseY",
-smalltalk.method({
-selector: "pmouseY",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.pmouseY;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pointLightV1_v2_v3_x_y_z_",
-smalltalk.method({
-selector: "pointLightV1:v2:v3:x:y:z:",
-fn: function (aV1, aV2, aV3, aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_pointLight_v2_v3_x_y_z_", [aV1, aV2, aV3, aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pointX_y_",
-smalltalk.method({
-selector: "pointX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_point_y_", [aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pointX_y_z_",
-smalltalk.method({
-selector: "pointX:y:z:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_point_y_z_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_popMatrix",
-smalltalk.method({
-selector: "popMatrix",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_popMatrix", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_printCamera",
-smalltalk.method({
-selector: "printCamera",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_printCamera", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_printMatrix",
-smalltalk.method({
-selector: "printMatrix",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_printMatrix", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_printProjection",
-smalltalk.method({
-selector: "printProjection",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_printProjection", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_processing",
-smalltalk.method({
-selector: "processing",
-fn: function () {
-    var self = this;
-    return self['@processing'];
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_pushMatrix",
-smalltalk.method({
-selector: "pushMatrix",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_pushMatrix", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_quadX1_y1_x2_y2_x3_y3_x4_y4_",
-smalltalk.method({
-selector: "quadX1:y1:x2:y2:x3:y3:x4:y4:",
-fn: function (aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_quad_y1_x2_y2_x3_y3_x4_y4_", [aX1, aY1, aX2, aY2, aX3, aY3, aX4, aY4]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rectMode_",
-smalltalk.method({
-selector: "rectMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rectMode_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rectX_y_width_height_",
-smalltalk.method({
-selector: "rectX:y:width:height:",
-fn: function (aX, aY, aWidth, aHeight) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rect_y_width_height_", [aX, aY, aWidth, aHeight]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rectX_y_width_height_radius_",
-smalltalk.method({
-selector: "rectX:y:width:height:radius:",
-fn: function (aX, aY, aWidth, aHeight, aRadius) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rect_y_width_height_radius_", [aX, aY, aWidth, aHeight, aRadius]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rectX_y_width_height_tlradius_trradius_brradius_blradius_",
-smalltalk.method({
-selector: "rectX:y:width:height:tlradius:trradius:brradius:blradius:",
-fn: function (aX, aY, aWidth, aHeight, aTLRadius, aTRRadius, aBRRadius, aBLRadius) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rect_y_width_height_tlradius_trradius_brradius_blradius_", [aX, aY, aWidth, aHeight, aTLRadius, aTRRadius, aBRRadius, aBLRadius]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_red_",
-smalltalk.method({
-selector: "red:",
-fn: function (aColor) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_red_", [aColor]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_requestImage_",
-smalltalk.method({
-selector: "requestImage:",
-fn: function (aFilename) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_", [aFilename])]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_requestImage_extension_",
-smalltalk.method({
-selector: "requestImage:extension:",
-fn: function (aFilename, aExtension) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_extension_", [aFilename, aExtension])]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_resetMatrix",
-smalltalk.method({
-selector: "resetMatrix",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_resetMatrix", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rotate_",
-smalltalk.method({
-selector: "rotate:",
-fn: function (anAngle) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rotate_", [anAngle]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rotateX_",
-smalltalk.method({
-selector: "rotateX:",
-fn: function (anAngle) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rotateX_", [anAngle]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rotateY_",
-smalltalk.method({
-selector: "rotateY:",
-fn: function (anAngle) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rotateY_", [anAngle]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_rotateZ_",
-smalltalk.method({
-selector: "rotateZ:",
-fn: function (anAngle) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_rotateZ_", [anAngle]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_saturation_",
-smalltalk.method({
-selector: "saturation:",
-fn: function (aColor) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_saturation_", [aColor]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_saveFrame",
-smalltalk.method({
-selector: "saveFrame",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_saveFrame", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_saveFrame_",
-smalltalk.method({
-selector: "saveFrame:",
-fn: function (aFileNameAndExt) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_saveFrame_", [aFileNameAndExt]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_saveImage_",
-smalltalk.method({
-selector: "saveImage:",
-fn: function (aFileName) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_save_", [aFileName]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_scaleSize_",
-smalltalk.method({
-selector: "scaleSize:",
-fn: function (aSize) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_scale_", [aSize]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_scaleX_y_",
-smalltalk.method({
-selector: "scaleX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_scale_y_", [aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_scaleX_y_z_",
-smalltalk.method({
-selector: "scaleX:y:z:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_scale_y_z_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_screenHeight",
-smalltalk.method({
-selector: "screenHeight",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.screen.height;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_screenWidth",
-smalltalk.method({
-selector: "screenWidth",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = processing.screen.width;
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_screenX_y_z_",
-smalltalk.method({
-selector: "screenX:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_screenX_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_screenY_y_z_",
-smalltalk.method({
-selector: "screenY:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_screenY_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_screenZ_y_z_",
-smalltalk.method({
-selector: "screenZ:y:z:",
-fn: function (anX, aY, aZ) {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_screenZ_y_z_", [anX, aY, aZ]);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_setX_y_color_",
-smalltalk.method({
-selector: "setX:y:color:",
-fn: function (aX, aY, aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_set_y_color_", [aX, aY, aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_setX_y_image_",
-smalltalk.method({
-selector: "setX:y:image:",
-fn: function (aX, aY, aPjsImage) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_set_y_image_", [aX, aY, smalltalk.send(aPjsImage, "_pjsImage", [])]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_shininess_",
-smalltalk.method({
-selector: "shininess:",
-fn: function (aShine) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_shininess_", [aShine]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_size_height_",
-smalltalk.method({
-selector: "size:height:",
-fn: function (aWidth, aHeight) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_size_height_", [aWidth, aHeight]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_smooth",
-smalltalk.method({
-selector: "smooth",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_smooth", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_specular_value2_value3_",
-smalltalk.method({
-selector: "specular:value2:value3:",
-fn: function (aValue1, aValue2, aValue3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_specular_value2_value3_", [aValue1, aValue2, aValue3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_specularColor_",
-smalltalk.method({
-selector: "specularColor:",
-fn: function (aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_specular_", [aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_specularGray_",
-smalltalk.method({
-selector: "specularGray:",
-fn: function (aGrayValue) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_specular_", [aGrayValue]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_sphere_",
-smalltalk.method({
-selector: "sphere:",
-fn: function (aRadius) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_sphere_", [aRadius]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_sphereDetail_",
-smalltalk.method({
-selector: "sphereDetail:",
-fn: function (aRes) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_sphereDetail_", [aRes]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_sphereDetail_vres_",
-smalltalk.method({
-selector: "sphereDetail:vres:",
-fn: function (aURes, aVRes) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_sphereDetail_vres_", [aURes, aVRes]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_spotLightV1_v2_v3_x_y_z_angle_concentration_",
-smalltalk.method({
-selector: "spotLightV1:v2:v3:x:y:z:angle:concentration:",
-fn: function (aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_spotLight_v2_v3_x_y_z_angle_concentration_", [aV1, aV2, aV3, aX, aY, aZ, anAngle, aCon]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeCap_",
-smalltalk.method({
-selector: "strokeCap:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_strokeCap_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeColor_",
-smalltalk.method({
-selector: "strokeColor:",
-fn: function (aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_", [aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeColor_alpha_",
-smalltalk.method({
-selector: "strokeColor:alpha:",
-fn: function (aColor, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_alpha_", [aColor, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeGray_",
-smalltalk.method({
-selector: "strokeGray:",
-fn: function (aGray) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_", [aGray]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeGray_alpha_",
-smalltalk.method({
-selector: "strokeGray:alpha:",
-fn: function (aGray, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_alpha_", [aGray, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeHex_",
-smalltalk.method({
-selector: "strokeHex:",
-fn: function (aHex) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_", [aHex]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeHex_alpha_",
-smalltalk.method({
-selector: "strokeHex:alpha:",
-fn: function (aHex, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_alpha_", [aHex, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeJoin_",
-smalltalk.method({
-selector: "strokeJoin:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_strokeJoin_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeValue1_value2_value3_",
-smalltalk.method({
-selector: "strokeValue1:value2:value3:",
-fn: function (aValue1, aValue2, aValue3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_value2_value3_", [aValue1, aValue2, aValue3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeValue1_value2_value3_alpha_",
-smalltalk.method({
-selector: "strokeValue1:value2:value3:alpha:",
-fn: function (aValue1, aValue2, aValue3, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_stroke_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_strokeWeight_",
-smalltalk.method({
-selector: "strokeWeight:",
-fn: function (aWidth) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_strokeWeight_", [aWidth]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_texture_",
-smalltalk.method({
-selector: "texture:",
-fn: function (aPjsImage) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_texture_", [smalltalk.send(aPjsImage, "_pjsImage", [])]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_textureMode_",
-smalltalk.method({
-selector: "textureMode:",
-fn: function (aMode) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_textureMode_", [aMode]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintColor_",
-smalltalk.method({
-selector: "tintColor:",
-fn: function (aColor) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_", [aColor]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintColor_alpha_",
-smalltalk.method({
-selector: "tintColor:alpha:",
-fn: function (aColor, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_alpha_", [aColor, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintGray_",
-smalltalk.method({
-selector: "tintGray:",
-fn: function (aGray) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_", [aGray]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintGray_alpha_",
-smalltalk.method({
-selector: "tintGray:alpha:",
-fn: function (aGray, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_alpha_", [aGray, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintHex_",
-smalltalk.method({
-selector: "tintHex:",
-fn: function (aHex) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_", [aHex]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintHex_alpha_",
-smalltalk.method({
-selector: "tintHex:alpha:",
-fn: function (aHex, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_alpha_", [aHex, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintValue1_value2_value3_",
-smalltalk.method({
-selector: "tintValue1:value2:value3:",
-fn: function (aValue1, aValue2, aValue3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_value2_value3_", [aValue1, aValue2, aValue3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_tintValue1_value2_value3_alpha_",
-smalltalk.method({
-selector: "tintValue1:value2:value3:alpha:",
-fn: function (aValue1, aValue2, aValue3, anAlpha) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_tint_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_translateX_y_",
-smalltalk.method({
-selector: "translateX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_translate_y_", [aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_translateX_y_z_",
-smalltalk.method({
-selector: "translateX:y:z:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_translate_y_z_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_triangleX1_y1_x2_y2_x3_y3_",
-smalltalk.method({
-selector: "triangleX1:y1:x2:y2:x3:y3:",
-fn: function (aX1, aY1, aX2, aY2, aX3, aY3) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_triangle_y1_x2_y2_x3_y3_", [aX1, aY1, aX2, aY2, aX3, aY3]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_updatePixels",
-smalltalk.method({
-selector: "updatePixels",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_updatePixels", []);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_vertexX_y_",
-smalltalk.method({
-selector: "vertexX:y:",
-fn: function (aX, aY) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_vertex_y_", [aX, aY]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_vertexX_y_u_v_",
-smalltalk.method({
-selector: "vertexX:y:u:v:",
-fn: function (aX, aY, anU, aV) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_vertex_y_u_v_", [aX, aY, anU, aV]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_vertexX_y_z_",
-smalltalk.method({
-selector: "vertexX:y:z:",
-fn: function (aX, aY, aZ) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_vertex_y_z_", [aX, aY, aZ]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_vertexX_y_z_u_v_",
-smalltalk.method({
-selector: "vertexX:y:z:u:v:",
-fn: function (aX, aY, aZ, anU, aV) {
-    var self = this;
-    smalltalk.send(self['@processing'], "_vertex_y_z_u_v_", [aX, aY, aZ, anU, aV]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
-"_width",
-smalltalk.method({
-selector: "width",
-fn: function () {
-    var self = this;
-    var $1;
-    $1 = smalltalk.send(self['@processing'], "_width", []);
-    return $1;
-}
-}),
-smalltalk.PjsSketch);
-
+smalltalk.PjsSketch.klass);
 
 smalltalk.addMethod(
 "_start",

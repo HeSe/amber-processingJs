@@ -1176,24 +1176,7 @@ smalltalk.PjsShape);
 
 
 
-smalltalk.addClass('PjsSketch', smalltalk.Object, ['processing'], 'Processing-Core');
-smalltalk.addMethod(
-"_activateFunctions",
-smalltalk.method({
-selector: "activateFunctions",
-category: 'initialization',
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    return self;
-},
-args: [],
-source: "activateFunctions\x0a\x0a\x09processing at: 'draw' put: [self draw].",
-messageSends: ["at:put:", "draw"],
-referencedClasses: []
-}),
-smalltalk.PjsSketch);
-
+smalltalk.addClass('PjsSketchObject', smalltalk.Object, ['processing'], 'Processing-Core');
 smalltalk.addMethod(
 "_alpha_",
 smalltalk.method({
@@ -1210,7 +1193,7 @@ source: "alpha: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\
 messageSends: ["alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambient_value2_value3_",
@@ -1227,7 +1210,7 @@ source: "ambient: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int o
 messageSends: ["ambient:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientColor_",
@@ -1244,7 +1227,7 @@ source: "ambientColor: aColor\x0a\x09\x22gray int or float: number specifying va
 messageSends: ["ambient:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientGray_",
@@ -1261,7 +1244,7 @@ source: "ambientGray: aGrayValue\x0a\x09\x22gray int or float: number specifying
 messageSends: ["ambient:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientLightV1_v2_v3_",
@@ -1278,7 +1261,7 @@ source: "ambientLightV1: aV1 v2: aV2 v3: aV3 \x0a\x09\x22v1 int or float: red or
 messageSends: ["ambientLight:v2:v3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ambientLightV1_v2_v3_x_y_z_",
@@ -1295,7 +1278,7 @@ source: "ambientLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x09\x22v1 int
 messageSends: ["ambientLight:v2:v3:x:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_applyMatrix_n01_n02_n03_n04_n05_n06_n07_n08_n09_n10_n11_n12_n13_n14_n15_",
@@ -1312,7 +1295,7 @@ source: "applyMatrix:aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06:
 messageSends: ["applyMatrix:n01:n02:n03:n04:n05:n06:n07:n08:n09:n10:n11:n12:n13:n14:n15:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_arcX_y_width_height_start_stop_",
@@ -1329,7 +1312,7 @@ source: "arcX: aX y: aY width: aWidth height: aHeight start: aStart stop: aStop\
 messageSends: ["arc:y:width:height:start:stop:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_background_value2_value3_",
@@ -1346,7 +1329,7 @@ source: "background: aValue1\x09value2: aValue2 value3: aValue3 \x0a\x09\x22valu
 messageSends: ["background:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_background_value2_value3_alpha_",
@@ -1363,7 +1346,7 @@ source: "background: aValue1\x09value2: aValue2 value3: aValue3 alpha: anAlpha\x
 messageSends: ["background:value2:value3:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundColor_",
@@ -1380,7 +1363,7 @@ source: "backgroundColor: aColor\x0a\x09\x22color \x09color: any value of the co
 messageSends: ["background:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundColor_alpha_",
@@ -1397,7 +1380,7 @@ source: "backgroundColor: aColor alpha: anAlpha\x0a\x09\x22color \x09color: any 
 messageSends: ["background:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundGray_",
@@ -1414,7 +1397,7 @@ source: "backgroundGray: aGrayValue\x0a\x09\x22gray \x09int or float: specifies 
 messageSends: ["background:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundGray_alpha_",
@@ -1431,7 +1414,7 @@ source: "backgroundGray: aGrayValue alpha: anAlpha\x0a\x09\x22gray \x09int or fl
 messageSends: ["background:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundHex_",
@@ -1448,7 +1431,7 @@ source: "backgroundHex: aHex \x0a\x09\x22hex \x09int: color value in hexadecimal
 messageSends: ["background:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_backgroundHex_alpha_",
@@ -1465,7 +1448,7 @@ source: "backgroundHex: aHex alpha: anAlpha\x0a\x09\x22hex \x09int: color value 
 messageSends: ["background:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginCamera",
@@ -1482,7 +1465,7 @@ source: "beginCamera\x0a\x09\x22The beginCamera() and endCamera() functions enab
 messageSends: ["beginCamera"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginShape",
@@ -1499,7 +1482,7 @@ source: "beginShape\x0a\x0a\x09processing beginShape\x0a    \x0a    \x22Using th
 messageSends: ["beginShape"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_beginShape_",
@@ -1516,7 +1499,7 @@ source: "beginShape: aMode\x0a\x09\x22MODE \x09Either POINTS, LINES, TRIANGLES, 
 messageSends: ["beginShape:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierDetail_",
@@ -1533,7 +1516,7 @@ source: "bezierDetail: aDetailint\x0a\x09\x22Sets the resolution at which Bezier
 messageSends: ["bezierDetail:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierPointA_b_c_d_t_",
@@ -1550,7 +1533,7 @@ source: "bezierPointA: anA b: aB c: aC d: aD t: aT\x0a\x09\x22a \x09int or float
 messageSends: ["bezierPoint:b:c:d:t:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierTangentA_b_c_d_t_",
@@ -1567,7 +1550,7 @@ source: "bezierTangentA: anA b: aB c: aC d: aD t: aT\x0a\x09\x22a \x09int or flo
 messageSends: ["bezierTangent:b:c:d:t:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierVertexCx1_cy1_cx2_cy2_x2_y2_",
@@ -1584,7 +1567,7 @@ source: "bezierVertexCx1: aCx1 cy1: aCy1 cx2: aCx2 cy2: aCy2 x2: aX2 y2: aY2\x0a
 messageSends: ["bezierVertex:cy1:cx2:cy2:x2:y2:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierVertexCx1_cy1_cz1_cx2_cy2_cz2_x2_y2_z2_",
@@ -1601,7 +1584,7 @@ source: "bezierVertexCx1: aCx1 cy1: aCy1 cz1: aCz1 cx2: aCx2 cy2: aCy2 cz2: aCz2
 messageSends: ["bezierVertex:cy1:cz1:cx2:cy2:cz2:x2:y2:z2:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierX1_y1_cx1_cy1_cx2_cy2_x2_y2_",
@@ -1618,7 +1601,7 @@ source: "bezierX1: aX1 y1: aY1 cx1: aCx1 cy1: aCy1 cx2: aCx2 cy2: aCy2 x2: aX2 y
 messageSends: ["bezier:y1:cx1:cy1:cx2:cy2:x2:y2:", "aX1"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_bezierX1_y1_z1_cx1_cy1_cz1_cx2_cy2_cz2_x2_y2_z2_",
@@ -1635,7 +1618,7 @@ source: "bezierX1: aX1 y1: aY1 z1: aZ1 cx1: aCx1 cy1: aCy1 cz1: aCz1 cx2: aCx2 c
 messageSends: ["bezier:y1:z1:cx1:cy1:cz1:cx2:cy2:cz2:x2:y2:z2:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendColor1_color2_mode_",
@@ -1653,7 +1636,7 @@ source: "blendColor1: aColor1 color2: aColor2 mode: aMode\x0a\x09\x22c1 \x09colo
 messageSends: ["blend:color2:mode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendImage_x_y_width_height_dx_dy_dwidth_dheight_mode_",
@@ -1670,7 +1653,7 @@ source: "blendImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX d
 messageSends: ["blend:x:y:width:height:dx:dy:dwidth:dheight:mode:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blendX_y_width_height_dx_dy_dwidth_dheight_mode_",
@@ -1687,7 +1670,7 @@ source: "blendX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDW
 messageSends: ["blend:y:width:height:dx:dy:dwidth:dheight:mode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_blue_",
@@ -1705,7 +1688,7 @@ source: "blue: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x
 messageSends: ["blue:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_box_",
@@ -1722,7 +1705,7 @@ source: "box: aSizeIntOrFloat\x0a\x09\x22size \x09int or float: dimension of the
 messageSends: ["box:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_boxWidth_height_depth_",
@@ -1739,7 +1722,7 @@ source: "boxWidth: aWidth height: aHeight depth: aDepth\x0a\x09\x22width \x09int
 messageSends: ["box:height:depth:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_brightness_",
@@ -1757,7 +1740,7 @@ source: "brightness: aColor\x0a\x09\x22color \x09any value of the color datatype
 messageSends: ["brightness:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_camera",
@@ -1774,7 +1757,7 @@ source: "camera\x0a\x09\x22eyeX float: x coordinate for the eye \x0a\x09eyeY flo
 messageSends: ["camera"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_cameraEyeX_eyeY_eyeZ_centerX_centerY_centerZ_upX_upY_upZ_",
@@ -1791,7 +1774,7 @@ source: "cameraEyeX: anEyeX eyeY: anEyeY eyeZ: anEyeZ centerX: aCenterX centerY:
 messageSends: ["camera:eyeY:eyeZ:centerX:centerY:centerZ:upX:upY:upZ:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorGray_",
@@ -1809,7 +1792,7 @@ source: "colorGray: aGray \x0a\x09\x22gray \x09int or float: number specifying v
 messageSends: ["color:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorGray_alpha_",
@@ -1827,7 +1810,7 @@ source: "colorGray: aGray alpha: anAlpha\x0a\x09\x22gray \x09int or float: numbe
 messageSends: ["color:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorHex_",
@@ -1845,7 +1828,7 @@ source: "colorHex: aHex \x0a\x09\x22hex \x09int: color value in hexadecimal nota
 messageSends: ["color:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorHex_alpha_",
@@ -1863,7 +1846,7 @@ source: "colorHex: aHex alpha: anAlpha\x0a\x09\x22hex \x09int: color value in he
 messageSends: ["color:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_",
@@ -1880,7 +1863,7 @@ source: "colorMode: aMode\x0a\x09\x22mode \x09Either RGB or HSB, corresponding t
 messageSends: ["colorMode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range1_range2_range3_",
@@ -1897,7 +1880,7 @@ source: "colorMode: aMode range1: aRange1 range2: aRange2 range3: aRange3\x0a\x0
 messageSends: ["colorMode:range1:range2:range3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range1_range2_range3_range4_",
@@ -1914,7 +1897,7 @@ source: "colorMode: aMode range1: aRange1 range2: aRange2 range3: aRange3 range4
 messageSends: ["colorMode:range1:range2:range3:range4:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorMode_range_",
@@ -1931,7 +1914,7 @@ source: "colorMode: aMode range: aRange\x0a\x09\x22mode \x09Either RGB or HSB, c
 messageSends: ["colorMode:range:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorValue1_value2_value3_",
@@ -1949,7 +1932,7 @@ source: "colorValue1: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22value1
 messageSends: ["color:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_colorValue1_value2_value3_alpha_",
@@ -1967,7 +1950,7 @@ source: "colorValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a
 messageSends: ["color:value2:value3:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_copyImage_x_y_width_height_dx_dy_dwidth_dheight_",
@@ -1984,7 +1967,7 @@ source: "copyImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy
 messageSends: ["copy:x:y:width:height:dx:dy:dwidth:dheight:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_copyX_y_width_height_dx_dy_dwidth_dheight_",
@@ -2001,7 +1984,7 @@ source: "copyX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWi
 messageSends: ["copy:y:width:height:dx:dy:dwidth:dheight:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_createImageWidth_height_format_",
@@ -2019,7 +2002,7 @@ source: "createImageWidth: aWidth height: aHeight format: aFormat\x0a\x09\x22wid
 messageSends: ["newImage:", "createImage:height:format:"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_cursor",
@@ -2037,7 +2020,7 @@ source: "cursor\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT \x0a
 messageSends: ["cursor"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_cursorImage_x_y_",
@@ -2054,7 +2037,7 @@ source: "cursorImage: aPjsImage x: aX y: aY\x0a\x09\x22MODE either ARROW, CROSS,
 messageSends: ["cursor:x:y:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_cursorMode_",
@@ -2071,7 +2054,7 @@ source: "cursorMode: aMode\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT
 messageSends: ["cursor:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveDetail_",
@@ -2088,7 +2071,7 @@ source: "curveDetail: aDetailint\x0a\x09\x22Sets the resolution at which curves 
 messageSends: ["curverDetail:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curvePointA_b_c_d_t_",
@@ -2105,7 +2088,7 @@ source: "curvePointA: anA b: aB c: aC d: aD t: aT\x0a\x09\x22a \x09int or float:
 messageSends: ["curvePoint:b:c:d:t:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveTangentA_b_c_d_t_",
@@ -2122,7 +2105,7 @@ source: "curveTangentA: anA b: aB c: aC d: aD t: aT\x0a\x09\x22a \x09int or floa
 messageSends: ["curveTangent:b:c:d:t:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveTightness_",
@@ -2139,7 +2122,7 @@ source: "curveTightness: anIntOrFloat\x0a\x09\x22Modifies the quality of forms c
 messageSends: ["curveTightness:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveVertexX_y_",
@@ -2156,7 +2139,7 @@ source: "curveVertexX: aX y: aY\x0a\x09\x22x \x09The x-coordinate of the vertex,
 messageSends: ["curveVertex:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveVertexX_y_z_",
@@ -2173,7 +2156,7 @@ source: "curveVertexX: aX y: aY z: aZ\x0a\x09\x22x \x09The x-coordinate of the v
 messageSends: ["curveVertex:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveX1_y1_x2_y2_x3_y3_x4_y4_",
@@ -2190,7 +2173,7 @@ source: "curveX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3 x4: aX4 y4: aY4\
 messageSends: ["curve:y1:x2:y2:x3:y3:x4:y4:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_curveX1_y1_z1_x2_y2_z2_x3_y3_z3_x4_y4_z4_",
@@ -2207,7 +2190,7 @@ source: "curveX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3
 messageSends: ["curve:y1:z1:x2:y2:z2:x3:y3:z3:x4:y4:z4:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_directionalV1_v2_v3_nx_ny_nz_",
@@ -2224,7 +2207,7 @@ source: "directionalV1: aV1 v2: aV2 v3: aV3 nx: aX ny: aY nz: aZ\x0a\x09\x22v1 i
 messageSends: ["directional:v2:v3:x:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_directiveCrisp_",
@@ -2245,7 +2228,7 @@ source: "directiveCrisp: aBool\x0a\x0a\x09\x22http://processingjs.org/reference/
 messageSends: ["ifTrue:ifFalse:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_directiveFont_",
@@ -2262,7 +2245,7 @@ source: "directiveFont: aFileName\x0a\x0a\x09\x22http://processingjs.org/referen
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_directivePauseOnBlur_",
@@ -2283,7 +2266,7 @@ source: "directivePauseOnBlur: aBool\x0a\x0a\x09\x22http://processingjs.org/refe
 messageSends: ["ifTrue:ifFalse:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_directivePreload_",
@@ -2300,7 +2283,7 @@ source: "directivePreload: aFileName\x0a\x0a\x09\x22http://processingjs.org/refe
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_draw",
@@ -2317,7 +2300,7 @@ source: " draw\x0a \x0a \x09self subclassResponsibility",
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ellipseMode_",
@@ -2334,7 +2317,7 @@ source: "ellipseMode: aMode\x0a\x09\x22MODE \x09Either CENTER, RADIUS, CORNER, o
 messageSends: ["ellipseMode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ellipseX_y_width_height_",
@@ -2351,7 +2334,7 @@ source: "ellipseX: aX y: aY width: aWidth height: aHeight \x0a\x0a\x09processing
 messageSends: ["ellipse:y:width:height:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_emissive_value2_value3_",
@@ -2368,7 +2351,7 @@ source: "emissive: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int 
 messageSends: ["emissivet:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_emissiveColor_",
@@ -2385,7 +2368,7 @@ source: "emissiveColor: aColor\x0a\x09\x22gray int or float: number specifying v
 messageSends: ["emissive:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_emissiveGray_",
@@ -2402,7 +2385,7 @@ source: "emissiveGray: aGrayValue\x0a\x09\x22gray int or float: number specifyin
 messageSends: ["emissive:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_endCamera",
@@ -2419,7 +2402,7 @@ source: "endCamera\x0a\x09\x22The beginCamera() and endCamera() functions enable
 messageSends: ["endCamera"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_endShape",
@@ -2436,7 +2419,7 @@ source: "endShape\x0a\x0a\x09processing endShape\x0a    \x0a    \x22The endShape
 messageSends: ["endShape"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_endShape_",
@@ -2453,7 +2436,7 @@ source: "endShape: aMode\x0a\x09\x22MODE \x09Use CLOSE to close the shape\x22\x0
 messageSends: ["endShape:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillColor_",
@@ -2470,7 +2453,7 @@ source: "fillColor: aColor \x0a\x09\x22color \x09color: any value of the color d
 messageSends: ["fill:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillColor_alpha_",
@@ -2487,7 +2470,7 @@ source: "fillColor: aColor alpha: anAlpha\x0a\x09\x22color \x09color: any value 
 messageSends: ["fill:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillGray_",
@@ -2504,7 +2487,7 @@ source: "fillGray: aGray \x0a\x09\x22gray \x09int or float: number specifying va
 messageSends: ["fill:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillGray_alpha_",
@@ -2521,7 +2504,7 @@ source: "fillGray: aGray alpha: anAlpha\x0a\x09\x22gray \x09int or float: number
 messageSends: ["fill:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillHex_",
@@ -2538,7 +2521,7 @@ source: "fillHex: aHex \x0a\x09\x22hex \x09int: color value in hexadecimal notat
 messageSends: ["fill:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillHex_alpha_",
@@ -2555,7 +2538,7 @@ source: "fillHex: aHex alpha: anAlpha\x0a\x09\x22hex \x09int: color value in hex
 messageSends: ["fill:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillValue1_value2_value3_",
@@ -2572,7 +2555,7 @@ source: "fillValue1: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22value1 
 messageSends: ["fill:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_fillValue1_value2_value3_alpha_",
@@ -2589,7 +2572,7 @@ source: "fillValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a\
 messageSends: ["fill:value2:value3:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_filterMode_",
@@ -2606,7 +2589,7 @@ source: "filterMode: aMode\x0a\x09\x22MODE Either THRESHOLD, GRAY, INVERT, POSTE
 messageSends: ["filter:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_filterMode_param_",
@@ -2623,7 +2606,7 @@ source: "filterMode: aMode param: aParam\x0a\x09\x22MODE Either THRESHOLD, GRAY,
 messageSends: ["filter:param:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_frameCount",
@@ -2641,7 +2624,7 @@ source: "frameCount\x0a\x09\x22The system variable frameCount contains the numbe
 messageSends: ["frameCount"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_frameRate",
@@ -2659,7 +2642,7 @@ source: "frameRate\x0a\x09\x22The system variable frameRate contains the approxi
 messageSends: ["frameRate"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_frameRate_",
@@ -2676,7 +2659,7 @@ source: "frameRate: aFps\x0a\x09\x22fps int: number of frames per second \x22\x0
 messageSends: ["frameRate:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_frustumLeft_right_bottom_top_near_far_",
@@ -2693,7 +2676,7 @@ source: "frustumLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNea
 messageSends: ["frustum:right:bottom:top:near:far:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_get",
@@ -2711,7 +2694,7 @@ source: "get\x0a\x09\x22x int: x-coordinate of the pixel \x0a\x09y int: y-coordi
 messageSends: ["newImage:", "get"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_getX_y_",
@@ -2729,7 +2712,7 @@ source: "getX: aX y: aY\x0a\x09\x22x int: x-coordinate of the pixel \x0a\x09y in
 messageSends: ["get:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_getX_y_width_height_",
@@ -2747,7 +2730,7 @@ source: "getX: aX y: aY width: aWidth height: aHeight\x0a\x09\x22x int: x-coordi
 messageSends: ["newImage:", "get:y:width:height:"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_green_",
@@ -2765,7 +2748,7 @@ source: "green: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\
 messageSends: ["green:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_height",
@@ -2783,7 +2766,7 @@ source: "height\x0a\x0a\x09^processing height",
 messageSends: ["height"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_hue_",
@@ -2801,7 +2784,7 @@ source: "hue: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x0
 messageSends: ["hue:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_image_x_y_",
@@ -2818,7 +2801,7 @@ source: "image: aPjsImage x: aX y: aY \x0a\x09\x22img PImage: the image to displ
 messageSends: ["image:x:y:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_image_x_y_width_height_",
@@ -2835,7 +2818,7 @@ source: "image: aPjsImage x: aX y: aY width: aWidth height: aHeight \x0a\x09\x22
 messageSends: ["image:x:y:width:height:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_imageMode_",
@@ -2852,7 +2835,7 @@ source: "imageMode: aMode\x0a\x09\x22MODE Either CORNER, CORNERS, or CENTER \x22
 messageSends: ["imageMode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_initialize",
@@ -2869,7 +2852,7 @@ source: "initialize\x0a\x0a\x09processing := <Processing.instances[0]>.\x0a\x09\
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_isFocused",
@@ -2887,7 +2870,7 @@ source: "isFocused\x0a\x09\x22Confirms if a Processing program is \x22\x22focuse
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_isKeyPressed",
@@ -2905,7 +2888,7 @@ source: "isKeyPressed \x0a    \x0a   \x22The boolean system variable keyPressed 
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_isMousePressed",
@@ -2923,7 +2906,7 @@ source: "isMousePressed \x0a    \x0a   \x22Variable storing if a mouse button is
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_isOnline",
@@ -2941,7 +2924,7 @@ source: "isOnline\x0a\x09\x22Confirms if a Processing program is running inside 
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_key",
@@ -2959,7 +2942,7 @@ source: "key \x0a    \x0a   \x22The system variable key always contains the valu
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_keyCode",
@@ -2977,7 +2960,7 @@ source: "keyCode \x0a    \x0a   \x22The system variable keyCode is used to detec
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_keyPressed",
@@ -2994,7 +2977,7 @@ source: "keyPressed \x0a    \x0a   \x22The keyPressed() function is called once 
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_keyReleased",
@@ -3011,7 +2994,7 @@ source: "keyReleased \x0a    \x0a   \x22The keyReleased() function is called onc
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_keyTyped",
@@ -3028,7 +3011,7 @@ source: "keyTyped \x0a    \x0a   \x22The keyTyped() function is called once ever
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lerpColor1_color2_amt_",
@@ -3046,7 +3029,7 @@ source: "lerpColor1: aColor1 color2: aColor2 amt: aAMT\x0a\x09\x22c1 \x09color: 
 messageSends: ["lerpColor:color2:amt:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lightFalloff_linear_quadratic_",
@@ -3063,7 +3046,7 @@ source: "lightFalloff: aConstant linear: aLinear quadratic: aQuadric\x0a\x09\x22
 messageSends: ["lightFalloff:linear:quadratic:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lightSpeculartV1_v2_v3_",
@@ -3080,7 +3063,7 @@ source: "lightSpeculartV1: aV1 v2: aV2 v3: aV3 \x0a\x09\x22v1 int or float: red 
 messageSends: ["lightSpecular:v2:v3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lights",
@@ -3097,7 +3080,7 @@ source: "lights\x0a\x09\x22Sets the default ambient light, directional light, fa
 messageSends: ["lights"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lineX1_y1_x2_y2_",
@@ -3114,7 +3097,7 @@ source: "lineX1: aX1  y1: aY1 x2: aX2 y2: aY2 \x0a\x0a\x09processing line: aX1 y
 messageSends: ["line:y1:x2:y2:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_lineX1_y1_z1_x2_y2_z2_",
@@ -3131,7 +3114,7 @@ source: "lineX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2\x0a\x0a\x09process
 messageSends: ["line:y1:z1:x2:y2:z2:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_loadImage_",
@@ -3149,7 +3132,7 @@ source: "loadImage: aFileName\x0a\x09\x22filename string: name of file to load o
 messageSends: ["newImage:", "loadImage:"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_loadPixels",
@@ -3166,7 +3149,7 @@ source: "loadPixels\x0a    \x0a\x09 processing loadPixels\x0a    \x0a    \x22Loa
 messageSends: ["loadPixels"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_modelX_y_z_",
@@ -3184,7 +3167,7 @@ source: "modelX: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to b
 messageSends: ["modelX:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_modelY_y_z_",
@@ -3202,7 +3185,7 @@ source: "modelY: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to b
 messageSends: ["modelY:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_modelZ_y_z_",
@@ -3220,7 +3203,7 @@ source: "modelZ: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to b
 messageSends: ["modelZ:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseButton",
@@ -3238,7 +3221,7 @@ source: "mouseButton \x0a    \x0a   \x22Processing automatically tracks if the m
 messageSends: ["mouseButton"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseClicked",
@@ -3255,7 +3238,7 @@ source: "mouseClicked\x0a    \x0a   \x22The mouseClicked() function is called on
 messageSends: ["subclassRespnsubility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseDragged",
@@ -3272,7 +3255,7 @@ source: "mouseDragged\x0a    \x0a   \x22The mouseDragged() function is called on
 messageSends: ["subclassRespnsubility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseMoved",
@@ -3289,7 +3272,7 @@ source: "mouseMoved\x0a    \x0a   \x22The mouseMoved() function is called every 
 messageSends: ["subclassRespnsubility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseOut",
@@ -3306,7 +3289,7 @@ source: "mouseOut\x0a    \x0a   \x22The mouseOut() function is called when the m
 messageSends: ["subclassRespnsubility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseOver",
@@ -3323,7 +3306,7 @@ source: "mouseOver\x0a    \x0a   \x22The mouseOver() function is called when the
 messageSends: ["subclassRespnsubility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mousePressed",
@@ -3340,7 +3323,7 @@ source: "mousePressed \x0a    \x0a   \x22The mousePressed() function is called o
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseReleased",
@@ -3357,7 +3340,7 @@ source: "mouseReleased \x0a    \x0a   \x22The mouseReleased() function is called
 messageSends: ["subclassResponsibility"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseX",
@@ -3375,7 +3358,7 @@ source: "mouseX \x0a    \x0a   \x22The system variable mouseX always contains th
 messageSends: ["mouseX"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_mouseY",
@@ -3393,7 +3376,7 @@ source: "mouseY \x0a    \x0a   \x22The system variable mouseY always contains th
 messageSends: ["mouseY"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noCursor",
@@ -3410,7 +3393,7 @@ source: "noCursor\x0a\x09\x22Hides the cursor from view. Will not work when runn
 messageSends: ["noCursor"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noFill",
@@ -3427,7 +3410,7 @@ source: "noFill\x0a\x09\x22Disables filling geometry. If both noStroke() and noF
 messageSends: ["noFill"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noLights",
@@ -3444,7 +3427,7 @@ source: "noLights\x0a\x09\x22Disable all lighting. Lighting is turned off by def
 messageSends: ["noLights"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noSmooth",
@@ -3461,7 +3444,7 @@ source: "noSmooth\x0a\x09\x22Draws all geometry with jagged (aliased) edges.\x22
 messageSends: ["noSmooth"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noStroke",
@@ -3478,7 +3461,7 @@ source: "noStroke\x0a\x09\x22Disables drawing the stroke (outline). If both noSt
 messageSends: ["noStroke"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_noTint",
@@ -3495,7 +3478,7 @@ source: "noTint\x0a\x09\x22Removes the current fill value for displaying images 
 messageSends: ["noTint"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_normal_ny_nz_",
@@ -3512,7 +3495,7 @@ source: "normal: aX ny: aY nz: aZ\x0a\x09\x0a\x09\x22nx int or float: direction 
 messageSends: ["normal:ny:nz:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_ortho",
@@ -3529,7 +3512,7 @@ source: "ortho\x0a\x09\x22left float: left plane of the clipping volume \x0a\x09
 messageSends: ["ortho"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_orthoLeft_right_bottom_top_near_far_",
@@ -3546,7 +3529,7 @@ source: "orthoLeft: aLeft  right: aRight  bottom: aBottom top: aTop near: aNear 
 messageSends: ["ortho:right:bottom:top:near:far:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_perspective",
@@ -3563,7 +3546,7 @@ source: "perspective\x0a\x09\x22fov float: field-of-view angle (in radians) for 
 messageSends: ["perspective"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_perspectiveFov_aspect_zNear_zFar_",
@@ -3580,7 +3563,7 @@ source: "perspectiveFov: aFov aspect: anAspect zNear: aZNear zFar: aZFar\x0a\x09
 messageSends: ["perspective:aspect:zNear:zFar:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pixelsAt_",
@@ -3598,7 +3581,7 @@ source: "pixelsAt: anIndex\x0a    \x0a\x09^ < processing.pixels[ anIndex ] >\x0a
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pixelsAt_put_",
@@ -3615,7 +3598,7 @@ source: "pixelsAt: anIndex put: aValue\x0a    \x0a\x09 < processing.pixels[ anIn
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pmouseX",
@@ -3633,7 +3616,7 @@ source: "pmouseX \x0a    \x0a   \x22The system variable pmouseX always contains 
 messageSends: ["pmouseX"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pmouseY",
@@ -3651,7 +3634,7 @@ source: "pmouseY \x0a    \x0a   \x22The system variable pmouseY always contains 
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pointLightV1_v2_v3_x_y_z_",
@@ -3668,7 +3651,7 @@ source: "pointLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ\x0a\x09\x22v1 int o
 messageSends: ["pointLight:v2:v3:x:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pointX_y_",
@@ -3685,7 +3668,7 @@ source: "pointX: aX y: aY \x0a\x0a\x09processing point: aX y: aY ",
 messageSends: ["point:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pointX_y_z_",
@@ -3702,7 +3685,7 @@ source: "pointX: aX y: aY z: aZ\x0a\x0a\x09processing point: aX y: aY z: aZ",
 messageSends: ["point:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_popMatrix",
@@ -3719,7 +3702,7 @@ source: "popMatrix\x0a\x09\x22Pops the current transformation matrix off the mat
 messageSends: ["popMatrix"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_printCamera",
@@ -3736,7 +3719,7 @@ source: "printCamera\x0a\x09\x22Prints the current camera matrix to the text win
 messageSends: ["printCamera"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_printMatrix",
@@ -3753,7 +3736,7 @@ source: "printMatrix\x0a\x09\x22Prints the current matrix to the text window\x22
 messageSends: ["printMatrix"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_printProjection",
@@ -3770,7 +3753,7 @@ source: "printProjection\x0a\x09\x22Prints the current projection matrix to the 
 messageSends: ["printProjection"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_processing",
@@ -3786,7 +3769,7 @@ source: "processing\x0a \x0a \x09^processing",
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_pushMatrix",
@@ -3803,7 +3786,7 @@ source: "pushMatrix\x0a\x09\x22Pushes the current transformation matrix onto the
 messageSends: ["pushMatrix"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_quadX1_y1_x2_y2_x3_y3_x4_y4_",
@@ -3820,7 +3803,7 @@ source: "quadX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3 x4: aX4 y4: aY4\x
 messageSends: ["quad:y1:x2:y2:x3:y3:x4:y4:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rectMode_",
@@ -3837,7 +3820,7 @@ source: "rectMode: aMode\x0a\x09\x22MODE \x09Either CENTER, RADIUS, CORNER, or C
 messageSends: ["rectMode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rectX_y_width_height_",
@@ -3854,7 +3837,7 @@ source: "rectX: aX y: aY width: aWidth height: aHeight \x0a\x0a\x09processing re
 messageSends: ["rect:y:width:height:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rectX_y_width_height_radius_",
@@ -3871,7 +3854,7 @@ source: "rectX: aX y: aY width: aWidth height: aHeight radius: aRadius\x0a\x0a\x
 messageSends: ["rect:y:width:height:radius:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rectX_y_width_height_tlradius_trradius_brradius_blradius_",
@@ -3888,7 +3871,7 @@ source: "rectX: aX y: aY width: aWidth height: aHeight tlradius: aTLRadius  trra
 messageSends: ["rect:y:width:height:tlradius:trradius:brradius:blradius:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_red_",
@@ -3906,7 +3889,7 @@ source: "red: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x0
 messageSends: ["red:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_requestImage_",
@@ -3924,7 +3907,7 @@ source: "requestImage: aFilename \x0a\x09\x22filename String: name of file to lo
 messageSends: ["newImage:", "requestImage:"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_requestImage_extension_",
@@ -3942,7 +3925,7 @@ source: "requestImage: aFilename extension: aExtension\x0a\x09\x22filename Strin
 messageSends: ["newImage:", "requestImage:extension:"],
 referencedClasses: ["PjsImage"]
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_resetMatrix",
@@ -3959,7 +3942,7 @@ source: "resetMatrix\x0a\x09\x22Replaces the current matrix with the identity ma
 messageSends: ["resetMatrix"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rotate_",
@@ -3976,7 +3959,7 @@ source: "rotate: anAngle\x0a\x09\x22angle float: angle of rotation specified in 
 messageSends: ["rotate:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rotateX_",
@@ -3993,7 +3976,7 @@ source: "rotateX: anAngle\x0a\x09\x22angle float: angle of rotation specified in
 messageSends: ["rotateX:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rotateY_",
@@ -4010,7 +3993,7 @@ source: "rotateY: anAngle\x0a\x09\x22angle float: angle of rotation specified in
 messageSends: ["rotateY:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_rotateZ_",
@@ -4027,7 +4010,7 @@ source: "rotateZ: anAngle\x0a\x09\x22angle float: angle of rotation specified in
 messageSends: ["rotateZ:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_saturation_",
@@ -4045,7 +4028,7 @@ source: "saturation: aColor\x0a\x09\x22color \x09any value of the color datatype
 messageSends: ["saturation:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_saveFrame",
@@ -4062,7 +4045,7 @@ source: "saveFrame\x0a\x09\x22filename String: any sequence of letters and numbe
 messageSends: ["saveFrame"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_saveFrame_",
@@ -4079,7 +4062,7 @@ source: "saveFrame: aFileNameAndExt\x0a\x09\x22filename String: any sequence of 
 messageSends: ["saveFrame:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_saveImage_",
@@ -4096,7 +4079,7 @@ source: "saveImage: aFileName\x0a\x09\x22filename String: any sequence of letter
 messageSends: ["save:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_scaleSize_",
@@ -4113,7 +4096,7 @@ source: "scaleSize: aSize\x0a\x09\x22size float: percentage to scale the object 
 messageSends: ["scale:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_scaleX_y_",
@@ -4130,7 +4113,7 @@ source: "scaleX: aX y: aY \x0a\x09\x22size float: percentage to scale the object
 messageSends: ["scale:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_scaleX_y_z_",
@@ -4147,7 +4130,7 @@ source: "scaleX: aX y: aY z: aZ\x0a\x09\x22size float: percentage to scale the o
 messageSends: ["scale:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_screenHeight",
@@ -4165,7 +4148,7 @@ source: "screenHeight\x0a\x09\x22System variable which stores the dimensions of 
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_screenWidth",
@@ -4183,7 +4166,7 @@ source: "screenWidth\x0a\x09\x22System variable which stores the dimensions of t
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_screenX_y_z_",
@@ -4201,7 +4184,7 @@ source: "screenX: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to 
 messageSends: ["screenX:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_screenY_y_z_",
@@ -4219,7 +4202,7 @@ source: "screenY: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to 
 messageSends: ["screenY:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_screenZ_y_z_",
@@ -4237,7 +4220,7 @@ source: "screenZ: anX y: aY z: aZ\x0a\x09\x22x int or float: 3D x coordinate to 
 messageSends: ["screenZ:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_setX_y_color_",
@@ -4254,7 +4237,7 @@ source: "setX: aX y: aY color: aColor\x0a    \x0a   \x22 x int: x-coordinate of 
 messageSends: ["set:y:color:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_setX_y_image_",
@@ -4271,7 +4254,7 @@ source: "setX: aX y: aY image: aPjsImage\x0a    \x0a   \x22 x int: x-coordinate 
 messageSends: ["set:y:image:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_shininess_",
@@ -4288,7 +4271,7 @@ source: "shininess: aShine\x0a\x09\x22shine float: degree of shininess  \x22\x0a
 messageSends: ["shininess:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_size_height_",
@@ -4305,7 +4288,7 @@ source: "size: aWidth height: aHeight \x0a\x0a\x09\x22width int: width of the di
 messageSends: ["size:height:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_smooth",
@@ -4322,7 +4305,7 @@ source: "smooth\x0a\x09\x22Draws all geometry with smooth (anti-aliased) edges. 
 messageSends: ["smooth"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_specular_value2_value3_",
@@ -4339,7 +4322,7 @@ source: "specular: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22gray int 
 messageSends: ["specular:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_specularColor_",
@@ -4356,7 +4339,7 @@ source: "specularColor: aColor\x0a\x09\x22gray int or float: number specifying v
 messageSends: ["specular:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_specularGray_",
@@ -4373,7 +4356,7 @@ source: "specularGray: aGrayValue\x0a\x09\x22gray int or float: number specifyin
 messageSends: ["specular:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_sphere_",
@@ -4390,7 +4373,7 @@ source: "sphere: aRadius\x0a\x09\x22radius \x09int or float: the radius of the s
 messageSends: ["sphere:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_sphereDetail_",
@@ -4407,7 +4390,7 @@ source: "sphereDetail: aRes\x0a\x09\x22res \x09int: number of segments (minimum 
 messageSends: ["sphereDetail:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_sphereDetail_vres_",
@@ -4424,7 +4407,7 @@ source: "sphereDetail: aURes vres: aVRes\x0a\x09\x22ures \x09int: number of segm
 messageSends: ["sphereDetail:vres:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_spotLightV1_v2_v3_x_y_z_angle_concentration_",
@@ -4441,7 +4424,7 @@ source: "spotLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle conce
 messageSends: ["spotLight:v2:v3:x:y:z:angle:concentration:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeCap_",
@@ -4458,7 +4441,7 @@ source: "strokeCap: aMode\x0a\x09\x22MODE \x09Either SQUARE, PROJECT, or ROUND.\
 messageSends: ["strokeCap:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeColor_",
@@ -4475,7 +4458,7 @@ source: "strokeColor: aColor \x0a\x09\x22color \x09color: any value of the color
 messageSends: ["stroke:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeColor_alpha_",
@@ -4492,7 +4475,7 @@ source: "strokeColor: aColor alpha: anAlpha\x0a\x09\x22color \x09color: any valu
 messageSends: ["stroke:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeGray_",
@@ -4509,7 +4492,7 @@ source: "strokeGray: aGray \x0a\x09\x22gray \x09int or float: number specifying 
 messageSends: ["stroke:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeGray_alpha_",
@@ -4526,7 +4509,7 @@ source: "strokeGray: aGray alpha: anAlpha\x0a\x09\x22gray \x09int or float: numb
 messageSends: ["stroke:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeHex_",
@@ -4543,7 +4526,7 @@ source: "strokeHex: aHex \x0a\x09\x22hex \x09int: color value in hexadecimal not
 messageSends: ["stroke:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeHex_alpha_",
@@ -4560,7 +4543,7 @@ source: "strokeHex: aHex alpha: anAlpha\x0a\x09\x22hex \x09int: color value in h
 messageSends: ["stroke:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeJoin_",
@@ -4577,7 +4560,7 @@ source: "strokeJoin: aMode\x0a\x09\x22MODE \x09Either MITER, BEVEL, or ROUND\x22
 messageSends: ["strokeJoin:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeValue1_value2_value3_",
@@ -4594,7 +4577,7 @@ source: "strokeValue1: aValue1 value2: aValue2 value3: aValue3 \x0a\x09\x22value
 messageSends: ["stroke:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeValue1_value2_value3_alpha_",
@@ -4611,7 +4594,7 @@ source: "strokeValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0
 messageSends: ["stroke:value2:value3:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_strokeWeight_",
@@ -4628,7 +4611,7 @@ source: "strokeWeight: aWidth\x0a\x09\x22width \x09int or float: the weight (in 
 messageSends: ["strokeWeight:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_texture_",
@@ -4645,7 +4628,7 @@ source: "texture: aPjsImage\x0a\x09\x22Sets a texture to be applied to vertex po
 messageSends: ["texture:", "pjsImage"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_textureMode_",
@@ -4662,7 +4645,7 @@ source: "textureMode: aMode\x0a\x09\x22MODE \x09either IMAGE or NORMALIZED\x22\x
 messageSends: ["textureMode:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintColor_",
@@ -4679,7 +4662,7 @@ source: "tintColor: aColor \x0a\x09\x22gray int or float: any valid number \x0a\
 messageSends: ["tint:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintColor_alpha_",
@@ -4696,7 +4679,7 @@ source: "tintColor: aColor alpha: anAlpha\x0a\x09\x22gray int or float: any vali
 messageSends: ["tint:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintGray_",
@@ -4713,7 +4696,7 @@ source: "tintGray: aGray\x0a\x09\x22gray int or float: any valid number \x0a\x09
 messageSends: ["tint:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintGray_alpha_",
@@ -4730,7 +4713,7 @@ source: "tintGray: aGray alpha: anAlpha\x0a\x09\x22gray int or float: any valid 
 messageSends: ["tint:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintHex_",
@@ -4747,7 +4730,7 @@ source: "tintHex: aHex\x0a\x09\x22gray int or float: any valid number \x0a\x09al
 messageSends: ["tint:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintHex_alpha_",
@@ -4764,7 +4747,7 @@ source: "tintHex: aHex alpha: anAlpha\x0a\x09\x22gray int or float: any valid nu
 messageSends: ["tint:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintValue1_value2_value3_",
@@ -4781,7 +4764,7 @@ source: "tintValue1: aValue1 value2: aValue2 value3: aValue3\x0a\x09\x22gray int
 messageSends: ["tint:value2:value3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_tintValue1_value2_value3_alpha_",
@@ -4798,7 +4781,7 @@ source: "tintValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a\
 messageSends: ["tint:value2:value3:alpha:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_translateX_y_",
@@ -4815,7 +4798,7 @@ source: "translateX: aX y: aY \x0a\x09\x22x int or float: left/right translation
 messageSends: ["translate:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_translateX_y_z_",
@@ -4832,7 +4815,7 @@ source: "translateX: aX y: aY z: aZ\x0a\x09\x22x int or float: left/right transl
 messageSends: ["translate:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_triangleX1_y1_x2_y2_x3_y3_",
@@ -4849,7 +4832,7 @@ source: "triangleX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3\x0a\x0a\x09pr
 messageSends: ["triangle:y1:x2:y2:x3:y3:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_updatePixels",
@@ -4866,7 +4849,7 @@ source: "updatePixels\x0a    \x0a   \x22Updates the display window (or an image)
 messageSends: ["updatePixels"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_vertexX_y_",
@@ -4883,7 +4866,7 @@ source: "vertexX: aX y: aY  \x0a\x09\x22x \x09int or float: x-coordinate of the 
 messageSends: ["vertex:y:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_vertexX_y_u_v_",
@@ -4900,7 +4883,7 @@ source: "vertexX: aX y: aY u: anU v: aV\x0a\x09\x22x \x09int or float: x-coordin
 messageSends: ["vertex:y:u:v:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_vertexX_y_z_",
@@ -4917,7 +4900,7 @@ source: "vertexX: aX y: aY z: aZ \x0a\x09\x22x \x09int or float: x-coordinate of
 messageSends: ["vertex:y:z:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_vertexX_y_z_u_v_",
@@ -4934,7 +4917,7 @@ source: "vertexX: aX y: aY z: aZ u: anU v: aV\x0a\x09\x22x \x09int or float: x-c
 messageSends: ["vertex:y:z:u:v:"],
 referencedClasses: []
 }),
-smalltalk.PjsSketch);
+smalltalk.PjsSketchObject);
 
 smalltalk.addMethod(
 "_width",
@@ -4952,8 +4935,63 @@ source: "width\x0a\x0a\x09^processing width",
 messageSends: ["width"],
 referencedClasses: []
 }),
+smalltalk.PjsSketchObject);
+
+
+
+smalltalk.addClass('PjsSketch', smalltalk.PjsSketchObject, [], 'Processing-Core');
+smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+category: 'initialization',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    return self;
+},
+args: [],
+source: "activateFunctions\x0a\x0a\x09processing at: 'draw' put: [self draw].",
+messageSends: ["at:put:", "draw"],
+referencedClasses: []
+}),
 smalltalk.PjsSketch);
 
+smalltalk.addMethod(
+"_cursor",
+smalltalk.method({
+selector: "cursor",
+category: 'environment',
+fn: function () {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(self['@processing'], "_cursor", []);
+    return $1;
+},
+args: [],
+source: "cursor\x0a\x09\x22MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT \x0a\x09image PImage: any variable of type PImage \x0a\x09x int: the horizonal active spot of the cursor \x0a\x09y int: the vertical active spot of the cursor \x22\x0a    \x0a\x09 ^processing cursor\x0a \x0a \x09\x22Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. \x0a    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. \x0a    It is not possible to load an image as the cursor if you are exporting your program for the Web. \x0a    The values for parameters x and y must be less than the dimensions of the image.\x22",
+messageSends: ["cursor"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+
+smalltalk.addMethod(
+"_overrideFunctions",
+smalltalk.method({
+selector: "overrideFunctions",
+category: 'not yet classified',
+fn: function () {
+    var self = this;
+    processing.draw = function () {};
+    return self;
+},
+args: [],
+source: "overrideFunctions\x0a\x0a\x09 < processing.draw = function() {}; >.",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.PjsSketch.klass);
 
 smalltalk.addMethod(
 "_start",

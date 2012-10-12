@@ -464,11 +464,11 @@ width: aValue
 	pjsShape width: aValue
 ! !
 
-Object subclass: #PjsSketch
+Object subclass: #PjsSketchObject
 	instanceVariableNames: 'processing'
 	package: 'Processing-Core'!
 
-!PjsSketch methodsFor: '2D primitives'!
+!PjsSketchObject methodsFor: '2D primitives'!
 
 arcX: aX y: aY width: aWidth height: aHeight start: aStart stop: aStop
 
@@ -525,7 +525,7 @@ triangleX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3
 	processing triangle: aX1 y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3
 ! !
 
-!PjsSketch methodsFor: '3D primitives'!
+!PjsSketchObject methodsFor: '3D primitives'!
 
 box: aSizeIntOrFloat
 	"size 	int or float: dimension of the box in all dimensions, creates a cube"
@@ -560,7 +560,7 @@ sphereDetail: aURes vres: aVRes
 	processing sphereDetail: aURes vres: aVRes
 ! !
 
-!PjsSketch methodsFor: 'accessing'!
+!PjsSketchObject methodsFor: 'accessing'!
 
 height
 
@@ -577,7 +577,7 @@ width
 	^processing width
 ! !
 
-!PjsSketch methodsFor: 'attributes'!
+!PjsSketchObject methodsFor: 'attributes'!
 
 ellipseMode: aMode
 	"MODE 	Either CENTER, RADIUS, CORNER, or CORNERS."
@@ -651,7 +651,7 @@ strokeWeight: aWidth
     This function does not work with the P3D renderer (please see the size() reference for more information)."
 ! !
 
-!PjsSketch methodsFor: 'camera'!
+!PjsSketchObject methodsFor: 'camera'!
 
 beginCamera
 	"The beginCamera() and endCamera() functions enable advanced customization of the camera space.
@@ -812,7 +812,7 @@ printProjection
     	processing printProjection
 ! !
 
-!PjsSketch methodsFor: 'color creating and reading'!
+!PjsSketchObject methodsFor: 'color creating and reading'!
 
 alpha: aColor
 	"color 	any value of the color datatype"
@@ -1015,7 +1015,7 @@ saturation: aColor
    "Extracts the saturation value from a color."
 ! !
 
-!PjsSketch methodsFor: 'color settings'!
+!PjsSketchObject methodsFor: 'color settings'!
 
 background: aValue1	value2: aValue2 value3: aValue3 
 	"value1 	int or float: red or hue value (depending on the current color mode)
@@ -1470,7 +1470,7 @@ strokeValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
     The default maximum value is 255."
 ! !
 
-!PjsSketch methodsFor: 'coordinates'!
+!PjsSketchObject methodsFor: 'coordinates'!
 
 modelX: anX y: aY z: aZ
 	"x int or float: 3D x coordinate to be mapped 
@@ -1550,7 +1550,7 @@ screenZ: anX y: aY z: aZ
      it will appear on a (two-dimensional) screen."
 ! !
 
-!PjsSketch methodsFor: 'curves'!
+!PjsSketchObject methodsFor: 'curves'!
 
 bezierDetail: aDetailint
 	"Sets the resolution at which Beziers display. The default value is 20. This function is only useful when using the P3D or OPENGL renderer as the default (JAVA2D) renderer does not use this information."
@@ -1647,7 +1647,7 @@ curveX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 
 	processing curve: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 x4: aX4 y4: aY4 z4: aZ4
 ! !
 
-!PjsSketch methodsFor: 'environmant'!
+!PjsSketchObject methodsFor: 'environmant'!
 
 cursor
 	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
@@ -1751,7 +1751,7 @@ screenWidth
 	^< processing.screen.width >
 ! !
 
-!PjsSketch methodsFor: 'image loading and displaying '!
+!PjsSketchObject methodsFor: 'image loading and displaying '!
 
 createImageWidth: aWidth height: aHeight format: aFormat
 	"width int: width in pixels 
@@ -2066,7 +2066,7 @@ tintValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
      The tint() method is also used to control the coloring of textures in 3D."
 ! !
 
-!PjsSketch methodsFor: 'image pixels'!
+!PjsSketchObject methodsFor: 'image pixels'!
 
 blendImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
 	"x int: X coordinate of the source's upper left corner 
@@ -2380,7 +2380,7 @@ updatePixels
 	 processing updatePixels
 ! !
 
-!PjsSketch methodsFor: 'image saving'!
+!PjsSketchObject methodsFor: 'image saving'!
 
 saveFrame
 	"filename String: any sequence of letters and numbers 
@@ -2427,19 +2427,14 @@ saveImage: aFileName
      "Saves an image from the display window. Images are saved in the PNG format as a Data URI, which can be displayed in the browser in a new window."
 ! !
 
-!PjsSketch methodsFor: 'initialization'!
-
-activateFunctions
-
-	processing at: 'draw' put: [self draw].
-!
+!PjsSketchObject methodsFor: 'initialization'!
 
 initialize
 
 	processing := <Processing.instances[0]>.
 ! !
 
-!PjsSketch methodsFor: 'lights'!
+!PjsSketchObject methodsFor: 'lights'!
 
 ambientLightV1: aV1 v2: aV2 v3: aV3 
 	"v1 int or float: red or hue value 
@@ -2599,7 +2594,7 @@ spotLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration:
      The angle parameter affects angle of the spotlight cone."
 ! !
 
-!PjsSketch methodsFor: 'material properties'!
+!PjsSketchObject methodsFor: 'material properties'!
 
 ambient: aValue1 value2: aValue2 value3: aValue3 
 	"gray int or float: number specifying value between white and black 
@@ -2745,14 +2740,14 @@ specularGray: aGrayValue
     Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
 ! !
 
-!PjsSketch methodsFor: 'processing overrides'!
+!PjsSketchObject methodsFor: 'processing overrides'!
 
 draw
  
  	self subclassResponsibility
 ! !
 
-!PjsSketch methodsFor: 'sketch directions'!
+!PjsSketchObject methodsFor: 'sketch directions'!
 
 directiveCrisp: aBool
 
@@ -2786,7 +2781,7 @@ directivePreload: aFileName
 	  < p.externals.sketch.options.preload = aFileName >
 ! !
 
-!PjsSketch methodsFor: 'sketch keyboard'!
+!PjsSketchObject methodsFor: 'sketch keyboard'!
 
 isKeyPressed 
     
@@ -2841,7 +2836,7 @@ keyTyped
 	self subclassResponsibility
 ! !
 
-!PjsSketch methodsFor: 'sketch mouse'!
+!PjsSketchObject methodsFor: 'sketch mouse'!
 
 isMousePressed 
     
@@ -2939,7 +2934,7 @@ pmouseY
 	^< processing.pmouseY >
 ! !
 
-!PjsSketch methodsFor: 'sketch structure'!
+!PjsSketchObject methodsFor: 'sketch structure'!
 
 size: aWidth height: aHeight 
 
@@ -2963,7 +2958,7 @@ size: aWidth height: aHeight
     Any code that appears before the size() command may run more than once, which can lead to confusing results."
 ! !
 
-!PjsSketch methodsFor: 'sketch transform'!
+!PjsSketchObject methodsFor: 'sketch transform'!
 
 applyMatrix:aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15
 	
@@ -3157,7 +3152,7 @@ translateX: aX y: aY z: aZ
     This function can be further controlled by the pushMatrix() and popMatrix()."
 ! !
 
-!PjsSketch methodsFor: 'vertex'!
+!PjsSketchObject methodsFor: 'vertex'!
 
 beginShape
 
@@ -3393,7 +3388,39 @@ vertexX: aX y: aY z: aZ u: anU v: aV
     but this relation can be changed with textureMode()."
 ! !
 
+PjsSketchObject subclass: #PjsSketch
+	instanceVariableNames: ''
+	package: 'Processing-Core'!
+
+!PjsSketch methodsFor: 'environment'!
+
+cursor
+	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
+	image PImage: any variable of type PImage 
+	x int: the horizonal active spot of the cursor 
+	y int: the vertical active spot of the cursor "
+    
+	 ^processing cursor
+ 
+ 	"Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. 
+    If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. 
+    It is not possible to load an image as the cursor if you are exporting your program for the Web. 
+    The values for parameters x and y must be less than the dimensions of the image."
+! !
+
+!PjsSketch methodsFor: 'initialization'!
+
+activateFunctions
+
+	processing at: 'draw' put: [self draw].
+! !
+
 !PjsSketch class methodsFor: 'not yet classified'!
+
+overrideFunctions
+
+	 < processing.draw = function() {}; >.
+!
 
 start
 
