@@ -1,6 +1,26 @@
 smalltalk.addPackage('Processing-Examples', {});
 smalltalk.addClass('ProcessingCircles', smalltalk.PjsSketch, ['radius', 'x', 'y', 'nY', 'nX', 'roty', 'delay'], 'Processing-Examples');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+category: 'not yet classified',
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["mouseMoved", function () {return smalltalk.send(self, "_mouseMoved", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
+    return self;
+},
+args: [],
+source: "activateFunctions\x0a\x0a\x09self processing at: 'setup' put: [self setup].\x0a\x09self processing at: 'draw' put: [self draw].\x0a\x09self processing at: 'mouseMoved' put: [self mouseMoved].\x0a    \x0a    self processing setup.",
+messageSends: ["at:put:", "setup", "processing", "draw", "mouseMoved"],
+referencedClasses: []
+}),
+smalltalk.ProcessingCircles);
+
+smalltalk.addMethod(
 "_delay",
 smalltalk.method({
 selector: "delay",
@@ -52,26 +72,6 @@ fn: function () {
 args: [],
 source: "draw\x0a\x0a\x09self radius: (self radius + (self processing sin: (self frameCount / 4))).\x0a \x0a    self x: (self  x +((self nX - self x) / self delay)).\x0a    self y: (self y + ((self nY - self y) / self delay)).\x0a\x0a     self  backgroundGray: 100.\x0a\x0a      self fillValue1: 0 value2: 121 value3: 184.\x0a\x0a      self  strokeGray: 255.\x0a\x0a      self  ellipseX: self x y: self y width: self radius height: self radius.",
 messageSends: ["radius:", "+", "sin:", "/", "frameCount", "processing", "radius", "x:", "delay", "-", "x", "nX", "y:", "y", "nY", "backgroundGray:", "fillValue1:value2:value3:", "strokeGray:", "ellipseX:y:width:height:"],
-referencedClasses: []
-}),
-smalltalk.ProcessingCircles);
-
-smalltalk.addMethod(
-"_initalizeFunctions",
-smalltalk.method({
-selector: "initalizeFunctions",
-category: 'not yet classified',
-fn: function () {
-    var self = this;
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["mouseMoved", function () {return smalltalk.send(self, "_mouseMoved", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
-    return self;
-},
-args: [],
-source: "initalizeFunctions\x0a\x0a\x09self processing at: 'setup' put: [self setup].\x0a\x09self processing at: 'draw' put: [self draw].\x0a\x09self processing at: 'mouseMoved' put: [self mouseMoved].\x0a    \x0a    self processing setup.",
-messageSends: ["at:put:", "setup", "processing", "draw", "mouseMoved"],
 referencedClasses: []
 }),
 smalltalk.ProcessingCircles);
@@ -327,6 +327,25 @@ smalltalk.ProcessingCircles.klass);
 
 smalltalk.addClass('ProcessingClock', smalltalk.PjsSketch, ['centerX', 'centerY', 'maxArmLength'], 'Processing-Examples');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+category: 'not yet classified',
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
+    return self;
+},
+args: [],
+source: "activateFunctions\x0a\x0a\x09self processing at: 'setup' put: [self setup].\x0a\x09self processing at: 'draw' put: [self draw].\x0a    \x0a    self processing setup.",
+messageSends: ["at:put:", "setup", "processing", "draw"],
+referencedClasses: []
+}),
+smalltalk.ProcessingClock);
+
+smalltalk.addMethod(
 "_draw",
 smalltalk.method({
 selector: "draw",
@@ -377,24 +396,41 @@ referencedClasses: ["Math"]
 smalltalk.ProcessingClock);
 
 smalltalk.addMethod(
-"_initialize",
+"_setup",
 smalltalk.method({
-selector: "initialize",
+selector: "setup",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    smalltalk.send(self, "_initialize", [], smalltalk.PjsSketch);
     self['@centerX'] = smalltalk.send(smalltalk.send(self, "_width", []), "__slash", [2]);
     self['@centerY'] = smalltalk.send(smalltalk.send(self, "_height", []), "__slash", [2]);
     self['@maxArmLength'] = smalltalk.send(smalltalk.Math || Math, "_min_or_", [self['@centerX'], self['@centerY']]);
     return self;
 },
 args: [],
-source: "initialize\x0a\x0a\x09super initialize.\x0a\x0a\x09centerX := self  width / 2.\x0a\x09centerY := self height / 2.\x0a\x09maxArmLength := Math min: centerX or: centerY.\x0a    \x0a    ",
-messageSends: ["initialize", "/", "width", "height", "min:or:"],
+source: "setup\x0a\x0a   centerX  := self width / 2.\x0a\x09centerY := self height / 2.\x0a\x09maxArmLength := Math min: centerX or: centerY.",
+messageSends: ["/", "width", "height", "min:or:"],
 referencedClasses: ["Math"]
 }),
 smalltalk.ProcessingClock);
 
+
+smalltalk.addMethod(
+"_overrideFunctions",
+smalltalk.method({
+selector: "overrideFunctions",
+category: 'not yet classified',
+fn: function () {
+    var self = this;
+    processing.setup = function () {};
+    processing.draw = function () {};
+    return self;
+},
+args: [],
+source: "overrideFunctions\x0a\x0a\x09 < processing.setup = function() {}; >.\x0a\x09 < processing.draw = function() {}; >.",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.ProcessingClock.klass);
 
 

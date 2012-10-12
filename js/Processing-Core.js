@@ -1178,6 +1178,23 @@ smalltalk.PjsShape);
 
 smalltalk.addClass('PjsSketch', smalltalk.Object, ['processing'], 'Processing-Core');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+category: 'initialization',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    return self;
+},
+args: [],
+source: "activateFunctions\x0a\x0a\x09processing at: 'draw' put: [self draw].",
+messageSends: ["at:put:", "draw"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_alpha_",
 smalltalk.method({
 selector: "alpha:",
@@ -2838,23 +2855,6 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
-"_initalizeFunctions",
-smalltalk.method({
-selector: "initalizeFunctions",
-category: 'initialization',
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    return self;
-},
-args: [],
-source: "initalizeFunctions\x0a\x0a\x09processing at: 'draw' put: [self draw].",
-messageSends: ["at:put:", "draw"],
-referencedClasses: []
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
 "_initialize",
 smalltalk.method({
 selector: "initialize",
@@ -2862,12 +2862,11 @@ category: 'initialization',
 fn: function () {
     var self = this;
     self['@processing'] = Processing.instances[0];
-    smalltalk.send(self, "_initalizeFunctions", []);
     return self;
 },
 args: [],
-source: "initialize\x0a\x0a\x09processing := <Processing.instances[0]>.\x0a\x09\x0a\x09self initalizeFunctions.",
-messageSends: ["initalizeFunctions"],
+source: "initialize\x0a\x0a\x09processing := <Processing.instances[0]>.\x0a\x09\x0a    ",
+messageSends: [],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -4964,12 +4963,33 @@ category: 'not yet classified',
 fn: function () {
     var self = this;
     var $1;
-    $1 = smalltalk.send(self, "_new", []);
+    $1 = smalltalk.send(smalltalk.send(self, "_new", []), "_activateFunctions", []);
     return $1;
 },
 args: [],
-source: "start\x0a\x0a\x09^self new",
-messageSends: ["new"],
+source: "start\x0a\x0a\x09^self new activateFunctions",
+messageSends: ["activateFunctions", "new"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch.klass);
+
+smalltalk.addMethod(
+"_startWidth_height_",
+smalltalk.method({
+selector: "startWidth:height:",
+category: 'not yet classified',
+fn: function (aWidth, aHeight) {
+    var self = this;
+    var $2, $3, $1;
+    $2 = smalltalk.send(self, "_new", []);
+    smalltalk.send($2, "_size_height_", [aWidth, aHeight]);
+    $3 = smalltalk.send($2, "_activateFunctions", []);
+    $1 = $3;
+    return $1;
+},
+args: ["aWidth", "aHeight"],
+source: "startWidth: aWidth height: aHeight\x0a\x0a\x09^self new \x0a         size: aWidth height: aHeight ;\x0a         activateFunctions",
+messageSends: ["size:height:", "new", "activateFunctions"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch.klass);

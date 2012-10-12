@@ -1,6 +1,21 @@
 smalltalk.addPackage('Processing-Examples', {});
 smalltalk.addClass('ProcessingCircles', smalltalk.PjsSketch, ['radius', 'x', 'y', 'nY', 'nX', 'roty', 'delay'], 'Processing-Examples');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["mouseMoved", function () {return smalltalk.send(self, "_mouseMoved", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
+    return self;
+}
+}),
+smalltalk.ProcessingCircles);
+
+smalltalk.addMethod(
 "_delay",
 smalltalk.method({
 selector: "delay",
@@ -36,21 +51,6 @@ fn: function () {
     smalltalk.send(self, "_fillValue1_value2_value3_", [0, 121, 184]);
     smalltalk.send(self, "_strokeGray_", [255]);
     smalltalk.send(self, "_ellipseX_y_width_height_", [smalltalk.send(self, "_x", []), smalltalk.send(self, "_y", []), smalltalk.send(self, "_radius", []), smalltalk.send(self, "_radius", [])]);
-    return self;
-}
-}),
-smalltalk.ProcessingCircles);
-
-smalltalk.addMethod(
-"_initalizeFunctions",
-smalltalk.method({
-selector: "initalizeFunctions",
-fn: function () {
-    var self = this;
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["mouseMoved", function () {return smalltalk.send(self, "_mouseMoved", []);}]);
-    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
     return self;
 }
 }),
@@ -237,6 +237,20 @@ smalltalk.ProcessingCircles.klass);
 
 smalltalk.addClass('ProcessingClock', smalltalk.PjsSketch, ['centerX', 'centerY', 'maxArmLength'], 'Processing-Examples');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_processing", []), "_setup", []);
+    return self;
+}
+}),
+smalltalk.ProcessingClock);
+
+smalltalk.addMethod(
 "_draw",
 smalltalk.method({
 selector: "draw",
@@ -277,12 +291,11 @@ fn: function (aPosition, aLengthScale, aWeight) {
 smalltalk.ProcessingClock);
 
 smalltalk.addMethod(
-"_initialize",
+"_setup",
 smalltalk.method({
-selector: "initialize",
+selector: "setup",
 fn: function () {
     var self = this;
-    smalltalk.send(self, "_initialize", [], smalltalk.PjsSketch);
     self['@centerX'] = smalltalk.send(smalltalk.send(self, "_width", []), "__slash", [2]);
     self['@centerY'] = smalltalk.send(smalltalk.send(self, "_height", []), "__slash", [2]);
     self['@maxArmLength'] = smalltalk.send(smalltalk.Math || Math, "_min_or_", [self['@centerX'], self['@centerY']]);
@@ -291,5 +304,18 @@ fn: function () {
 }),
 smalltalk.ProcessingClock);
 
+
+smalltalk.addMethod(
+"_overrideFunctions",
+smalltalk.method({
+selector: "overrideFunctions",
+fn: function () {
+    var self = this;
+    processing.setup = function () {};
+    processing.draw = function () {};
+    return self;
+}
+}),
+smalltalk.ProcessingClock.klass);
 
 

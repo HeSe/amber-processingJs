@@ -68,7 +68,7 @@ sketchClass: aPjsSketchSubClass
 
 startPjsSketch		
 
-	pjsSketch := (Smalltalk current at: self sketchClass)  start
+	pjsSketch := (Smalltalk current at: self sketchClass)  startWidth: self width height: self height
 !
 
 width		

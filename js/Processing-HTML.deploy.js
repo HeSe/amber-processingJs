@@ -124,7 +124,7 @@ smalltalk.method({
 selector: "startPjsSketch",
 fn: function () {
     var self = this;
-    self['@pjsSketch'] = smalltalk.send(smalltalk.send(smalltalk.send(smalltalk.Smalltalk || Smalltalk, "_current", []), "_at_", [smalltalk.send(self, "_sketchClass", [])]), "_start", []);
+    self['@pjsSketch'] = smalltalk.send(smalltalk.send(smalltalk.send(smalltalk.Smalltalk || Smalltalk, "_current", []), "_at_", [smalltalk.send(self, "_sketchClass", [])]), "_startWidth_height_", [smalltalk.send(self, "_width", []), smalltalk.send(self, "_height", [])]);
     return self;
 }
 }),

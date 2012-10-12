@@ -5,6 +5,15 @@ PjsSketch subclass: #ProcessingCircles
 
 !ProcessingCircles methodsFor: 'not yet classified'!
 
+activateFunctions
+
+	self processing at: 'setup' put: [self setup].
+	self processing at: 'draw' put: [self draw].
+	self processing at: 'mouseMoved' put: [self mouseMoved].
+    
+    self processing setup.
+!
+
 delay
 
 	^delay
@@ -29,15 +38,6 @@ draw
       self  strokeGray: 255.
 
       self  ellipseX: self x y: self y width: self radius height: self radius.
-!
-
-initalizeFunctions
-
-	self processing at: 'setup' put: [self setup].
-	self processing at: 'draw' put: [self draw].
-	self processing at: 'mouseMoved' put: [self mouseMoved].
-    
-    self processing setup.
 !
 
 initialize
@@ -134,6 +134,14 @@ PjsSketch subclass: #ProcessingClock
 
 !ProcessingClock methodsFor: 'not yet classified'!
 
+activateFunctions
+
+	self processing at: 'setup' put: [self setup].
+	self processing at: 'draw' put: [self draw].
+    
+    self processing setup.
+!
+
 draw
 
   | now hoursPosition minutesPosition secondsPosition |  
@@ -169,12 +177,18 @@ drawArm: aPosition lengthScale: aLengthScale weight: aWeight
 	self lineX1: centerX  y1: centerY x2: myDX y2: myDY
 !
 
-initialize
+setup
 
-	super initialize.
-
-	centerX := self  width / 2.
+   centerX  := self width / 2.
 	centerY := self height / 2.
 	maxArmLength := Math min: centerX or: centerY.
+! !
+
+!ProcessingClock class methodsFor: 'not yet classified'!
+
+overrideFunctions
+
+	 < processing.setup = function() {}; >.
+	 < processing.draw = function() {}; >.
 ! !
 

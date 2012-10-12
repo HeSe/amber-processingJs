@@ -170,12 +170,12 @@ selector: "startPjsSketch",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    self['@pjsSketch'] = smalltalk.send(smalltalk.send(smalltalk.send(smalltalk.Smalltalk || Smalltalk, "_current", []), "_at_", [smalltalk.send(self, "_sketchClass", [])]), "_start", []);
+    self['@pjsSketch'] = smalltalk.send(smalltalk.send(smalltalk.send(smalltalk.Smalltalk || Smalltalk, "_current", []), "_at_", [smalltalk.send(self, "_sketchClass", [])]), "_startWidth_height_", [smalltalk.send(self, "_width", []), smalltalk.send(self, "_height", [])]);
     return self;
 },
 args: [],
-source: "startPjsSketch\x09\x09\x0a\x0a\x09pjsSketch := (Smalltalk current at: self sketchClass)  start",
-messageSends: ["start", "at:", "sketchClass", "current"],
+source: "startPjsSketch\x09\x09\x0a\x0a\x09pjsSketch := (Smalltalk current at: self sketchClass)  startWidth: self width height: self height",
+messageSends: ["startWidth:height:", "width", "height", "at:", "sketchClass", "current"],
 referencedClasses: ["Smalltalk"]
 }),
 smalltalk.PjsSketchContainer);

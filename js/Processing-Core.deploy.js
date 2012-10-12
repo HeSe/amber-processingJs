@@ -843,6 +843,18 @@ smalltalk.PjsShape);
 
 smalltalk.addClass('PjsSketch', smalltalk.Object, ['processing'], 'Processing-Core');
 smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_alpha_",
 smalltalk.method({
 selector: "alpha:",
@@ -2023,25 +2035,12 @@ fn: function (aMode) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
-"_initalizeFunctions",
-smalltalk.method({
-selector: "initalizeFunctions",
-fn: function () {
-    var self = this;
-    smalltalk.send(self['@processing'], "_at_put_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
-    return self;
-}
-}),
-smalltalk.PjsSketch);
-
-smalltalk.addMethod(
 "_initialize",
 smalltalk.method({
 selector: "initialize",
 fn: function () {
     var self = this;
     self['@processing'] = Processing.instances[0];
-    smalltalk.send(self, "_initalizeFunctions", []);
     return self;
 }
 }),
@@ -3533,7 +3532,23 @@ selector: "start",
 fn: function () {
     var self = this;
     var $1;
-    $1 = smalltalk.send(self, "_new", []);
+    $1 = smalltalk.send(smalltalk.send(self, "_new", []), "_activateFunctions", []);
+    return $1;
+}
+}),
+smalltalk.PjsSketch.klass);
+
+smalltalk.addMethod(
+"_startWidth_height_",
+smalltalk.method({
+selector: "startWidth:height:",
+fn: function (aWidth, aHeight) {
+    var self = this;
+    var $2, $3, $1;
+    $2 = smalltalk.send(self, "_new", []);
+    smalltalk.send($2, "_size_height_", [aWidth, aHeight]);
+    $3 = smalltalk.send($2, "_activateFunctions", []);
+    $1 = $3;
     return $1;
 }
 }),

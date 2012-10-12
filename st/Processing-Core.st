@@ -2429,7 +2429,7 @@ saveImage: aFileName
 
 !PjsSketch methodsFor: 'initialization'!
 
-initalizeFunctions
+activateFunctions
 
 	processing at: 'draw' put: [self draw].
 !
@@ -2437,8 +2437,6 @@ initalizeFunctions
 initialize
 
 	processing := <Processing.instances[0]>.
-	
-	self initalizeFunctions.
 ! !
 
 !PjsSketch methodsFor: 'lights'!
@@ -3399,7 +3397,14 @@ vertexX: aX y: aY z: aZ u: anU v: aV
 
 start
 
-	^self new
+	^self new activateFunctions
+!
+
+startWidth: aWidth height: aHeight
+
+	^self new 
+         size: aWidth height: aHeight ;
+         activateFunctions
 ! !
 
 Object subclass: #PjsVector
