@@ -1,6 +1,6 @@
 Smalltalk current createPackage: 'Processing-Examples' properties: #{}!
 PjsSketch subclass: #ProcessingClock
-	instanceVariableNames: 'processing centerX centerY maxArmLength'
+	instanceVariableNames: 'centerX centerY maxArmLength'
 	package: 'Processing-Examples'!
 
 !ProcessingClock methodsFor: 'not yet classified'!

@@ -1085,6 +1085,30 @@ fn: function (aColor1, aColor2, aMode) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_blendImage_x_y_width_height_dx_dy_dwidth_dheight_mode_",
+smalltalk.method({
+selector: "blendImage:x:y:width:height:dx:dy:dwidth:dheight:mode:",
+fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_blend_x_y_width_height_dx_dy_dwidth_dheight_mode_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_blendX_y_width_height_dx_dy_dwidth_dheight_mode_",
+smalltalk.method({
+selector: "blendX:y:width:height:dx:dy:dwidth:dheight:mode:",
+fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_blend_y_width_height_dx_dy_dwidth_dheight_mode_", [aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_blue_",
 smalltalk.method({
 selector: "blue:",
@@ -1255,6 +1279,43 @@ fn: function (aValue1, aValue2, aValue3, anAlpha) {
     var self = this;
     var $1;
     $1 = smalltalk.send(self['@processing'], "_color_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_copyImage_x_y_width_height_dx_dy_dwidth_dheight_",
+smalltalk.method({
+selector: "copyImage:x:y:width:height:dx:dy:dwidth:dheight:",
+fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_copy_x_y_width_height_dx_dy_dwidth_dheight_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_copyX_y_width_height_dx_dy_dwidth_dheight_",
+smalltalk.method({
+selector: "copyX:y:width:height:dx:dy:dwidth:dheight:",
+fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_copy_y_width_height_dx_dy_dwidth_dheight_", [aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_createImageWidth_height_format_",
+smalltalk.method({
+selector: "createImageWidth:height:format:",
+fn: function (aWidth, aHeight, aFormat) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_createImage_height_format_", [aWidth, aHeight, aFormat])]);
     return $1;
 }
 }),
@@ -1513,6 +1574,18 @@ fn: function (aValue1, aValue2, aValue3, anAlpha) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_filterMode_param_",
+smalltalk.method({
+selector: "filterMode:param:",
+fn: function (aMode, aParam) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_param_", [aMode, aParam]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_green_",
 smalltalk.method({
 selector: "green:",
@@ -1534,6 +1607,42 @@ fn: function (aColor) {
     var $1;
     $1 = smalltalk.send(self['@processing'], "_hue_", [aColor]);
     return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_image_x_y_",
+smalltalk.method({
+selector: "image:x:y:",
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_image_x_y_width_height_",
+smalltalk.method({
+selector: "image:x:y:width:height:",
+fn: function (aPjsImage, aX, aY, aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_width_height_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeight]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_imageMode_",
+smalltalk.method({
+selector: "imageMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_imageMode_", [aMode]);
+    return self;
 }
 }),
 smalltalk.PjsSketch);
@@ -1601,6 +1710,19 @@ fn: function (aX1, aY1, aZ1, aX2, aY2, aZ2) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_loadImage_",
+smalltalk.method({
+selector: "loadImage:",
+fn: function (aFileName) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_loadImage_", [aFileName])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_noFill",
 smalltalk.method({
 selector: "noFill",
@@ -1631,6 +1753,18 @@ selector: "noStroke",
 fn: function () {
     var self = this;
     smalltalk.send(self['@processing'], "_noStroke", []);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_noTint",
+smalltalk.method({
+selector: "noTint",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noTint", []);
     return self;
 }
 }),
@@ -1739,6 +1873,32 @@ fn: function (aColor) {
     var self = this;
     var $1;
     $1 = smalltalk.send(self['@processing'], "_red_", [aColor]);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_requestImage_",
+smalltalk.method({
+selector: "requestImage:",
+fn: function (aFilename) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_", [aFilename])]);
+    return $1;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_requestImage_extension_",
+smalltalk.method({
+selector: "requestImage:extension:",
+fn: function (aFilename, aExtension) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_extension_", [aFilename, aExtension])]);
     return $1;
 }
 }),
@@ -1956,6 +2116,102 @@ selector: "textureMode:",
 fn: function (aMode) {
     var self = this;
     smalltalk.send(self['@processing'], "_textureMode_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintColor_",
+smalltalk.method({
+selector: "tintColor:",
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aColor]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintColor_alpha_",
+smalltalk.method({
+selector: "tintColor:alpha:",
+fn: function (aColor, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aColor, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintGray_",
+smalltalk.method({
+selector: "tintGray:",
+fn: function (aGray) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aGray]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintGray_alpha_",
+smalltalk.method({
+selector: "tintGray:alpha:",
+fn: function (aGray, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aGray, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintHex_",
+smalltalk.method({
+selector: "tintHex:",
+fn: function (aHex) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aHex]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintHex_alpha_",
+smalltalk.method({
+selector: "tintHex:alpha:",
+fn: function (aHex, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aHex, anAlpha]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:",
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_alpha_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:alpha:",
+fn: function (aValue1, aValue2, aValue3, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
     return self;
 }
 }),

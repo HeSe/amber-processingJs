@@ -1396,6 +1396,458 @@ curveX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 
 	processing curve: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 x4: aX4 y4: aY4 z4: aZ4
 ! !
 
+!PjsSketch methodsFor: 'image loading and displaying '!
+
+createImageWidth: aWidth height: aHeight format: aFormat
+	"width int: width in pixels 
+	height int: height in pixels 
+	format Either RGB, ARGB, ALPHA (grayscale alpha channel) "
+    
+	^ PjsImage newImage: (processing createImage: aWidth height: aHeight format: aFormat)
+    
+     "Creates a new PImage (the datatype for storing images). 
+      This provides a fresh buffer of pixels to play with. 
+      Set the size of the buffer with the width and height parameters. 
+      The format parameter defines how the pixels are stored. 
+      See the PImage reference for more information. 
+      Be sure to include all three parameters, specifying only the width 
+      and height (but no format) will produce a strange error."
+!
+
+image: aPjsImage x: aX y: aY 
+	"img PImage: the image to display 
+	x int or float: x-coordinate of the image 
+	y int or float: y-coordinate of the image "
+    
+	processing image: aPjsImage pjsImage x: aX y: aY 
+    
+     "Diplays images to the screen. The images must be preloaded using @pjs preload before 
+     it can be used. Processing currently works with GIF, JPEG, and Targa images. 
+     The color of an image may be modified with the tint() function and if a GIF has transparency, 
+     it will maintain its transparency. The img parameter specifies the image to display and 
+     the x and y parameters define the location of the image from its upper-left corner. 
+     The image is displayed at its original size unless the width and height parameters specify a different size. 
+     The imageMode() function changes the way the parameters work. 
+     A call to imageMode(CORNERS) will change the width and height parameters to define 
+     the x and y values of the opposite corner of the image. 
+
+	NOTE: DOM security will not allow you to load images file:/// URIs. 
+    This security can be overridden in Firefox in about:config, by changing security.fileuri.strict_origin_policy to false."
+!
+
+image: aPjsImage x: aX y: aY width: aWidth height: aHeight 
+	"img PImage: the image to display 
+	x int or float: x-coordinate of the image 
+	y int or float: y-coordinate of the image 
+	width int or float: width to display the image 
+	height int or float: height to display the image "
+    
+	processing image: aPjsImage pjsImage x: aX y: aY width: aWidth height: aHeight 
+    
+     "Diplays images to the screen. The images must be preloaded using @pjs preload before 
+     it can be used. Processing currently works with GIF, JPEG, and Targa images. 
+     The color of an image may be modified with the tint() function and if a GIF has transparency, 
+     it will maintain its transparency. The img parameter specifies the image to display and 
+     the x and y parameters define the location of the image from its upper-left corner. 
+     The image is displayed at its original size unless the width and height parameters specify a different size. 
+     The imageMode() function changes the way the parameters work. 
+     A call to imageMode(CORNERS) will change the width and height parameters to define 
+     the x and y values of the opposite corner of the image. 
+
+	NOTE: DOM security will not allow you to load images file:/// URIs. 
+    This security can be overridden in Firefox in about:config, by changing security.fileuri.strict_origin_policy to false."
+!
+
+imageMode: aMode
+	"MODE Either CORNER, CORNERS, or CENTER "
+    
+	processing imageMode: aMode
+    
+     "Modifies the location from which images draw. The default mode is imageMode(CORNER), 
+      which specifies the location to be the upper left corner and uses the fourth and fifth parameters of image() 
+      to set the image's width and height. The syntax imageMode(CORNERS) uses the second and third parameters of image() 
+      to set the location of one corner of the image and uses the fourth and fifth parameters to set the opposite corner. 
+      Use imageMode(CENTER) to draw images centered at the given x and y position"
+!
+
+loadImage: aFileName
+	"filename string: name of file to load or data URI/td>   "
+    
+	^PjsImage newImage: (processing loadImage: aFileName)
+    
+     "Loads an image into a variable of type PImage. Four types of images ( .gif, .jpg, .tga, .png) images may be loaded. 
+     To load correctly, images must be located in the data directory of the current sketch, the images must be preloaded 
+     using @pjs preload specifying the path to the image. In most cases, load all images in setup() to preload them at the 
+     start of the program. Loading images inside draw() will reduce the speed of a program. 
+     You can also load images from a data URI, such as ""data:image/jpg;base64,{base 64 encoded data block}"" 
+     which does not require any preloading. 
+     The filename parameter can also be a URL to a file found online. For security reasons, 
+      a Processing sketch found online can only download files from the same server from which it came. 
+  	The extension of the filename parameter is used to determine the image type. 
+     In cases where the image filename does not end with a proper extension, specify the extension 
+     as the second parameter to loadImage(), as shown in the third example on this page. 
+	If an image is not loaded successfully, the null value is returned and an error message will be printed to the console. 
+    The error message does not halt the program, however the null value may cause a NullPointerException if 
+    your code does not check whether the value returned from loadImage() is null. 
+
+NOTE: Some browers will not allow you to load images from file:// URIs. It is recommended that you use a webserver for your development and testing to avoid any problems with file:// URIs.
+"
+!
+
+noTint
+	"Removes the current fill value for displaying images and reverts to displaying images with their original hues."
+    
+	processing noTint
+!
+
+requestImage: aFilename 
+	"filename String: name of file to load, can be .gif, .jpg, .tga, or a handful of other image types depending on your platform  "
+    
+	^PjsImage newImage: (processing requestImage: aFilename  )
+    
+     "This function load images on a separate thread so that your sketch does not freeze while images load during setup(). 
+     While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. 
+     You'll know when the image has loaded properly because its width and height will be greater than 0. 
+     Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.
+      The extension parameter is used to determine the image type in cases where the image filename does not end 
+      with a proper extension. Specify the extension as the second parameter to requestImage()."
+!
+
+requestImage: aFilename extension: aExtension
+	"filename String: name of file to load, can be .gif, .jpg, .tga, or a handful of other image types depending on your platform 
+	extension String: the type of image to load, for example ""png"", ""gif"", ""jpg""  "
+    
+	^PjsImage newImage: (processing requestImage: aFilename extension: aExtension)
+    
+     "This function load images on a separate thread so that your sketch does not freeze while images load during setup(). 
+     While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. 
+     You'll know when the image has loaded properly because its width and height will be greater than 0. 
+     Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.
+      The extension parameter is used to determine the image type in cases where the image filename does not end 
+      with a proper extension. Specify the extension as the second parameter to requestImage()."
+!
+
+tintColor: aColor 
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aColor 
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintColor: aColor alpha: anAlpha
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aColor alpha: anAlpha
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintGray: aGray
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aGray
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintGray: aGray alpha: anAlpha
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aGray alpha: anAlpha
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintHex: aHex
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aHex
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintHex: aHex alpha: anAlpha
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aHex alpha: anAlpha
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintValue1: aValue1 value2: aValue2 value3: aValue3
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aValue1 value2: aValue2 value3: aValue3
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+!
+
+tintValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
+	"gray int or float: any valid number 
+	alpha int or float: opacity of the image 
+	value1 int or float: red or hue value 
+	value2 int or float: green or saturation value 
+	value3 int or float: blue or brightness value 
+	color color: any value of the color datatype  
+	hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) "
+    
+	processing tint: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
+    
+    "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. 
+     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. 
+     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). 
+     When using hexadecimal notation to specify a color, use ""#"" or ""0x"" before the values (e.g. #CCFFAA, 0xFFCCFFAA). 
+    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). 
+    When using the hexadecimal notation starting with ""0x"", the hexadecimal value must be specified with eight characters; 
+    the first two characters define the alpha component and the remainder the red, green, and blue components. 
+    The value for the parameter ""gray"" must be less than or equal to the current maximum value as specified by colorMode(). 
+    The default maximum value is 255. 
+     The tint() method is also used to control the coloring of textures in 3D."
+! !
+
+!PjsSketch methodsFor: 'image pixels'!
+
+blendImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
+	"x int: X coordinate of the source's upper left corner 
+	y int: Y coordinate of the source's upper left corner 
+	width int: source image width 
+	height int: source image height 
+	dx int: X coordinate of the destination's upper left corner 
+	dy int: Y coordinate of the destination's upper left corner 
+	dwidth int: destination image width 
+	dheight int: destination image height 
+	srcImg PImage:a image variable referring to the source image. 
+	MODE Either BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN "
+    
+	processing blend: aPjsImage pjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
+    
+    "Blends a region of pixels into the image specified by the img parameter. 
+       These copies utilize full alpha channel support and a choice of the following modes to 
+       blend the colors of source pixels (A) with the ones of pixels in the destination image (B):
+	BLEND - linear interpolation of colours: C = A*factor + B
+	ADD - additive blending with white clip: C = min(A*factor + B, 255)
+	SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)
+	DARKEST - only the darkest colour succeeds: C = min(A*factor, B)
+	LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)
+	DIFFERENCE - subtract colors from underlying image.
+	EXCLUSION - similar to DIFFERENCE, but less extreme.
+	MULTIPLY - Multiply the colors, result will always be darker.
+	SCREEN - Opposite multiply, uses inverse values of the colors.
+	OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values, and screens light values.
+	HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.
+	SOFT_LIGHT - Mix of DARKEST and LIGHTEST. Works like OVERLAY, but not as harsh.
+	DODGE - Lightens light tones and increases contrast, ignores darks. Called ""Color Dodge"" in Illustrator and Photoshop.
+	BURN - Darker areas are applied, increasing contrast, ignores lights. Called ""Color Burn"" in Illustrator and Photoshop.
+	All modes use the alpha information (highest byte) of source image pixels as the blending factor. 
+    If the source and destination regions are different sizes, the image will be automatically resized to 
+    match the destination size. If the srcImg parameter is not used, the display window is used as the source image.
+	This function ignores imageMode().."
+!
+
+blendX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
+	"x int: X coordinate of the source's upper left corner 
+	y int: Y coordinate of the source's upper left corner 
+	width int: source image width 
+	height int: source image height 
+	dx int: X coordinate of the destination's upper left corner 
+	dy int: Y coordinate of the destination's upper left corner 
+	dwidth int: destination image width 
+	dheight int: destination image height 
+	srcImg PImage:a image variable referring to the source image. 
+	MODE Either BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN "
+    
+	processing blend: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
+    
+    "Blends a region of pixels into the image specified by the img parameter. 
+       These copies utilize full alpha channel support and a choice of the following modes to 
+       blend the colors of source pixels (A) with the ones of pixels in the destination image (B):
+	BLEND - linear interpolation of colours: C = A*factor + B
+	ADD - additive blending with white clip: C = min(A*factor + B, 255)
+	SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)
+	DARKEST - only the darkest colour succeeds: C = min(A*factor, B)
+	LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)
+	DIFFERENCE - subtract colors from underlying image.
+	EXCLUSION - similar to DIFFERENCE, but less extreme.
+	MULTIPLY - Multiply the colors, result will always be darker.
+	SCREEN - Opposite multiply, uses inverse values of the colors.
+	OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values, and screens light values.
+	HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.
+	SOFT_LIGHT - Mix of DARKEST and LIGHTEST. Works like OVERLAY, but not as harsh.
+	DODGE - Lightens light tones and increases contrast, ignores darks. Called ""Color Dodge"" in Illustrator and Photoshop.
+	BURN - Darker areas are applied, increasing contrast, ignores lights. Called ""Color Burn"" in Illustrator and Photoshop.
+	All modes use the alpha information (highest byte) of source image pixels as the blending factor. 
+    If the source and destination regions are different sizes, the image will be automatically resized to 
+    match the destination size. If the srcImg parameter is not used, the display window is used as the source image.
+	This function ignores imageMode().."
+!
+
+copyImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight
+	"x int: X coordinate of the source's upper left corner 
+	y int: Y coordinate of the source's upper left corner 
+	width int: source image width 
+	height int: source image height 
+	dx int: X coordinate of the destination's upper left corner 
+	dy int: Y coordinate of the destination's upper left corner 
+	dwidth int: destination image width 
+	dheight int: destination image height 
+	srcImg PImage:a image variable referring to the source image. "
+    
+	processing copy: aPjsImage pjsImage  x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight 
+    
+    "Copies a region of pixels from the display window to another area of the display window and 
+      copies a region of pixels from an image used as the srcImg parameter into the display window. 
+      If the source and destination regions aren't the same size, it will automatically resize the source pixels 
+      to fit the specified target region. No alpha information is used in the process, 
+      however if the source image has an alpha channel set, it will be copied as well. 
+      This function ignores imageMode()."
+!
+
+copyX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight
+	"x int: X coordinate of the source's upper left corner 
+	y int: Y coordinate of the source's upper left corner 
+	width int: source image width 
+	height int: source image height 
+	dx int: X coordinate of the destination's upper left corner 
+	dy int: Y coordinate of the destination's upper left corner 
+	dwidth int: destination image width 
+	dheight int: destination image height 
+	srcImg PImage:a image variable referring to the source image.  "
+    
+	processing copy:aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight 
+    
+    "Copies a region of pixels from the display window to another area of the display window and 
+      copies a region of pixels from an image used as the srcImg parameter into the display window. 
+      If the source and destination regions aren't the same size, it will automatically resize the source pixels 
+      to fit the specified target region. No alpha information is used in the process, 
+      however if the source image has an alpha channel set, it will be copied as well. 
+      This function ignores imageMode()."
+!
+
+filterMode: aMode param: aParam
+	"MODE Either THRESHOLD, GRAY, INVERT, POSTERIZE, BLUR, OPAQUE, ERODE, or DILATE 
+	param int or float in the range from 0 to 1"
+    
+	processing filter: aMode param: aParam
+    
+    "Filters an image as defined by one of the following modes:
+	THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. 
+    						The level must be between 0.0 (black) and 1.0(white). If no level is specified, 0.5 is used.
+  	GRAY - converts any colors in the image to grayscale equivalents
+	INVERT - sets each pixel to its inverse value
+	POSTERIZE - limits each channel of the image to the number of colors specified as the level parameter
+	BLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. 
+    			If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.
+	OPAQUE - sets the alpha channel to entirely opaque.
+	ERODE - reduces the light areas with the amount defined by the level parameter.
+	DILATE - increases the light areas with the amount defined by the level parameter"
+! !
+
 !PjsSketch methodsFor: 'initialization'!
 
 initalizeFunctions

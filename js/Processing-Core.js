@@ -1520,6 +1520,40 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_blendImage_x_y_width_height_dx_dy_dwidth_dheight_mode_",
+smalltalk.method({
+selector: "blendImage:x:y:width:height:dx:dy:dwidth:dheight:mode:",
+category: 'image pixels',
+fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_blend_x_y_width_height_dx_dy_dwidth_dheight_mode_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode]);
+    return self;
+},
+args: ["aPjsImage", "aX", "aY", "aWidth", "aHeigt", "dX", "dY", "aDWidth", "aDHeight", "aMode"],
+source: "blendImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode\x0a\x09\x22x int: X coordinate of the source's upper left corner \x0a\x09y int: Y coordinate of the source's upper left corner \x0a\x09width int: source image width \x0a\x09height int: source image height \x0a\x09dx int: X coordinate of the destination's upper left corner \x0a\x09dy int: Y coordinate of the destination's upper left corner \x0a\x09dwidth int: destination image width \x0a\x09dheight int: destination image height \x0a\x09srcImg PImage:a image variable referring to the source image. \x0a\x09MODE Either BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN \x22\x0a    \x0a\x09processing blend: aPjsImage pjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode\x0a    \x0a    \x22Blends a region of pixels into the image specified by the img parameter. \x0a       These copies utilize full alpha channel support and a choice of the following modes to \x0a       blend the colors of source pixels (A) with the ones of pixels in the destination image (B):\x0a\x09BLEND - linear interpolation of colours: C = A*factor + B\x0a\x09ADD - additive blending with white clip: C = min(A*factor + B, 255)\x0a\x09SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)\x0a\x09DARKEST - only the darkest colour succeeds: C = min(A*factor, B)\x0a\x09LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)\x0a\x09DIFFERENCE - subtract colors from underlying image.\x0a\x09EXCLUSION - similar to DIFFERENCE, but less extreme.\x0a\x09MULTIPLY - Multiply the colors, result will always be darker.\x0a\x09SCREEN - Opposite multiply, uses inverse values of the colors.\x0a\x09OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values, and screens light values.\x0a\x09HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.\x0a\x09SOFT_LIGHT - Mix of DARKEST and LIGHTEST. Works like OVERLAY, but not as harsh.\x0a\x09DODGE - Lightens light tones and increases contrast, ignores darks. Called \x22\x22Color Dodge\x22\x22 in Illustrator and Photoshop.\x0a\x09BURN - Darker areas are applied, increasing contrast, ignores lights. Called \x22\x22Color Burn\x22\x22 in Illustrator and Photoshop.\x0a\x09All modes use the alpha information (highest byte) of source image pixels as the blending factor. \x0a    If the source and destination regions are different sizes, the image will be automatically resized to \x0a    match the destination size. If the srcImg parameter is not used, the display window is used as the source image.\x0a\x09This function ignores imageMode()..\x22",
+messageSends: ["blend:x:y:width:height:dx:dy:dwidth:dheight:mode:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_blendX_y_width_height_dx_dy_dwidth_dheight_mode_",
+smalltalk.method({
+selector: "blendX:y:width:height:dx:dy:dwidth:dheight:mode:",
+category: 'image pixels',
+fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_blend_y_width_height_dx_dy_dwidth_dheight_mode_", [aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight, aMode]);
+    return self;
+},
+args: ["aX", "aY", "aWidth", "aHeigt", "dX", "dY", "aDWidth", "aDHeight", "aMode"],
+source: "blendX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode\x0a\x09\x22x int: X coordinate of the source's upper left corner \x0a\x09y int: Y coordinate of the source's upper left corner \x0a\x09width int: source image width \x0a\x09height int: source image height \x0a\x09dx int: X coordinate of the destination's upper left corner \x0a\x09dy int: Y coordinate of the destination's upper left corner \x0a\x09dwidth int: destination image width \x0a\x09dheight int: destination image height \x0a\x09srcImg PImage:a image variable referring to the source image. \x0a\x09MODE Either BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN \x22\x0a    \x0a\x09processing blend: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode\x0a    \x0a    \x22Blends a region of pixels into the image specified by the img parameter. \x0a       These copies utilize full alpha channel support and a choice of the following modes to \x0a       blend the colors of source pixels (A) with the ones of pixels in the destination image (B):\x0a\x09BLEND - linear interpolation of colours: C = A*factor + B\x0a\x09ADD - additive blending with white clip: C = min(A*factor + B, 255)\x0a\x09SUBTRACT - subtractive blending with black clip: C = max(B - A*factor, 0)\x0a\x09DARKEST - only the darkest colour succeeds: C = min(A*factor, B)\x0a\x09LIGHTEST - only the lightest colour succeeds: C = max(A*factor, B)\x0a\x09DIFFERENCE - subtract colors from underlying image.\x0a\x09EXCLUSION - similar to DIFFERENCE, but less extreme.\x0a\x09MULTIPLY - Multiply the colors, result will always be darker.\x0a\x09SCREEN - Opposite multiply, uses inverse values of the colors.\x0a\x09OVERLAY - A mix of MULTIPLY and SCREEN. Multiplies dark values, and screens light values.\x0a\x09HARD_LIGHT - SCREEN when greater than 50% gray, MULTIPLY when lower.\x0a\x09SOFT_LIGHT - Mix of DARKEST and LIGHTEST. Works like OVERLAY, but not as harsh.\x0a\x09DODGE - Lightens light tones and increases contrast, ignores darks. Called \x22\x22Color Dodge\x22\x22 in Illustrator and Photoshop.\x0a\x09BURN - Darker areas are applied, increasing contrast, ignores lights. Called \x22\x22Color Burn\x22\x22 in Illustrator and Photoshop.\x0a\x09All modes use the alpha information (highest byte) of source image pixels as the blending factor. \x0a    If the source and destination regions are different sizes, the image will be automatically resized to \x0a    match the destination size. If the srcImg parameter is not used, the display window is used as the source image.\x0a\x09This function ignores imageMode()..\x22",
+messageSends: ["blend:y:width:height:dx:dy:dwidth:dheight:mode:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_blue_",
 smalltalk.method({
 selector: "blue:",
@@ -1762,6 +1796,58 @@ args: ["aValue1", "aValue2", "aValue3", "anAlpha"],
 source: "colorValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a\x09\x22value1 \x09int or float: red or hue value\x0a\x09value2 \x09int or float: green or saturation value\x0a\x09value3 \x09int or float: blue or brightness value\x0a    alpha \x09int or float: opacity of the fill\x22\x0a    \x0a\x09 ^processing color: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a    \x0a    \x22Creates colors for storing in variables of the color datatype. \x0a    The parameters are interpreted as RGB or HSB values depending on the current colorMode(). \x0a    The default mode is RGB values from 0 to 255 and therefore, the function call color(255, 204, 0) will return \x0a    a bright yellow color. The color() function packs the information input through its parameters into a 32 bit number\x0a    in the following order AAAAAAAARRRRRRRRGGGGGGGGBBBBBBBB where R is the red/hue value, G is green/saturation, and B is blue/brightness.\x0a\x09Color can also be created using hexadecimal notation. For example, \x22\x22color(0, 102, 153)\x22\x22 is equivalent to \x22\x22color(#006699)\x22\x22 and \x22\x22color(0x006699)\x22\x22. \x0a    To create a color with an alpha value using hexadecimal notation, it's necessary to use the \x22\x220x\x22\x22 prefix, \x0a    for example \x22\x22color(0xCC006699)\x22\x22, which is equivalent to \x22\x22color(0, 102, 153, 204)\x22\x22. \x0a    Note the alpha value is first in the hexadecimal notation and last in the RGB notation.\x22",
 messageSends: ["color:value2:value3:alpha:"],
 referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_copyImage_x_y_width_height_dx_dy_dwidth_dheight_",
+smalltalk.method({
+selector: "copyImage:x:y:width:height:dx:dy:dwidth:dheight:",
+category: 'image pixels',
+fn: function (aPjsImage, aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_copy_x_y_width_height_dx_dy_dwidth_dheight_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight]);
+    return self;
+},
+args: ["aPjsImage", "aX", "aY", "aWidth", "aHeigt", "dX", "dY", "aDWidth", "aDHeight"],
+source: "copyImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight\x0a\x09\x22x int: X coordinate of the source's upper left corner \x0a\x09y int: Y coordinate of the source's upper left corner \x0a\x09width int: source image width \x0a\x09height int: source image height \x0a\x09dx int: X coordinate of the destination's upper left corner \x0a\x09dy int: Y coordinate of the destination's upper left corner \x0a\x09dwidth int: destination image width \x0a\x09dheight int: destination image height \x0a\x09srcImg PImage:a image variable referring to the source image. \x22\x0a    \x0a\x09processing copy: aPjsImage pjsImage  x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight \x0a    \x0a    \x22Copies a region of pixels from the display window to another area of the display window and \x0a      copies a region of pixels from an image used as the srcImg parameter into the display window. \x0a      If the source and destination regions aren't the same size, it will automatically resize the source pixels \x0a      to fit the specified target region. No alpha information is used in the process, \x0a      however if the source image has an alpha channel set, it will be copied as well. \x0a      This function ignores imageMode().\x22",
+messageSends: ["copy:x:y:width:height:dx:dy:dwidth:dheight:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_copyX_y_width_height_dx_dy_dwidth_dheight_",
+smalltalk.method({
+selector: "copyX:y:width:height:dx:dy:dwidth:dheight:",
+category: 'image pixels',
+fn: function (aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_copy_y_width_height_dx_dy_dwidth_dheight_", [aX, aY, aWidth, aHeigt, dX, dY, aDWidth, aDHeight]);
+    return self;
+},
+args: ["aX", "aY", "aWidth", "aHeigt", "dX", "dY", "aDWidth", "aDHeight"],
+source: "copyX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight\x0a\x09\x22x int: X coordinate of the source's upper left corner \x0a\x09y int: Y coordinate of the source's upper left corner \x0a\x09width int: source image width \x0a\x09height int: source image height \x0a\x09dx int: X coordinate of the destination's upper left corner \x0a\x09dy int: Y coordinate of the destination's upper left corner \x0a\x09dwidth int: destination image width \x0a\x09dheight int: destination image height \x0a\x09srcImg PImage:a image variable referring to the source image.  \x22\x0a    \x0a\x09processing copy:aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight \x0a    \x0a    \x22Copies a region of pixels from the display window to another area of the display window and \x0a      copies a region of pixels from an image used as the srcImg parameter into the display window. \x0a      If the source and destination regions aren't the same size, it will automatically resize the source pixels \x0a      to fit the specified target region. No alpha information is used in the process, \x0a      however if the source image has an alpha channel set, it will be copied as well. \x0a      This function ignores imageMode().\x22",
+messageSends: ["copy:y:width:height:dx:dy:dwidth:dheight:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_createImageWidth_height_format_",
+smalltalk.method({
+selector: "createImageWidth:height:format:",
+category: 'image loading and displaying ',
+fn: function (aWidth, aHeight, aFormat) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_createImage_height_format_", [aWidth, aHeight, aFormat])]);
+    return $1;
+},
+args: ["aWidth", "aHeight", "aFormat"],
+source: "createImageWidth: aWidth height: aHeight format: aFormat\x0a\x09\x22width int: width in pixels \x0a\x09height int: height in pixels \x0a\x09format Either RGB, ARGB, ALPHA (grayscale alpha channel) \x22\x0a    \x0a\x09^ PjsImage newImage: (processing createImage: aWidth height: aHeight format: aFormat)\x0a    \x0a     \x22Creates a new PImage (the datatype for storing images). \x0a      This provides a fresh buffer of pixels to play with. \x0a      Set the size of the buffer with the width and height parameters. \x0a      The format parameter defines how the pixels are stored. \x0a      See the PImage reference for more information. \x0a      Be sure to include all three parameters, specifying only the width \x0a      and height (but no format) will produce a strange error.\x22",
+messageSends: ["newImage:", "createImage:height:format:"],
+referencedClasses: ["PjsImage"]
 }),
 smalltalk.PjsSketch);
 
@@ -2123,6 +2209,23 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_filterMode_param_",
+smalltalk.method({
+selector: "filterMode:param:",
+category: 'image pixels',
+fn: function (aMode, aParam) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_param_", [aMode, aParam]);
+    return self;
+},
+args: ["aMode", "aParam"],
+source: "filterMode: aMode param: aParam\x0a\x09\x22MODE Either THRESHOLD, GRAY, INVERT, POSTERIZE, BLUR, OPAQUE, ERODE, or DILATE \x0a\x09param int or float in the range from 0 to 1\x22\x0a    \x0a\x09processing filter: aMode param: aParam\x0a    \x0a    \x22Filters an image as defined by one of the following modes:\x0a\x09THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. \x0a    \x09\x09\x09\x09\x09\x09The level must be between 0.0 (black) and 1.0(white). If no level is specified, 0.5 is used.\x0a  \x09GRAY - converts any colors in the image to grayscale equivalents\x0a\x09INVERT - sets each pixel to its inverse value\x0a\x09POSTERIZE - limits each channel of the image to the number of colors specified as the level parameter\x0a\x09BLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. \x0a    \x09\x09\x09If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.\x0a\x09OPAQUE - sets the alpha channel to entirely opaque.\x0a\x09ERODE - reduces the light areas with the amount defined by the level parameter.\x0a\x09DILATE - increases the light areas with the amount defined by the level parameter\x22",
+messageSends: ["filter:param:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_green_",
 smalltalk.method({
 selector: "green:",
@@ -2154,6 +2257,57 @@ fn: function (aColor) {
 args: ["aColor"],
 source: "hue: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x0a    \x0a\x09^processing hue: aColor\x0a    \x0a   \x22Extracts the hue value from a color.\x22",
 messageSends: ["hue:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_image_x_y_",
+smalltalk.method({
+selector: "image:x:y:",
+category: 'image loading and displaying ',
+fn: function (aPjsImage, aX, aY) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY]);
+    return self;
+},
+args: ["aPjsImage", "aX", "aY"],
+source: "image: aPjsImage x: aX y: aY \x0a\x09\x22img PImage: the image to display \x0a\x09x int or float: x-coordinate of the image \x0a\x09y int or float: y-coordinate of the image \x22\x0a    \x0a\x09processing image: aPjsImage pjsImage x: aX y: aY \x0a    \x0a     \x22Diplays images to the screen. The images must be preloaded using @pjs preload before \x0a     it can be used. Processing currently works with GIF, JPEG, and Targa images. \x0a     The color of an image may be modified with the tint() function and if a GIF has transparency, \x0a     it will maintain its transparency. The img parameter specifies the image to display and \x0a     the x and y parameters define the location of the image from its upper-left corner. \x0a     The image is displayed at its original size unless the width and height parameters specify a different size. \x0a     The imageMode() function changes the way the parameters work. \x0a     A call to imageMode(CORNERS) will change the width and height parameters to define \x0a     the x and y values of the opposite corner of the image. \x0a\x0a\x09NOTE: DOM security will not allow you to load images file:/// URIs. \x0a    This security can be overridden in Firefox in about:config, by changing security.fileuri.strict_origin_policy to false.\x22",
+messageSends: ["image:x:y:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_image_x_y_width_height_",
+smalltalk.method({
+selector: "image:x:y:width:height:",
+category: 'image loading and displaying ',
+fn: function (aPjsImage, aX, aY, aWidth, aHeight) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_image_x_y_width_height_", [smalltalk.send(aPjsImage, "_pjsImage", []), aX, aY, aWidth, aHeight]);
+    return self;
+},
+args: ["aPjsImage", "aX", "aY", "aWidth", "aHeight"],
+source: "image: aPjsImage x: aX y: aY width: aWidth height: aHeight \x0a\x09\x22img PImage: the image to display \x0a\x09x int or float: x-coordinate of the image \x0a\x09y int or float: y-coordinate of the image \x0a\x09width int or float: width to display the image \x0a\x09height int or float: height to display the image \x22\x0a    \x0a\x09processing image: aPjsImage pjsImage x: aX y: aY width: aWidth height: aHeight \x0a    \x0a     \x22Diplays images to the screen. The images must be preloaded using @pjs preload before \x0a     it can be used. Processing currently works with GIF, JPEG, and Targa images. \x0a     The color of an image may be modified with the tint() function and if a GIF has transparency, \x0a     it will maintain its transparency. The img parameter specifies the image to display and \x0a     the x and y parameters define the location of the image from its upper-left corner. \x0a     The image is displayed at its original size unless the width and height parameters specify a different size. \x0a     The imageMode() function changes the way the parameters work. \x0a     A call to imageMode(CORNERS) will change the width and height parameters to define \x0a     the x and y values of the opposite corner of the image. \x0a\x0a\x09NOTE: DOM security will not allow you to load images file:/// URIs. \x0a    This security can be overridden in Firefox in about:config, by changing security.fileuri.strict_origin_policy to false.\x22",
+messageSends: ["image:x:y:width:height:", "pjsImage"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_imageMode_",
+smalltalk.method({
+selector: "imageMode:",
+category: 'image loading and displaying ',
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_imageMode_", [aMode]);
+    return self;
+},
+args: ["aMode"],
+source: "imageMode: aMode\x0a\x09\x22MODE Either CORNER, CORNERS, or CENTER \x22\x0a    \x0a\x09processing imageMode: aMode\x0a    \x0a     \x22Modifies the location from which images draw. The default mode is imageMode(CORNER), \x0a      which specifies the location to be the upper left corner and uses the fourth and fifth parameters of image() \x0a      to set the image's width and height. The syntax imageMode(CORNERS) uses the second and third parameters of image() \x0a      to set the location of one corner of the image and uses the fourth and fifth parameters to set the opposite corner. \x0a      Use imageMode(CENTER) to draw images centered at the given x and y position\x22",
+messageSends: ["imageMode:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2246,6 +2400,24 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_loadImage_",
+smalltalk.method({
+selector: "loadImage:",
+category: 'image loading and displaying ',
+fn: function (aFileName) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_loadImage_", [aFileName])]);
+    return $1;
+},
+args: ["aFileName"],
+source: "loadImage: aFileName\x0a\x09\x22filename string: name of file to load or data URI/td>   \x22\x0a    \x0a\x09^PjsImage newImage: (processing loadImage: aFileName)\x0a    \x0a     \x22Loads an image into a variable of type PImage. Four types of images ( .gif, .jpg, .tga, .png) images may be loaded. \x0a     To load correctly, images must be located in the data directory of the current sketch, the images must be preloaded \x0a     using @pjs preload specifying the path to the image. In most cases, load all images in setup() to preload them at the \x0a     start of the program. Loading images inside draw() will reduce the speed of a program. \x0a     You can also load images from a data URI, such as \x22\x22data:image/jpg;base64,{base 64 encoded data block}\x22\x22 \x0a     which does not require any preloading. \x0a     The filename parameter can also be a URL to a file found online. For security reasons, \x0a      a Processing sketch found online can only download files from the same server from which it came. \x0a  \x09The extension of the filename parameter is used to determine the image type. \x0a     In cases where the image filename does not end with a proper extension, specify the extension \x0a     as the second parameter to loadImage(), as shown in the third example on this page. \x0a\x09If an image is not loaded successfully, the null value is returned and an error message will be printed to the console. \x0a    The error message does not halt the program, however the null value may cause a NullPointerException if \x0a    your code does not check whether the value returned from loadImage() is null. \x0a\x0aNOTE: Some browers will not allow you to load images from file:// URIs. It is recommended that you use a webserver for your development and testing to avoid any problems with file:// URIs.\x0a\x22",
+messageSends: ["newImage:", "loadImage:"],
+referencedClasses: ["PjsImage"]
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_noFill",
 smalltalk.method({
 selector: "noFill",
@@ -2292,6 +2464,23 @@ fn: function () {
 args: [],
 source: "noStroke\x0a\x09\x22Disables drawing the stroke (outline). If both noStroke() and noFill() are called, nothing will be drawn to the screen.\x22\x0a    \x0a\x09processing noStroke",
 messageSends: ["noStroke"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_noTint",
+smalltalk.method({
+selector: "noTint",
+category: 'image loading and displaying ',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noTint", []);
+    return self;
+},
+args: [],
+source: "noTint\x0a\x09\x22Removes the current fill value for displaying images and reverts to displaying images with their original hues.\x22\x0a    \x0a\x09processing noTint\x0a    ",
+messageSends: ["noTint"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
@@ -2446,6 +2635,42 @@ args: ["aColor"],
 source: "red: aColor\x0a\x09\x22color \x09any value of the color datatype\x22\x0a    \x0a\x09^processing red: aColor\x0a    \x0a   \x22 \x09Extracts the red value from a color, scaled to match current colorMode(). \x0a   This value is always returned as a float so be careful not to assign it to an int value.\x0a\x09The red() function is easy to use and undestand, but is slower than another technique. \x0a    To achieve the same results when working in colorMode(RGB, 255), but with greater speed, \x0a    use the >> (right shift) operator with a bit mask. \x0a    For example, the following two lines of code are equivalent:\x0a\x09float r1 = red(myColor);\x0a\x09float r2 = myColor >> 16 & 0xFF;\x22",
 messageSends: ["red:"],
 referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_requestImage_",
+smalltalk.method({
+selector: "requestImage:",
+category: 'image loading and displaying ',
+fn: function (aFilename) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_", [aFilename])]);
+    return $1;
+},
+args: ["aFilename"],
+source: "requestImage: aFilename \x0a\x09\x22filename String: name of file to load, can be .gif, .jpg, .tga, or a handful of other image types depending on your platform  \x22\x0a    \x0a\x09^PjsImage newImage: (processing requestImage: aFilename  )\x0a    \x0a     \x22This function load images on a separate thread so that your sketch does not freeze while images load during setup(). \x0a     While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. \x0a     You'll know when the image has loaded properly because its width and height will be greater than 0. \x0a     Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.\x0a      The extension parameter is used to determine the image type in cases where the image filename does not end \x0a      with a proper extension. Specify the extension as the second parameter to requestImage().\x22",
+messageSends: ["newImage:", "requestImage:"],
+referencedClasses: ["PjsImage"]
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_requestImage_extension_",
+smalltalk.method({
+selector: "requestImage:extension:",
+category: 'image loading and displaying ',
+fn: function (aFilename, aExtension) {
+    var self = this;
+    var $1;
+    $1 = smalltalk.send(smalltalk.PjsImage || PjsImage, "_newImage_", [smalltalk.send(self['@processing'], "_requestImage_extension_", [aFilename, aExtension])]);
+    return $1;
+},
+args: ["aFilename", "aExtension"],
+source: "requestImage: aFilename extension: aExtension\x0a\x09\x22filename String: name of file to load, can be .gif, .jpg, .tga, or a handful of other image types depending on your platform \x0a\x09extension String: the type of image to load, for example \x22\x22png\x22\x22, \x22\x22gif\x22\x22, \x22\x22jpg\x22\x22  \x22\x0a    \x0a\x09^PjsImage newImage: (processing requestImage: aFilename extension: aExtension)\x0a    \x0a     \x22This function load images on a separate thread so that your sketch does not freeze while images load during setup(). \x0a     While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. \x0a     You'll know when the image has loaded properly because its width and height will be greater than 0. \x0a     Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.\x0a      The extension parameter is used to determine the image type in cases where the image filename does not end \x0a      with a proper extension. Specify the extension as the second parameter to requestImage().\x22",
+messageSends: ["newImage:", "requestImage:extension:"],
+referencedClasses: ["PjsImage"]
 }),
 smalltalk.PjsSketch);
 
@@ -2752,6 +2977,142 @@ fn: function (aMode) {
 args: ["aMode"],
 source: "textureMode: aMode\x0a\x09\x22MODE \x09either IMAGE or NORMALIZED\x22\x0a    \x0a\x09processing textureMode: aMode\x0a    \x0a    \x22Sets the coordinate space for texture mapping. \x0a    There are two options, IMAGE, which refers to the actual coordinates of the image, and NORMALIZED, \x0a    which refers to a normalized space of values ranging from 0 to 1. \x0a    The default mode is IMAGE. In IMAGE, if an image is 100 x 200 pixels, mapping the image onto the \x0a    entire size of a quad would require the points (0,0) (0,100) (100,200) (0,200). \x0a    The same mapping in NORMAL_SPACE is (0,0) (0,1) (1,1) (0,1).\x22",
 messageSends: ["textureMode:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintColor_",
+smalltalk.method({
+selector: "tintColor:",
+category: 'image loading and displaying ',
+fn: function (aColor) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aColor]);
+    return self;
+},
+args: ["aColor"],
+source: "tintColor: aColor \x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aColor \x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintColor_alpha_",
+smalltalk.method({
+selector: "tintColor:alpha:",
+category: 'image loading and displaying ',
+fn: function (aColor, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aColor, anAlpha]);
+    return self;
+},
+args: ["aColor", "anAlpha"],
+source: "tintColor: aColor alpha: anAlpha\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aColor alpha: anAlpha\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:alpha:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintGray_",
+smalltalk.method({
+selector: "tintGray:",
+category: 'image loading and displaying ',
+fn: function (aGray) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aGray]);
+    return self;
+},
+args: ["aGray"],
+source: "tintGray: aGray\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aGray\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintGray_alpha_",
+smalltalk.method({
+selector: "tintGray:alpha:",
+category: 'image loading and displaying ',
+fn: function (aGray, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aGray, anAlpha]);
+    return self;
+},
+args: ["aGray", "anAlpha"],
+source: "tintGray: aGray alpha: anAlpha\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aGray alpha: anAlpha\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:alpha:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintHex_",
+smalltalk.method({
+selector: "tintHex:",
+category: 'image loading and displaying ',
+fn: function (aHex) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_", [aHex]);
+    return self;
+},
+args: ["aHex"],
+source: "tintHex: aHex\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aHex\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintHex_alpha_",
+smalltalk.method({
+selector: "tintHex:alpha:",
+category: 'image loading and displaying ',
+fn: function (aHex, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_alpha_", [aHex, anAlpha]);
+    return self;
+},
+args: ["aHex", "anAlpha"],
+source: "tintHex: aHex alpha: anAlpha\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aHex alpha: anAlpha\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:alpha:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:",
+category: 'image loading and displaying ',
+fn: function (aValue1, aValue2, aValue3) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_", [aValue1, aValue2, aValue3]);
+    return self;
+},
+args: ["aValue1", "aValue2", "aValue3"],
+source: "tintValue1: aValue1 value2: aValue2 value3: aValue3\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aValue1 value2: aValue2 value3: aValue3\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:value2:value3:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
+"_tintValue1_value2_value3_alpha_",
+smalltalk.method({
+selector: "tintValue1:value2:value3:alpha:",
+category: 'image loading and displaying ',
+fn: function (aValue1, aValue2, aValue3, anAlpha) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_tint_value2_value3_alpha_", [aValue1, aValue2, aValue3, anAlpha]);
+    return self;
+},
+args: ["aValue1", "aValue2", "aValue3", "anAlpha"],
+source: "tintValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a\x09\x22gray int or float: any valid number \x0a\x09alpha int or float: opacity of the image \x0a\x09value1 int or float: red or hue value \x0a\x09value2 int or float: green or saturation value \x0a\x09value3 int or float: blue or brightness value \x0a\x09color color: any value of the color datatype  \x0a\x09hex int: color value in hexadecimal notation (i.e. #FFCC00 or 0xFFFFCC00) \x22\x0a    \x0a\x09processing tint: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha\x0a    \x0a    \x22Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the alpha. \x0a     To make an image transparent, but not change it's color, use white as the tint color and specify an alpha value. \x0a     For instance, tint(255, 128) will make an image 50% transparent (unless colorMode() has been used). \x0a     When using hexadecimal notation to specify a color, use \x22\x22#\x22\x22 or \x22\x220x\x22\x22 before the values (e.g. #CCFFAA, 0xFFCCFFAA). \x0a    The # syntax uses six digits to specify a color (the way colors are specified in HTML and CSS). \x0a    When using the hexadecimal notation starting with \x22\x220x\x22\x22, the hexadecimal value must be specified with eight characters; \x0a    the first two characters define the alpha component and the remainder the red, green, and blue components. \x0a    The value for the parameter \x22\x22gray\x22\x22 must be less than or equal to the current maximum value as specified by colorMode(). \x0a    The default maximum value is 255. \x0a     The tint() method is also used to control the coloring of textures in 3D.\x22",
+messageSends: ["tint:value2:value3:alpha:"],
 referencedClasses: []
 }),
 smalltalk.PjsSketch);
