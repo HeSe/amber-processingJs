@@ -1574,6 +1574,18 @@ fn: function (aValue1, aValue2, aValue3, anAlpha) {
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_filterMode_",
+smalltalk.method({
+selector: "filterMode:",
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_", [aMode]);
+    return self;
+}
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_filterMode_param_",
 smalltalk.method({
 selector: "filterMode:param:",

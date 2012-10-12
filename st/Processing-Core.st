@@ -1829,6 +1829,25 @@ copyX: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheig
       This function ignores imageMode()."
 !
 
+filterMode: aMode
+	"MODE Either THRESHOLD, GRAY, INVERT, POSTERIZE, BLUR, OPAQUE, ERODE, or DILATE 
+	param int or float in the range from 0 to 1"
+    
+	processing filter: aMode 
+    
+    "Filters an image as defined by one of the following modes:
+	THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. 
+    						The level must be between 0.0 (black) and 1.0(white). If no level is specified, 0.5 is used.
+  	GRAY - converts any colors in the image to grayscale equivalents
+	INVERT - sets each pixel to its inverse value
+	POSTERIZE - limits each channel of the image to the number of colors specified as the level parameter
+	BLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. 
+    			If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.
+	OPAQUE - sets the alpha channel to entirely opaque.
+	ERODE - reduces the light areas with the amount defined by the level parameter.
+	DILATE - increases the light areas with the amount defined by the level parameter"
+!
+
 filterMode: aMode param: aParam
 	"MODE Either THRESHOLD, GRAY, INVERT, POSTERIZE, BLUR, OPAQUE, ERODE, or DILATE 
 	param int or float in the range from 0 to 1"

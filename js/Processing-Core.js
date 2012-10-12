@@ -2209,6 +2209,23 @@ referencedClasses: []
 smalltalk.PjsSketch);
 
 smalltalk.addMethod(
+"_filterMode_",
+smalltalk.method({
+selector: "filterMode:",
+category: 'image pixels',
+fn: function (aMode) {
+    var self = this;
+    smalltalk.send(self['@processing'], "_filter_", [aMode]);
+    return self;
+},
+args: ["aMode"],
+source: "filterMode: aMode\x0a\x09\x22MODE Either THRESHOLD, GRAY, INVERT, POSTERIZE, BLUR, OPAQUE, ERODE, or DILATE \x0a\x09param int or float in the range from 0 to 1\x22\x0a    \x0a\x09processing filter: aMode \x0a    \x0a    \x22Filters an image as defined by one of the following modes:\x0a\x09THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. \x0a    \x09\x09\x09\x09\x09\x09The level must be between 0.0 (black) and 1.0(white). If no level is specified, 0.5 is used.\x0a  \x09GRAY - converts any colors in the image to grayscale equivalents\x0a\x09INVERT - sets each pixel to its inverse value\x0a\x09POSTERIZE - limits each channel of the image to the number of colors specified as the level parameter\x0a\x09BLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. \x0a    \x09\x09\x09If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.\x0a\x09OPAQUE - sets the alpha channel to entirely opaque.\x0a\x09ERODE - reduces the light areas with the amount defined by the level parameter.\x0a\x09DILATE - increases the light areas with the amount defined by the level parameter\x22",
+messageSends: ["filter:"],
+referencedClasses: []
+}),
+smalltalk.PjsSketch);
+
+smalltalk.addMethod(
 "_filterMode_param_",
 smalltalk.method({
 selector: "filterMode:param:",
