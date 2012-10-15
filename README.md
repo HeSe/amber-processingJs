@@ -17,6 +17,6 @@ About
 Installation
 --------
 
-Put these sources, as is, in the amber examples folder.
+Put these sources, as is, in the amber examples folder ("amber\examples\amber-processingJs").
 
 

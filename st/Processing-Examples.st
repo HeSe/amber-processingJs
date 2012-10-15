@@ -7,11 +7,11 @@ PjsSketch subclass: #ProcessingCircles
 
 activateFunctions
 
-	self processing at: 'setup' put: [self setup].
-	self processing at: 'draw' put: [self draw].
-	self processing at: 'mouseMoved' put: [self mouseMoved].
+	self pjsInterface override: 'setup' with: [self setup].
+	self pjsInterface override: 'draw' with: [self draw].
+	self pjsInterface override: 'mouseMoved' with: [self mouseMoved].
     
-    self processing setup.
+    self pjsInterface pjsSetup.
 !
 
 delay
@@ -26,18 +26,18 @@ delay: aValue
 
 draw
 
-	self radius: (self radius + (self processing sin: (self frameCount / 4))).
+	self radius: (self radius + (self pjsInterface processing sin: (self pjsInterface frameCount / 4))).
  
     self x: (self  x +((self nX - self x) / self delay)).
     self y: (self y + ((self nY - self y) / self delay)).
 
-     self  backgroundGray: 100.
+     self pjsInterface backgroundGray: 100.
 
-      self fillValue1: 0 value2: 121 value3: 184.
+      self pjsInterface fillValue1: 0 value2: 121 value3: 184.
 
-      self  strokeGray: 255.
+      self pjsInterface strokeGray: 255.
 
-      self  ellipseX: self x y: self y width: self radius height: self radius.
+      self pjsInterface ellipseX: self x y: self y width: self radius height: self radius.
 !
 
 initialize
@@ -55,8 +55,8 @@ initialize
 
 mouseMoved
 
-	self nX: self mouseX.
-    self nY: self mouseY.
+	self nX: self pjsInterface mouseX.
+    self nY: self pjsInterface mouseY.
 !
 
 nX
@@ -91,10 +91,10 @@ radius: aValue
 
 setup
 
-  self strokeWeight: 10.
-  self frameRate: 15.
- self x: (self width / 2).
-  self y: (self height / 2).
+  self pjsInterface strokeWeight: 10.
+  self pjsInterface frameRate: 15.
+ self x: (self pjsInterface width / 2).
+  self y: (self pjsInterface height / 2).
   self nX: self x.
   self nY: self y.
 !
@@ -136,17 +136,17 @@ PjsSketch subclass: #ProcessingClock
 
 activateFunctions
 
-	self processing at: 'setup' put: [self setup].
-	self processing at: 'draw' put: [self draw].
+	self pjsInterface override: 'setup' with: [self setup].
+	self pjsInterface override: 'draw' with: [self draw].
     
-    self processing setup.
+    self pjsInterface pjsSetup.
 !
 
 draw
 
   | now hoursPosition minutesPosition secondsPosition |  
   
-  self backgroundGray: 224.
+  self pjsInterface backgroundGray: 224.
   
   now := Date new.
   
@@ -165,7 +165,7 @@ draw
 
 drawArm: aPosition lengthScale: aLengthScale weight: aWeight
 	| myDX myDY |
-	self  strokeWeight: aWeight.
+	self  pjsInterface strokeWeight: aWeight.
 
 	myDX := centerX 
 			+ ((Math sin: (aPosition * 2 * Math PI))
@@ -174,13 +174,13 @@ drawArm: aPosition lengthScale: aLengthScale weight: aWeight
 			- ((Math cos: (aPosition * 2 * Math PI))
 			* aLengthScale * maxArmLength).
             
-	self lineX1: centerX  y1: centerY x2: myDX y2: myDY
+	self pjsInterface lineX1: centerX  y1: centerY x2: myDX y2: myDY
 !
 
 setup
 
-   centerX  := self width / 2.
-	centerY := self height / 2.
+   centerX  := self pjsInterface width / 2.
+	centerY := self pjsInterface height / 2.
 	maxArmLength := Math min: centerX or: centerY.
 ! !
 

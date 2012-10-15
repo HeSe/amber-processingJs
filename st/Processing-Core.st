@@ -333,142 +333,11 @@ newWidth: aWidth heigth: aHeight format: aFormat
   ^instance
 ! !
 
-Object subclass: #PjsShape
-	instanceVariableNames: 'pjsShape'
-	package: 'Processing-Core'!
-
-!PjsShape methodsFor: 'not yet classified'!
-
-addChild: aWho
-
-	pjsShape addChild: aWho
-!
-
-beginContour
-
-	pjsShape beginContour
-!
-
-disableStyle
-
-	pjsShape disableStyle
-!
-
-enableStyle
-
-	pjsShape enableStyle
-!
-
-end
-
-	pjsShape end
-!
-
-endContour
-
-	pjsShape endContour
-!
-
-getChild: anIndexOrTarget
-
-	^pjsShape getChild: anIndexOrTarget
-!
-
-height
-
-	^  pjsShape height
-!
-
-height: aValue
-
-	pjsShape height: aValue
-!
-
-initialize
-
-	pjsShape := < new Shape() >
-!
-
-isVisible
-
-	^pjsShape isVisible
-!
-
-pjsShape
-
-	^pjsShape
-!
-
-resetMatrix
-
-	pjsShape resetMatrix
-!
-
-rotate: aFloatAngleInRadians
-	
-    pjsShape rotate: aFloatAngleInRadians
-!
-
-rotateX: aFloatAngle
-	
-    pjsShape rotateX: aFloatAngle
-!
-
-rotateY: aFloatAngle
-	
-    pjsShape rotateY: aFloatAngle
-!
-
-rotateZ: aFloatAngle
-	
-    pjsShape rotateZ: aFloatAngle
-!
-
-scale: aFloatPercent
-	
-    pjsShape scale: aFloatPercent
-!
-
-scaleX: aFloatPercentXAxis y: aFloatPercentYAxis
-	
-    pjsShape scale: aFloatPercentXAxis  y: aFloatPercentYAxis
-!
-
-scaleX: aFloatPercentXAxis y: aFloatPercentYAxis z: aFloatPercentZAxis
-	
-    pjsShape scale: aFloatPercentXAxis  y: aFloatPercentYAxis z: aFloatPercentZAxis
-!
-
-setVisible: aBoolean
-
-	pjsShape setVisibile: aBoolean
-!
-
-translateX: aFloatLeftRight y: aFloatUpDown
-	
-    pjsShape translate: aFloatLeftRight y: aFloatUpDown
-!
-
-translateX: aFloatLeftRight y: aFloatUpDown z: aFloatForwarBackward
-	
-    pjsShape translate: aFloatLeftRight y: aFloatUpDown z: aFloatForwarBackward
-!
-
-width
-
-	^ pjsShape width
-!
-
-width: aValue
-
-	pjsShape width: aValue
-! !
-
-Object subclass: #PjsSketchObject
+Object subclass: #PjsInterface
 	instanceVariableNames: 'processing'
 	package: 'Processing-Core'!
 
-!PjsSketchObject methodsFor: '2D primitives'!
+!PjsInterface methodsFor: '2D primitives'!
 
 arcX: aX y: aY width: aWidth height: aHeight start: aStart stop: aStop
 
@@ -525,7 +394,7 @@ triangleX1: aX1  y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3
 	processing triangle: aX1 y1: aY1 x2: aX2 y2: aY2 x3: aX3  y3: aY3
 ! !
 
-!PjsSketchObject methodsFor: '3D primitives'!
+!PjsInterface methodsFor: '3D primitives'!
 
 box: aSizeIntOrFloat
 	"size 	int or float: dimension of the box in all dimensions, creates a cube"
@@ -560,7 +429,7 @@ sphereDetail: aURes vres: aVRes
 	processing sphereDetail: aURes vres: aVRes
 ! !
 
-!PjsSketchObject methodsFor: 'accessing'!
+!PjsInterface methodsFor: 'accessing'!
 
 height
 
@@ -572,12 +441,31 @@ processing
  	^processing
 !
 
+processing: aProcessingInstance
+ 
+ 	processing := aProcessingInstance
+!
+
 width
 
 	^processing width
 ! !
 
-!PjsSketchObject methodsFor: 'attributes'!
+!PjsInterface methodsFor: 'amber - processingJs API'!
+
+override: aMethodName with: aFunctionBlock
+
+	self processing at: aMethodName put: aFunctionBlock
+!
+
+pjsSetup
+
+	"fire up processing"
+
+	processing setup
+! !
+
+!PjsInterface methodsFor: 'attributes'!
 
 ellipseMode: aMode
 	"MODE 	Either CENTER, RADIUS, CORNER, or CORNERS."
@@ -651,7 +539,7 @@ strokeWeight: aWidth
     This function does not work with the P3D renderer (please see the size() reference for more information)."
 ! !
 
-!PjsSketchObject methodsFor: 'camera'!
+!PjsInterface methodsFor: 'camera'!
 
 beginCamera
 	"The beginCamera() and endCamera() functions enable advanced customization of the camera space.
@@ -812,7 +700,7 @@ printProjection
     	processing printProjection
 ! !
 
-!PjsSketchObject methodsFor: 'color creating and reading'!
+!PjsInterface methodsFor: 'color creating and reading'!
 
 alpha: aColor
 	"color 	any value of the color datatype"
@@ -1015,7 +903,7 @@ saturation: aColor
    "Extracts the saturation value from a color."
 ! !
 
-!PjsSketchObject methodsFor: 'color settings'!
+!PjsInterface methodsFor: 'color settings'!
 
 background: aValue1	value2: aValue2 value3: aValue3 
 	"value1 	int or float: red or hue value (depending on the current color mode)
@@ -1470,7 +1358,7 @@ strokeValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
     The default maximum value is 255."
 ! !
 
-!PjsSketchObject methodsFor: 'coordinates'!
+!PjsInterface methodsFor: 'coordinates'!
 
 modelX: anX y: aY z: aZ
 	"x int or float: 3D x coordinate to be mapped 
@@ -1550,7 +1438,7 @@ screenZ: anX y: aY z: aZ
      it will appear on a (two-dimensional) screen."
 ! !
 
-!PjsSketchObject methodsFor: 'curves'!
+!PjsInterface methodsFor: 'curves'!
 
 bezierDetail: aDetailint
 	"Sets the resolution at which Beziers display. The default value is 20. This function is only useful when using the P3D or OPENGL renderer as the default (JAVA2D) renderer does not use this information."
@@ -1647,7 +1535,7 @@ curveX1: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 
 	processing curve: aX1  y1: aY1 z1: aZ1 x2: aX2 y2: aY2 z2: aZ2  x3: aX3  y3: aY3 z3: aZ3 x4: aX4 y4: aY4 z4: aZ4
 ! !
 
-!PjsSketchObject methodsFor: 'environmant'!
+!PjsInterface methodsFor: 'environmant'!
 
 cursor
 	"MODE either ARROW, CROSS, HAND, MOVE, TEXT, WAIT 
@@ -1751,7 +1639,7 @@ screenWidth
 	^< processing.screen.width >
 ! !
 
-!PjsSketchObject methodsFor: 'image loading and displaying '!
+!PjsInterface methodsFor: 'image loading and displaying '!
 
 createImageWidth: aWidth height: aHeight format: aFormat
 	"width int: width in pixels 
@@ -2066,7 +1954,7 @@ tintValue1: aValue1 value2: aValue2 value3: aValue3 alpha: anAlpha
      The tint() method is also used to control the coloring of textures in 3D."
 ! !
 
-!PjsSketchObject methodsFor: 'image pixels'!
+!PjsInterface methodsFor: 'image pixels'!
 
 blendImage: aPjsImage x: aX y: aY width: aWidth height: aHeigt dx: dX dy: dY dwidth: aDWidth dheight: aDHeight mode: aMode
 	"x int: X coordinate of the source's upper left corner 
@@ -2380,7 +2268,7 @@ updatePixels
 	 processing updatePixels
 ! !
 
-!PjsSketchObject methodsFor: 'image saving'!
+!PjsInterface methodsFor: 'image saving'!
 
 saveFrame
 	"filename String: any sequence of letters and numbers 
@@ -2427,14 +2315,14 @@ saveImage: aFileName
      "Saves an image from the display window. Images are saved in the PNG format as a Data URI, which can be displayed in the browser in a new window."
 ! !
 
-!PjsSketchObject methodsFor: 'initialization'!
+!PjsInterface methodsFor: 'initialization'!
 
 initialize
 
 	processing := <Processing.instances[0]>.
 ! !
 
-!PjsSketchObject methodsFor: 'lights'!
+!PjsInterface methodsFor: 'lights'!
 
 ambientLightV1: aV1 v2: aV2 v3: aV3 
 	"v1 int or float: red or hue value 
@@ -2594,7 +2482,7 @@ spotLightV1: aV1 v2: aV2 v3: aV3 x: aX y: aY z: aZ angle: anAngle concentration:
      The angle parameter affects angle of the spotlight cone."
 ! !
 
-!PjsSketchObject methodsFor: 'material properties'!
+!PjsInterface methodsFor: 'material properties'!
 
 ambient: aValue1 value2: aValue2 value3: aValue3 
 	"gray int or float: number specifying value between white and black 
@@ -2740,14 +2628,14 @@ specularGray: aGrayValue
     Used in combination with emissive(), specular(), and shininess() in setting the materal properties of shapes."
 ! !
 
-!PjsSketchObject methodsFor: 'processing overrides'!
+!PjsInterface methodsFor: 'processing overrides'!
 
 draw
  
  	self subclassResponsibility
 ! !
 
-!PjsSketchObject methodsFor: 'sketch directions'!
+!PjsInterface methodsFor: 'sketch directions'!
 
 directiveCrisp: aBool
 
@@ -2781,7 +2669,7 @@ directivePreload: aFileName
 	  < p.externals.sketch.options.preload = aFileName >
 ! !
 
-!PjsSketchObject methodsFor: 'sketch keyboard'!
+!PjsInterface methodsFor: 'sketch keyboard'!
 
 isKeyPressed 
     
@@ -2836,7 +2724,7 @@ keyTyped
 	self subclassResponsibility
 ! !
 
-!PjsSketchObject methodsFor: 'sketch mouse'!
+!PjsInterface methodsFor: 'sketch mouse'!
 
 isMousePressed 
     
@@ -2934,7 +2822,7 @@ pmouseY
 	^< processing.pmouseY >
 ! !
 
-!PjsSketchObject methodsFor: 'sketch structure'!
+!PjsInterface methodsFor: 'sketch structure'!
 
 size: aWidth height: aHeight 
 
@@ -2958,7 +2846,7 @@ size: aWidth height: aHeight
     Any code that appears before the size() command may run more than once, which can lead to confusing results."
 ! !
 
-!PjsSketchObject methodsFor: 'sketch transform'!
+!PjsInterface methodsFor: 'sketch transform'!
 
 applyMatrix:aN00 n01: aN01 n02: aN02 n03: aN03 n04: aN04 n05: aN05 n06: aN06 n07: aN07 n08: aN08 n09: aN09 n10: aN10 n11: aN11 n12: aN12 n13: aN13 n14: aN14 n15: aN15
 	
@@ -3152,7 +3040,7 @@ translateX: aX y: aY z: aZ
     This function can be further controlled by the pushMatrix() and popMatrix()."
 ! !
 
-!PjsSketchObject methodsFor: 'vertex'!
+!PjsInterface methodsFor: 'vertex'!
 
 beginShape
 
@@ -3388,9 +3276,192 @@ vertexX: aX y: aY z: aZ u: anU v: aV
     but this relation can be changed with textureMode()."
 ! !
 
-PjsSketchObject subclass: #PjsSketch
-	instanceVariableNames: ''
+!PjsInterface class methodsFor: 'not yet classified'!
+
+new
+
+	self error: 'use on: instead'
+!
+
+on: aProcessingInstance
+
+	^super new processing: aProcessingInstance
+! !
+
+Object subclass: #PjsObject
+	instanceVariableNames: 'pjsInterface'
 	package: 'Processing-Core'!
+
+!PjsObject methodsFor: 'not yet classified'!
+
+pjsInterface
+
+	^pjsInterface
+!
+
+pjsInterface: aPjsInterface
+
+	pjsInterface := aPjsInterface
+! !
+
+!PjsObject class methodsFor: 'not yet classified'!
+
+new
+
+	self error: 'use on: instead'
+!
+
+on: aPjsInterface
+
+	 ^super new pjsInterface: aPjsInterface
+! !
+
+Object subclass: #PjsShape
+	instanceVariableNames: 'pjsShape'
+	package: 'Processing-Core'!
+
+!PjsShape methodsFor: 'not yet classified'!
+
+addChild: aWho
+
+	pjsShape addChild: aWho
+!
+
+beginContour
+
+	pjsShape beginContour
+!
+
+disableStyle
+
+	pjsShape disableStyle
+!
+
+enableStyle
+
+	pjsShape enableStyle
+!
+
+end
+
+	pjsShape end
+!
+
+endContour
+
+	pjsShape endContour
+!
+
+getChild: anIndexOrTarget
+
+	^pjsShape getChild: anIndexOrTarget
+!
+
+height
+
+	^  pjsShape height
+!
+
+height: aValue
+
+	pjsShape height: aValue
+!
+
+initialize
+
+	pjsShape := < new Shape() >
+!
+
+isVisible
+
+	^pjsShape isVisible
+!
+
+pjsShape
+
+	^pjsShape
+!
+
+resetMatrix
+
+	pjsShape resetMatrix
+!
+
+rotate: aFloatAngleInRadians
+	
+    pjsShape rotate: aFloatAngleInRadians
+!
+
+rotateX: aFloatAngle
+	
+    pjsShape rotateX: aFloatAngle
+!
+
+rotateY: aFloatAngle
+	
+    pjsShape rotateY: aFloatAngle
+!
+
+rotateZ: aFloatAngle
+	
+    pjsShape rotateZ: aFloatAngle
+!
+
+scale: aFloatPercent
+	
+    pjsShape scale: aFloatPercent
+!
+
+scaleX: aFloatPercentXAxis y: aFloatPercentYAxis
+	
+    pjsShape scale: aFloatPercentXAxis  y: aFloatPercentYAxis
+!
+
+scaleX: aFloatPercentXAxis y: aFloatPercentYAxis z: aFloatPercentZAxis
+	
+    pjsShape scale: aFloatPercentXAxis  y: aFloatPercentYAxis z: aFloatPercentZAxis
+!
+
+setVisible: aBoolean
+
+	pjsShape setVisibile: aBoolean
+!
+
+translateX: aFloatLeftRight y: aFloatUpDown
+	
+    pjsShape translate: aFloatLeftRight y: aFloatUpDown
+!
+
+translateX: aFloatLeftRight y: aFloatUpDown z: aFloatForwarBackward
+	
+    pjsShape translate: aFloatLeftRight y: aFloatUpDown z: aFloatForwarBackward
+!
+
+width
+
+	^ pjsShape width
+!
+
+width: aValue
+
+	pjsShape width: aValue
+! !
+
+Object subclass: #PjsSketch
+	instanceVariableNames: 'pjsInterface'
+	package: 'Processing-Core'!
+
+!PjsSketch methodsFor: 'accessing'!
+
+pjsInterface
+
+	^pjsInterface
+!
+
+pjsInterface: aPjsInterface
+
+	pjsInterface := aPjsInterface
+! !
 
 !PjsSketch methodsFor: 'environment'!
 
@@ -3400,7 +3471,7 @@ cursor
 	x int: the horizonal active spot of the cursor 
 	y int: the vertical active spot of the cursor "
     
-	 ^processing cursor
+	 ^self pjsInterface cursor
  
  	"Sets the cursor to a predefined symbol, an image, or turns it on if already hidden. 
     If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. 
@@ -3412,10 +3483,31 @@ cursor
 
 activateFunctions
 
-	processing at: 'draw' put: [self draw].
+	self pjsInterface override: 'draw' with: [self draw].
+!
+
+initialize
+ 
+	|  mProcessingInstance |
+
+	mProcessingInstance := <Processing.instances[0]>.
+
+	pjsInterface := PjsInterface on: mProcessingInstance.
+! !
+
+!PjsSketch methodsFor: 'processing'!
+
+size: aWidth height: aHeight 
+
+	self pjsInterface size: aWidth height: aHeight
 ! !
 
 !PjsSketch class methodsFor: 'not yet classified'!
+
+new
+
+	^self start
+!
 
 overrideFunctions
 
@@ -3424,7 +3516,7 @@ overrideFunctions
 
 start
 
-	^self new activateFunctions
+	^super new activateFunctions
 !
 
 startWidth: aWidth height: aHeight
