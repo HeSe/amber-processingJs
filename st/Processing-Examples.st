@@ -192,3 +192,57 @@ overrideFunctions
 	 < processing.draw = function() {}; >.
 ! !
 
+PjsSketch subclass: #ProcessingVector
+	instanceVariableNames: 'v1 v2'
+	package: 'Processing-Examples'!
+
+!ProcessingVector methodsFor: 'accessing'!
+
+v1
+
+	^v1
+!
+
+v2
+
+	^v2
+! !
+
+!ProcessingVector methodsFor: 'drawing'!
+
+draw
+
+  self pjsInterface ellipseX: v1 x y: v1 y width: 12 height: 12.
+  self pjsInterface ellipseX: v2 x y: v2 y width: 12 height: 12.
+  v1 multVector: v2.
+  self pjsInterface ellipseX: v1 x y: v1 y width: 24 height: 24.
+  
+  self pjsInterface  noLoop.
+! !
+
+!ProcessingVector methodsFor: 'initialization'!
+
+activateFunctions
+
+	self pjsInterface override: 'setup' with: [self setup].
+	self pjsInterface override: 'draw' with: [self draw].
+    
+    self pjsInterface pjsSetup.
+!
+
+setup
+
+  self pjsInterface  smooth.
+
+  v1 :=  PjsVector newX: 5.0 y: 10.0 z: 0.0.
+  v2 :=  PjsVector newX: 15.0 y: 8.0 z: 0.0.
+! !
+
+!ProcessingVector class methodsFor: 'not yet classified'!
+
+overrideFunctions
+
+	 < processing.setup = function() {}; >.
+	 < processing.draw = function() {}; >.
+! !
+

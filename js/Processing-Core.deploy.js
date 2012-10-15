@@ -6,7 +6,7 @@ smalltalk.method({
 selector: "initPjsFont",
 fn: function () {
     var self = this;
-    self['@pjsFont'] = new PFont;
+    self['@pjsFont'] = new p.PFont;
     return self;
 }
 }),
@@ -18,7 +18,7 @@ smalltalk.method({
 selector: "initPjsFont:smooth:",
 fn: function (font, smooth) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smootht);
+    self['@pjsFont'] = new p.PFont(font, smootht);
     return self;
 }
 }),
@@ -30,7 +30,7 @@ smalltalk.method({
 selector: "initPjsFont:smooth:charset:",
 fn: function (font, smooth, charset) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smooth, charset);
+    self['@pjsFont'] = new p.PFont(font, smooth, charset);
     return self;
 }
 }),
@@ -42,7 +42,7 @@ smalltalk.method({
 selector: "initPjsFont:smooth:charset:onInputStream:",
 fn: function (font, smooth, charset, stream) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smooth, charset, stream);
+    self['@pjsFont'] = new p.PFont(font, smooth, charset, stream);
     return self;
 }
 }),
@@ -54,7 +54,7 @@ smalltalk.method({
 selector: "initPjsFontOnInputStream:",
 fn: function (stream) {
     var self = this;
-    self['@pjsFont'] = new PFont(stream);
+    self['@pjsFont'] = new p.PFont(stream);
     return self;
 }
 }),
@@ -290,7 +290,7 @@ smalltalk.method({
 selector: "initPjsImage",
 fn: function () {
     var self = this;
-    self['@pjsImage'] = new PImage;
+    self['@pjsImage'] = new p.PImage;
     return self;
 }
 }),
@@ -302,7 +302,7 @@ smalltalk.method({
 selector: "initPjsImage:",
 fn: function (img) {
     var self = this;
-    self['@pjsImage'] = new PImage(img);
+    self['@pjsImage'] = new p.PImage(img);
     return self;
 }
 }),
@@ -314,7 +314,7 @@ smalltalk.method({
 selector: "initPjsImageWidth:height:",
 fn: function (width, height) {
     var self = this;
-    self['@pjsImage'] = new PImage(width, height);
+    self['@pjsImage'] = new p.PImage(width, height);
     return self;
 }
 }),
@@ -326,7 +326,7 @@ smalltalk.method({
 selector: "initPjsImageWidth:height:format:",
 fn: function (width, height, format) {
     var self = this;
-    self['@pjsImage'] = new PImage(width, height, format);
+    self['@pjsImage'] = new p.PImage(width, height, format);
     return self;
 }
 }),
@@ -1941,6 +1941,18 @@ fn: function () {
 smalltalk.PjsInterface);
 
 smalltalk.addMethod(
+"_loop",
+smalltalk.method({
+selector: "loop",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_loop", []);
+    return self;
+}
+}),
+smalltalk.PjsInterface);
+
+smalltalk.addMethod(
 "_modelX_y_z_",
 smalltalk.method({
 selector: "modelX:y:z:",
@@ -2133,6 +2145,18 @@ selector: "noLights",
 fn: function () {
     var self = this;
     smalltalk.send(self['@processing'], "_noLights", []);
+    return self;
+}
+}),
+smalltalk.PjsInterface);
+
+smalltalk.addMethod(
+"_noLoop",
+smalltalk.method({
+selector: "noLoop",
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noLoop", []);
     return self;
 }
 }),
@@ -3437,7 +3461,7 @@ smalltalk.method({
 selector: "initialize",
 fn: function () {
     var self = this;
-    self['@pjsShape'] = new Shape;
+    self['@pjsShape'] = new p.Shape;
     return self;
 }
 }),
@@ -3916,7 +3940,7 @@ smalltalk.method({
 selector: "initPjsVector",
 fn: function () {
     var self = this;
-    self['@pjsVector'] = new PVector;
+    self['@pjsVector'] = new p.PVector;
     return self;
 }
 }),
@@ -3938,9 +3962,9 @@ smalltalk.addMethod(
 "_initPjsVectorX_y_",
 smalltalk.method({
 selector: "initPjsVectorX:y:",
-fn: function (x, y) {
+fn: function (aX, aY) {
     var self = this;
-    self['@pjsVector'] = new PVector(x, y);
+    self['@pjsVector'] = new p.PVector(aX, aY);
     return self;
 }
 }),
@@ -3952,7 +3976,7 @@ smalltalk.method({
 selector: "initPjsVectorX:y:z:",
 fn: function (x, y, z) {
     var self = this;
-    self['@pjsVector'] = new PVector(x, y, z);
+    self['@pjsVector'] = new p.PVector(x, y, z);
     return self;
 }
 }),
@@ -4002,6 +4026,18 @@ selector: "mult:vector:",
 fn: function (aScalarFloat, aPjsVector) {
     var self = this;
     smalltalk.send(self['@pjsVector'], "_mult_vector_", [aScalarFloat, smalltalk.send(aPjsVector, "_pjsVector", [])]);
+    return self;
+}
+}),
+smalltalk.PjsVector);
+
+smalltalk.addMethod(
+"_multVector_",
+smalltalk.method({
+selector: "multVector:",
+fn: function (aPjsVector) {
+    var self = this;
+    smalltalk.send(self['@pjsVector'], "_mult_", [smalltalk.send(aPjsVector, "_pjsVector", [])]);
     return self;
 }
 }),
@@ -4269,10 +4305,9 @@ smalltalk.method({
 selector: "new",
 fn: function () {
     var self = this;
-    var instance;
-    instance = smalltalk.send(self, "_new", []);
-    smalltalk.send(instance, "_initPjsVector", []);
-    return instance;
+    var $1;
+    $1 = smalltalk.send(smalltalk.send(self, "_new", [], smalltalk.Object.klass), "_initPjsVector", []);
+    return $1;
 }
 }),
 smalltalk.PjsVector.klass);
@@ -4283,10 +4318,9 @@ smalltalk.method({
 selector: "newX:y:",
 fn: function (aXFloat, aYFloat) {
     var self = this;
-    var instance;
-    instance = smalltalk.send(self, "_new", [], smalltalk.Object.klass);
-    smalltalk.send(instance, "_initPjsVectorX_y_", [aXFloat, aYFloat]);
-    return instance;
+    var $1;
+    $1 = smalltalk.send(smalltalk.send(self, "_new", [], smalltalk.Object.klass), "_initPjsVectorX_y_", [aXFloat, aYFloat]);
+    return $1;
 }
 }),
 smalltalk.PjsVector.klass);

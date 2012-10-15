@@ -117,14 +117,14 @@ fn: function (html) {
     smalltalk.send(canvas, "_width_", [smalltalk.send(self, "_width", [])]);
     smalltalk.send(canvas, "_height_", [smalltalk.send(self, "_height", [])]);
     smalltalk.send(canvas, "_id_", [smalltalk.send(self, "_canvasId", [])]);
-    sketchProc = smalltalk.send(function (processing) {return processing.draw = function () {};}, "_appendToJQuery_", [smalltalk.send("body", "_asJQuery", [])]);
+    sketchProc = smalltalk.send(function (processing) {processing.setup = function () {};return processing.draw = function () {};}, "_appendToJQuery_", [smalltalk.send("body", "_asJQuery", [])]);
     canvas = smalltalk.send(document, "_getElementById_", [smalltalk.send(self, "_canvasId", [])]);
     p = new Processing(canvas, sketchProc);
     smalltalk.send(self, "_startPjsSketch", []);
     return self;
 },
 args: ["html"],
-source: "renderOn: html\x0a\x0a\x09| canvas  sketchProc |\x0a    \x0a    canvas := html canvas.\x0a    canvas width: self width.\x0a    canvas height: self height.\x0a    canvas id: self canvasId.\x0a    \x0a    \x0a    sketchProc :=( [:processing |  < processing.draw = function() {}; > ] appendToJQuery: 'body' asJQuery ).\x0a\x0a\x09canvas := document getElementById: self canvasId.\x0a\x09\x09\x0a\x09< p =  new Processing(canvas, sketchProc); >.\x0a        \x0a      self startPjsSketch\x0a    \x0a    ",
+source: "renderOn: html\x0a\x0a\x09| canvas  sketchProc |\x0a    \x0a    canvas := html canvas.\x0a    canvas width: self width.\x0a    canvas height: self height.\x0a    canvas id: self canvasId.\x0a    \x0a    \x0a    sketchProc :=( [:processing | < processing.setup = function() {}; > .\x0a\x09\x09\x09\x09\x09\x09\x09< processing.draw = function() {}; >   ] appendToJQuery: 'body' asJQuery ).\x0a\x0a\x09canvas := document getElementById: self canvasId.\x0a\x09\x09\x0a\x09< p =  new Processing(canvas, sketchProc); >.\x0a        \x0a      self startPjsSketch\x0a    \x0a    ",
 messageSends: ["canvas", "width:", "width", "height:", "height", "id:", "canvasId", "appendToJQuery:", "asJQuery", "getElementById:", "startPjsSketch"],
 referencedClasses: []
 }),

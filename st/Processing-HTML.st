@@ -47,7 +47,8 @@ renderOn: html
     canvas id: self canvasId.
     
     
-    sketchProc :=( [:processing |  < processing.draw = function() {}; > ] appendToJQuery: 'body' asJQuery ).
+    sketchProc :=( [:processing | < processing.setup = function() {}; > .
+							< processing.draw = function() {}; >   ] appendToJQuery: 'body' asJQuery ).
 
 	canvas := document getElementById: self canvasId.
 		

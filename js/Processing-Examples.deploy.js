@@ -319,3 +319,85 @@ fn: function () {
 smalltalk.ProcessingClock.klass);
 
 
+smalltalk.addClass('ProcessingVector', smalltalk.PjsSketch, ['v1', 'v2'], 'Processing-Examples');
+smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_override_with_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_override_with_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_pjsSetup", []);
+    return self;
+}
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_draw",
+smalltalk.method({
+selector: "draw",
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v1'], "_x", []), smalltalk.send(self['@v1'], "_y", []), 12, 12]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v2'], "_x", []), smalltalk.send(self['@v2'], "_y", []), 12, 12]);
+    smalltalk.send(self['@v1'], "_multVector_", [self['@v2']]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v1'], "_x", []), smalltalk.send(self['@v1'], "_y", []), 24, 24]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_noLoop", []);
+    return self;
+}
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_setup",
+smalltalk.method({
+selector: "setup",
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_smooth", []);
+    self['@v1'] = smalltalk.send(smalltalk.PjsVector || PjsVector, "_newX_y_z_", [5, 10, 0]);
+    self['@v2'] = smalltalk.send(smalltalk.PjsVector || PjsVector, "_newX_y_z_", [15, 8, 0]);
+    return self;
+}
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_v1",
+smalltalk.method({
+selector: "v1",
+fn: function () {
+    var self = this;
+    return self['@v1'];
+}
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_v2",
+smalltalk.method({
+selector: "v2",
+fn: function () {
+    var self = this;
+    return self['@v2'];
+}
+}),
+smalltalk.ProcessingVector);
+
+
+smalltalk.addMethod(
+"_overrideFunctions",
+smalltalk.method({
+selector: "overrideFunctions",
+fn: function () {
+    var self = this;
+    processing.setup = function () {};
+    processing.draw = function () {};
+    return self;
+}
+}),
+smalltalk.ProcessingVector.klass);
+
+

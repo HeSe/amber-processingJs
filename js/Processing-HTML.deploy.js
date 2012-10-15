@@ -86,7 +86,7 @@ fn: function (html) {
     smalltalk.send(canvas, "_width_", [smalltalk.send(self, "_width", [])]);
     smalltalk.send(canvas, "_height_", [smalltalk.send(self, "_height", [])]);
     smalltalk.send(canvas, "_id_", [smalltalk.send(self, "_canvasId", [])]);
-    sketchProc = smalltalk.send(function (processing) {return processing.draw = function () {};}, "_appendToJQuery_", [smalltalk.send("body", "_asJQuery", [])]);
+    sketchProc = smalltalk.send(function (processing) {processing.setup = function () {};return processing.draw = function () {};}, "_appendToJQuery_", [smalltalk.send("body", "_asJQuery", [])]);
     canvas = smalltalk.send(document, "_getElementById_", [smalltalk.send(self, "_canvasId", [])]);
     p = new Processing(canvas, sketchProc);
     smalltalk.send(self, "_startPjsSketch", []);

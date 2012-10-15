@@ -434,3 +434,115 @@ referencedClasses: []
 smalltalk.ProcessingClock.klass);
 
 
+smalltalk.addClass('ProcessingVector', smalltalk.PjsSketch, ['v1', 'v2'], 'Processing-Examples');
+smalltalk.addMethod(
+"_activateFunctions",
+smalltalk.method({
+selector: "activateFunctions",
+category: 'initialization',
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_override_with_", ["setup", function () {return smalltalk.send(self, "_setup", []);}]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_override_with_", ["draw", function () {return smalltalk.send(self, "_draw", []);}]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_pjsSetup", []);
+    return self;
+},
+args: [],
+source: "activateFunctions\x0a\x0a\x09self pjsInterface override: 'setup' with: [self setup].\x0a\x09self pjsInterface override: 'draw' with: [self draw].\x0a    \x0a    self pjsInterface pjsSetup.",
+messageSends: ["override:with:", "setup", "pjsInterface", "draw", "pjsSetup"],
+referencedClasses: []
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_draw",
+smalltalk.method({
+selector: "draw",
+category: 'drawing',
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v1'], "_x", []), smalltalk.send(self['@v1'], "_y", []), 12, 12]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v2'], "_x", []), smalltalk.send(self['@v2'], "_y", []), 12, 12]);
+    smalltalk.send(self['@v1'], "_multVector_", [self['@v2']]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_ellipseX_y_width_height_", [smalltalk.send(self['@v1'], "_x", []), smalltalk.send(self['@v1'], "_y", []), 24, 24]);
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_noLoop", []);
+    return self;
+},
+args: [],
+source: "draw\x0a\x0a  self pjsInterface ellipseX: v1 x y: v1 y width: 12 height: 12.\x0a  self pjsInterface ellipseX: v2 x y: v2 y width: 12 height: 12.\x0a  v1 multVector: v2.\x0a  self pjsInterface ellipseX: v1 x y: v1 y width: 24 height: 24.\x0a  \x0a  self pjsInterface  noLoop.\x0a",
+messageSends: ["ellipseX:y:width:height:", "x", "y", "pjsInterface", "multVector:", "noLoop"],
+referencedClasses: []
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_setup",
+smalltalk.method({
+selector: "setup",
+category: 'initialization',
+fn: function () {
+    var self = this;
+    smalltalk.send(smalltalk.send(self, "_pjsInterface", []), "_smooth", []);
+    self['@v1'] = smalltalk.send(smalltalk.PjsVector || PjsVector, "_newX_y_z_", [5, 10, 0]);
+    self['@v2'] = smalltalk.send(smalltalk.PjsVector || PjsVector, "_newX_y_z_", [15, 8, 0]);
+    return self;
+},
+args: [],
+source: "setup\x0a\x0a  self pjsInterface  smooth.\x0a\x0a  v1 :=  PjsVector newX: 5.0 y: 10.0 z: 0.0.\x0a  v2 :=  PjsVector newX: 15.0 y: 8.0 z: 0.0.\x0a",
+messageSends: ["smooth", "pjsInterface", "newX:y:z:"],
+referencedClasses: ["PjsVector"]
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_v1",
+smalltalk.method({
+selector: "v1",
+category: 'accessing',
+fn: function () {
+    var self = this;
+    return self['@v1'];
+},
+args: [],
+source: "v1\x0a\x0a\x09^v1",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.ProcessingVector);
+
+smalltalk.addMethod(
+"_v2",
+smalltalk.method({
+selector: "v2",
+category: 'accessing',
+fn: function () {
+    var self = this;
+    return self['@v2'];
+},
+args: [],
+source: "v2\x0a\x0a\x09^v2",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.ProcessingVector);
+
+
+smalltalk.addMethod(
+"_overrideFunctions",
+smalltalk.method({
+selector: "overrideFunctions",
+category: 'not yet classified',
+fn: function () {
+    var self = this;
+    processing.setup = function () {};
+    processing.draw = function () {};
+    return self;
+},
+args: [],
+source: "overrideFunctions\x0a\x0a\x09 < processing.setup = function() {}; >.\x0a\x09 < processing.draw = function() {}; >.",
+messageSends: [],
+referencedClasses: []
+}),
+smalltalk.ProcessingVector.klass);
+
+

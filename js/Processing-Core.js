@@ -7,11 +7,11 @@ selector: "initPjsFont",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    self['@pjsFont'] = new PFont;
+    self['@pjsFont'] = new p.PFont;
     return self;
 },
 args: [],
-source: " initPjsFont\x0a  \x0a    pjsFont := <new PFont() > \x0a  ",
+source: " initPjsFont\x0a  \x0a    pjsFont := <new p.PFont() > \x0a  ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -24,11 +24,11 @@ selector: "initPjsFont:smooth:",
 category: 'not yet classified',
 fn: function (font, smooth) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smootht);
+    self['@pjsFont'] = new p.PFont(font, smootht);
     return self;
 },
 args: ["font", "smooth"],
-source: " initPjsFont: font smooth: smooth \x0a  \x0a    pjsFont := <new PFont(font, smootht) > \x0a  ",
+source: " initPjsFont: font smooth: smooth \x0a  \x0a    pjsFont := <new p.PFont(font, smootht) > \x0a  ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -41,11 +41,11 @@ selector: "initPjsFont:smooth:charset:",
 category: 'not yet classified',
 fn: function (font, smooth, charset) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smooth, charset);
+    self['@pjsFont'] = new p.PFont(font, smooth, charset);
     return self;
 },
 args: ["font", "smooth", "charset"],
-source: " initPjsFont: font smooth: smooth charset: charset\x0a  \x0a    pjsFont := <new PFont(font, smooth, charset) > \x0a  ",
+source: " initPjsFont: font smooth: smooth charset: charset\x0a  \x0a    pjsFont := <new p.PFont(font, smooth, charset) > \x0a  ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -58,11 +58,11 @@ selector: "initPjsFont:smooth:charset:onInputStream:",
 category: 'not yet classified',
 fn: function (font, smooth, charset, stream) {
     var self = this;
-    self['@pjsFont'] = new PFont(font, smooth, charset, stream);
+    self['@pjsFont'] = new p.PFont(font, smooth, charset, stream);
     return self;
 },
 args: ["font", "smooth", "charset", "stream"],
-source: " initPjsFont: font smooth: smooth charset: charset onInputStream: stream\x0a  \x0a    pjsFont := <new PFont(font, smooth, charset, stream) > \x0a  ",
+source: " initPjsFont: font smooth: smooth charset: charset onInputStream: stream\x0a  \x0a    pjsFont := <new p.PFont(font, smooth, charset, stream) > \x0a  ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -75,11 +75,11 @@ selector: "initPjsFontOnInputStream:",
 category: 'not yet classified',
 fn: function (stream) {
     var self = this;
-    self['@pjsFont'] = new PFont(stream);
+    self['@pjsFont'] = new p.PFont(stream);
     return self;
 },
 args: ["stream"],
-source: " initPjsFontOnInputStream: stream\x0a  \x0a    pjsFont := <new PFont(stream) > \x0a  ",
+source: " initPjsFontOnInputStream: stream\x0a  \x0a    pjsFont := <new p.PFont(stream) > \x0a  ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -401,11 +401,11 @@ selector: "initPjsImage",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    self['@pjsImage'] = new PImage;
+    self['@pjsImage'] = new p.PImage;
     return self;
 },
 args: [],
-source: "initPjsImage\x0a  \x0a    pjsImage := <new PImage() >",
+source: "initPjsImage\x0a  \x0a    pjsImage := <new p.PImage() >",
 messageSends: [],
 referencedClasses: []
 }),
@@ -418,11 +418,11 @@ selector: "initPjsImage:",
 category: 'not yet classified',
 fn: function (img) {
     var self = this;
-    self['@pjsImage'] = new PImage(img);
+    self['@pjsImage'] = new p.PImage(img);
     return self;
 },
 args: ["img"],
-source: "initPjsImage: img\x0a  \x0a    pjsImage := <new PImage(img) >",
+source: "initPjsImage: img\x0a  \x0a    pjsImage := <new p.PImage(img) >",
 messageSends: [],
 referencedClasses: []
 }),
@@ -435,11 +435,11 @@ selector: "initPjsImageWidth:height:",
 category: 'not yet classified',
 fn: function (width, height) {
     var self = this;
-    self['@pjsImage'] = new PImage(width, height);
+    self['@pjsImage'] = new p.PImage(width, height);
     return self;
 },
 args: ["width", "height"],
-source: "initPjsImageWidth: width height: height\x0a  \x0a    pjsImage := <new PImage(width, height) >",
+source: "initPjsImageWidth: width height: height\x0a  \x0a    pjsImage := <new p.PImage(width, height) >",
 messageSends: [],
 referencedClasses: []
 }),
@@ -452,11 +452,11 @@ selector: "initPjsImageWidth:height:format:",
 category: 'not yet classified',
 fn: function (width, height, format) {
     var self = this;
-    self['@pjsImage'] = new PImage(width, height, format);
+    self['@pjsImage'] = new p.PImage(width, height, format);
     return self;
 },
 args: ["width", "height", "format"],
-source: "initPjsImageWidth: width height: height format: format\x0a  \x0a    pjsImage := <new PImage(width, height, format) >",
+source: "initPjsImageWidth: width height: height format: format\x0a  \x0a    pjsImage := <new p.PImage(width, height, format) >",
 messageSends: [],
 referencedClasses: []
 }),
@@ -2721,6 +2721,23 @@ referencedClasses: []
 smalltalk.PjsInterface);
 
 smalltalk.addMethod(
+"_loop",
+smalltalk.method({
+selector: "loop",
+category: 'sketch structure',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_loop", []);
+    return self;
+},
+args: [],
+source: "loop\x0a\x0a\x09\x22Causes Processing to continuously execute the code within draw(). If noLoop() is called, the code in draw() stops executing.\x22\x0a\x0a\x09processing loop\x0a",
+messageSends: ["loop"],
+referencedClasses: []
+}),
+smalltalk.PjsInterface);
+
+smalltalk.addMethod(
 "_modelX_y_z_",
 smalltalk.method({
 selector: "modelX:y:z:",
@@ -2994,6 +3011,23 @@ fn: function () {
 args: [],
 source: "noLights\x0a\x09\x22Disable all lighting. Lighting is turned off by default and enabled with the lights() method. \x0a    This function can be used to disable lighting so that 2D geometry \x0a    (which does not require lighting) can be drawn after a set of lighted 3D geometry. \x22\x0a    \x0a    \x09processing noLights\x0a\x0a",
 messageSends: ["noLights"],
+referencedClasses: []
+}),
+smalltalk.PjsInterface);
+
+smalltalk.addMethod(
+"_noLoop",
+smalltalk.method({
+selector: "noLoop",
+category: 'sketch structure',
+fn: function () {
+    var self = this;
+    smalltalk.send(self['@processing'], "_noLoop", []);
+    return self;
+},
+args: [],
+source: "noLoop\x0a\x0a\x09\x22Causes Processing to continuously execute the code within draw(). If noLoop() is called, the code in draw() stops executing.\x22\x0a\x0a\x09processing noLoop\x0a",
+messageSends: ["noLoop"],
 referencedClasses: []
 }),
 smalltalk.PjsInterface);
@@ -4828,11 +4862,11 @@ selector: "initialize",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    self['@pjsShape'] = new Shape;
+    self['@pjsShape'] = new p.Shape;
     return self;
 },
 args: [],
-source: "initialize\x0a\x0a\x09pjsShape := < new Shape() >",
+source: "initialize\x0a\x0a\x09pjsShape := < new p.Shape() >",
 messageSends: [],
 referencedClasses: []
 }),
@@ -5497,11 +5531,11 @@ selector: "initPjsVector",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    self['@pjsVector'] = new PVector;
+    self['@pjsVector'] = new p.PVector;
     return self;
 },
 args: [],
-source: "initPjsVector\x0a\x0a\x09pjsVector := <new PVector(); >\x0a",
+source: "initPjsVector\x0a\x0a\x09pjsVector := <new p.PVector(); >\x0a",
 messageSends: [],
 referencedClasses: []
 }),
@@ -5529,13 +5563,13 @@ smalltalk.addMethod(
 smalltalk.method({
 selector: "initPjsVectorX:y:",
 category: 'not yet classified',
-fn: function (x, y) {
+fn: function (aX, aY) {
     var self = this;
-    self['@pjsVector'] = new PVector(x, y);
+    self['@pjsVector'] = new p.PVector(aX, aY);
     return self;
 },
-args: ["x", "y"],
-source: "initPjsVectorX: x y: y \x0a\x0a\x09pjsVector := <new PVector(x, y); >\x0a",
+args: ["aX", "aY"],
+source: "initPjsVectorX: aX y: aY \x0a\x0a\x09pjsVector :=   <new p.PVector(aX, aY) >.\x0a ",
 messageSends: [],
 referencedClasses: []
 }),
@@ -5548,11 +5582,11 @@ selector: "initPjsVectorX:y:z:",
 category: 'not yet classified',
 fn: function (x, y, z) {
     var self = this;
-    self['@pjsVector'] = new PVector(x, y, z);
+    self['@pjsVector'] = new p.PVector(x, y, z);
     return self;
 },
 args: ["x", "y", "z"],
-source: "initPjsVectorX: x y: y z: z\x0a\x0a\x09pjsVector := <new PVector(x, y, z); >\x0a",
+source: "initPjsVectorX: x y: y z: z\x0a\x0a\x09pjsVector := <new p.PVector(x, y, z); >\x0a",
 messageSends: [],
 referencedClasses: []
 }),
@@ -5623,6 +5657,23 @@ fn: function (aScalarFloat, aPjsVector) {
 args: ["aScalarFloat", "aPjsVector"],
 source: "mult: aScalarFloat vector: aPjsVector\x0a\x0a\x09pjsVector mult: aScalarFloat vector: aPjsVector pjsVector",
 messageSends: ["mult:vector:", "pjsVector"],
+referencedClasses: []
+}),
+smalltalk.PjsVector);
+
+smalltalk.addMethod(
+"_multVector_",
+smalltalk.method({
+selector: "multVector:",
+category: 'not yet classified',
+fn: function (aPjsVector) {
+    var self = this;
+    smalltalk.send(self['@pjsVector'], "_mult_", [smalltalk.send(aPjsVector, "_pjsVector", [])]);
+    return self;
+},
+args: ["aPjsVector"],
+source: "multVector: aPjsVector\x0a\x0a\x09pjsVector mult: aPjsVector pjsVector",
+messageSends: ["mult:", "pjsVector"],
 referencedClasses: []
 }),
 smalltalk.PjsVector);
@@ -5980,14 +6031,13 @@ selector: "new",
 category: 'not yet classified',
 fn: function () {
     var self = this;
-    var instance;
-    instance = smalltalk.send(self, "_new", []);
-    smalltalk.send(instance, "_initPjsVector", []);
-    return instance;
+    var $1;
+    $1 = smalltalk.send(smalltalk.send(self, "_new", [], smalltalk.Object.klass), "_initPjsVector", []);
+    return $1;
 },
 args: [],
-source: "new\x0a\x0a\x09| instance |\x0a\x0a  instance := self new.\x0a  instance initPjsVector.\x0a  \x0a  ^instance\x0a  ",
-messageSends: ["new", "initPjsVector"],
+source: "new\x0a\x0a    ^ super new initPjsVector\x0a",
+messageSends: ["initPjsVector", "new"],
 referencedClasses: []
 }),
 smalltalk.PjsVector.klass);
@@ -5999,14 +6049,13 @@ selector: "newX:y:",
 category: 'not yet classified',
 fn: function (aXFloat, aYFloat) {
     var self = this;
-    var instance;
-    instance = smalltalk.send(self, "_new", [], smalltalk.Object.klass);
-    smalltalk.send(instance, "_initPjsVectorX_y_", [aXFloat, aYFloat]);
-    return instance;
+    var $1;
+    $1 = smalltalk.send(smalltalk.send(self, "_new", [], smalltalk.Object.klass), "_initPjsVectorX_y_", [aXFloat, aYFloat]);
+    return $1;
 },
 args: ["aXFloat", "aYFloat"],
-source: "newX: aXFloat y: aYFloat\x0a\x0a\x09| instance |\x0a\x0a  instance := super new.\x0a  instance initPjsVectorX: aXFloat y: aYFloat.\x0a  \x0a  ^instance\x0a  ",
-messageSends: ["new", "initPjsVectorX:y:"],
+source: "newX: aXFloat y: aYFloat\x0a\x0a    ^ super new initPjsVectorX: aXFloat y: aYFloat.\x0a  \x0a  ",
+messageSends: ["initPjsVectorX:y:", "new"],
 referencedClasses: []
 }),
 smalltalk.PjsVector.klass);

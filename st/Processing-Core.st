@@ -7,27 +7,27 @@ Object subclass: #PjsFont
 
 initPjsFont
   
-    pjsFont := <new PFont() >
+    pjsFont := <new p.PFont() >
 !
 
 initPjsFont: font smooth: smooth 
   
-    pjsFont := <new PFont(font, smootht) >
+    pjsFont := <new p.PFont(font, smootht) >
 !
 
 initPjsFont: font smooth: smooth charset: charset
   
-    pjsFont := <new PFont(font, smooth, charset) >
+    pjsFont := <new p.PFont(font, smooth, charset) >
 !
 
 initPjsFont: font smooth: smooth charset: charset onInputStream: stream
   
-    pjsFont := <new PFont(font, smooth, charset, stream) >
+    pjsFont := <new p.PFont(font, smooth, charset, stream) >
 !
 
 initPjsFontOnInputStream: stream
   
-    pjsFont := <new PFont(stream) >
+    pjsFont := <new p.PFont(stream) >
 ! !
 
 !PjsFont class methodsFor: 'not yet classified'!
@@ -213,22 +213,22 @@ height
 
 initPjsImage
   
-    pjsImage := <new PImage() >
+    pjsImage := <new p.PImage() >
 !
 
 initPjsImage: img
   
-    pjsImage := <new PImage(img) >
+    pjsImage := <new p.PImage(img) >
 !
 
 initPjsImageWidth: width height: height
   
-    pjsImage := <new PImage(width, height) >
+    pjsImage := <new p.PImage(width, height) >
 !
 
 initPjsImageWidth: width height: height format: format
   
-    pjsImage := <new PImage(width, height, format) >
+    pjsImage := <new p.PImage(width, height, format) >
 !
 
 loadPixels
@@ -2824,6 +2824,20 @@ pmouseY
 
 !PjsInterface methodsFor: 'sketch structure'!
 
+loop
+
+	"Causes Processing to continuously execute the code within draw(). If noLoop() is called, the code in draw() stops executing."
+
+	processing loop
+!
+
+noLoop
+
+	"Causes Processing to continuously execute the code within draw(). If noLoop() is called, the code in draw() stops executing."
+
+	processing noLoop
+!
+
 size: aWidth height: aHeight 
 
 	"width int: width of the display window in units of pixels 
@@ -3369,7 +3383,7 @@ height: aValue
 
 initialize
 
-	pjsShape := < new Shape() >
+	pjsShape := < new p.Shape() >
 !
 
 isVisible
@@ -3600,7 +3614,7 @@ get: aTarget
 
 initPjsVector
 
-	pjsVector := <new PVector(); >
+	pjsVector := <new p.PVector(); >
 !
 
 initPjsVector: aPVector
@@ -3608,14 +3622,14 @@ initPjsVector: aPVector
 	pjsVector := aPVector
 !
 
-initPjsVectorX: x y: y 
+initPjsVectorX: aX y: aY 
 
-	pjsVector := <new PVector(x, y); >
+	pjsVector :=   <new p.PVector(aX, aY) >.
 !
 
 initPjsVectorX: x y: y z: z
 
-	pjsVector := <new PVector(x, y, z); >
+	pjsVector := <new p.PVector(x, y, z); >
 !
 
 limit: aMaxFloat
@@ -3636,6 +3650,11 @@ mult: aScalarFloat
 mult: aScalarFloat vector: aPjsVector
 
 	pjsVector mult: aScalarFloat vector: aPjsVector pjsVector
+!
+
+multVector: aPjsVector
+
+	pjsVector mult: aPjsVector pjsVector
 !
 
 normalize
@@ -3789,22 +3808,12 @@ multVector1: aVector1 vector2: aVector2
 
 new
 
-	| instance |
-
-  instance := self new.
-  instance initPjsVector.
-  
-  ^instance
+    ^ super new initPjsVector
 !
 
 newX: aXFloat y: aYFloat
 
-	| instance |
-
-  instance := super new.
-  instance initPjsVectorX: aXFloat y: aYFloat.
-  
-  ^instance
+    ^ super new initPjsVectorX: aXFloat y: aYFloat.
 !
 
 newX: aXFloat y: aYFloat z: aZFloat
