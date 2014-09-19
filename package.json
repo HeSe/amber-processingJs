@@ -1,0 +1,40 @@
+{
+  "name": "amber-processingJS",
+  "title": "amber processingJS support",
+  "description": "An API layer for processingJs in Amber.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/HeSe/amber-processingJs",
+  "author": {
+    "name": "Sebastian Heidbrink",
+    "email": "sebastian_heidbrink@yahoo.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeSe/amber-processingJs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HeSe/amber-processingJs/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/HeSe/amber-processingJs/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-execute": "~0.2.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "amber-dev": "~0.1.5"
+  },
+  "keywords": [
+    "Amber",
+    "Smalltalk"
+  ]
+}
