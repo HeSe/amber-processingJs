@@ -1,0 +1,27 @@
+{
+  "name": "amber-processingJs",
+  "version": "0.1.0",
+  "homepage": "https://github.com/HeSe/amber-processingJs",
+  "description": "An API layer for processingJs in Amber",
+  "keywords": [
+    "javascript",
+    "smalltalk",
+    "language",
+    "compiler",
+    "web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "amber": "master"
+  },
+  "authors": [
+    "Sebastian Heidbrink <sebastian_heidbrink@yahoo.de>"
+  ]
+}

@@ -14,9 +14,27 @@ About
 * ProcessingJs Web Site:          http://processingjs.org
 * ProcessingJs Github Repo:       http://github.com/jeresig/processing-js
 
-Installation
---------
+Getting started
+===============
 
-Put these sources, as is, in the amber examples folder ("amber\examples\amber-processingJs").
+To get started you must first get the tools for this project:
+
+    npm install -g amber-cli
+    npm install -g bower
+
+ and dependencies of this project:
+ 
+    git submodule update --init --recursive
+    npm install
+    bower install
+
+Afterwards execute the server:
+
+`amber serve`
+
+and point your browser to
+
+`http://localhost:4000/`
+
 
 
