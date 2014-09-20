@@ -1,4 +1,4 @@
-Smalltalk current createPackage: 'Processing-Core' properties: #{}!
+Smalltalk createPackage: 'Processing-Core'!
 Object subclass: #PjsFont
 	instanceVariableNames: 'pjsFont'
 	package: 'Processing-Core'!
@@ -7,34 +7,59 @@ Object subclass: #PjsFont
 
 initPjsFont
   
-    pjsFont := <new p.PFont() >
+    pjsFont := self newFontJs
 !
 
-initPjsFont: font smooth: smooth 
+initPjsFont: font smooth: smooth
   
-    pjsFont := <new p.PFont(font, smootht) >
+    pjsFont := self newFontJs: font smooth: smooth
 !
 
 initPjsFont: font smooth: smooth charset: charset
   
-    pjsFont := <new p.PFont(font, smooth, charset) >
+    pjsFont := self newFontJs: font smooth: smooth charset: charset
 !
 
 initPjsFont: font smooth: smooth charset: charset onInputStream: stream
   
-    pjsFont := <new p.PFont(font, smooth, charset, stream) >
+    pjsFont := self newFontJs: font smooth: smooth charset: charset onInputStream: stream
 !
 
 initPjsFontOnInputStream: stream
   
-    pjsFont := <new p.PFont(stream) >
+    pjsFont := self newFontOnInputStreamJs: stream
+!
+
+newFontJs
+
+         <return new p.PFont() >
+!
+
+newFontJs: font smooth: smooth 
+
+         <return new p.PFont(font, smooth) >
+!
+
+newFontJs: font smooth: smooth charset: charset
+  
+    <return new p.PFont(font, smooth, charset) >
+!
+
+newFontJs: font smooth: smooth charset: charset onInputStream: stream
+  
+    < return new p.PFont(font, smooth, charset, stream) >
+!
+
+newFontOnInputStreamJs: stream
+  
+    < return new p.PFont(stream) >
 ! !
 
 !PjsFont class methodsFor: 'not yet classified'!
 
 list
   
-  ^<PFont.list();>
+  < return PFont.list();>
 !
 
 new
@@ -213,22 +238,22 @@ height
 
 initPjsImage
   
-    pjsImage := <new p.PImage() >
+    pjsImage := self newImageJs
 !
 
 initPjsImage: img
   
-    pjsImage := <new p.PImage(img) >
+    pjsImage := self newImageJs: img
 !
 
 initPjsImageWidth: width height: height
   
-    pjsImage := <new p.PImage(width, height) >
+    pjsImage := self newImageWidthJs: width height: height
 !
 
 initPjsImageWidth: width height: height format: format
   
-    pjsImage := <new p.PImage(width, height, format) >
+    pjsImage := self newImageWidthJs: width height: height format: format
 !
 
 loadPixels
@@ -244,6 +269,26 @@ maskArray: anIntArray
 maskImage: aPjsImage
 
 	pjsImage mask: aPjsImage pjsImage
+!
+
+newImageJs
+  
+     <return new p.PImage() >
+!
+
+newImageJs: img
+  
+    < return new p.PImage(img) >
+!
+
+newImageWidthJs: width height: height
+  
+    < return new p.PImage(width, height) >
+!
+
+newImageWidthJs: width height: height format: format
+  
+    < return new p.PImage(width, height, format) >
 !
 
 pixels
@@ -1607,14 +1652,14 @@ isFocused
 	"Confirms if a Processing program is ""focused"", meaning that it is active and will accept input from mouse or keyboard. 
     This variable is ""true"" if it is focused and ""false"" if not. This variable is often used when you want to warn people they need to click on or roll over an applet before it will work."
     
-	^< processing.focused >
+	< return  processing.focused >
 !
 
 isOnline
 	"Confirms if a Processing program is running inside a web browser. 
     This variable is ""true"" if the program is online and ""false"" if not.."
     
-	^< processing.online >
+	< return  processing.online >
 !
 
 noCursor
@@ -1628,7 +1673,7 @@ screenHeight
     For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. 
     These dimensions are useful when exporting full-screen applications. ."
     
-	^< processing.screen.height >
+	< return  processing.screen.height >
 !
 
 screenWidth
@@ -1636,7 +1681,7 @@ screenWidth
     For example, if the current screen resolution is 1024x768, screen.width is 1024 and screen.height is 768. 
     These dimensions are useful when exporting full-screen applications. ."
     
-	^< processing.screen.width >
+	< return  processing.screen.width >
 ! !
 
 !PjsInterface methodsFor: 'image loading and displaying '!
@@ -2187,7 +2232,7 @@ loadPixels
 
 pixelsAt: anIndex
     
-	^ < processing.pixels[ anIndex ] >
+	< return  processing.pixels[ anIndex ] >
     
     "Array containing the values for all the pixels in the display window. 
       These values are of the color datatype. 
@@ -2319,13 +2364,18 @@ saveImage: aFileName
 
 initialize
 
-	processing := <Processing.instances[0]>.
+	processing := self newProcessingInstance.
+!
+
+newProcessingInstance
+
+ < return Processing.instances[0]>
 ! !
 
 !PjsInterface methodsFor: 'lights'!
 
 ambientLightV1: aV1 v2: aV2 v3: aV3 
-	"v1 int or float: red or hue value 
+	"v1 int or float: red or hue value
 	v2 int or float: green or hue value 
 	v3 int or float: green or hue value 
 	x int or float: x-coordinate of the light 
@@ -2642,8 +2692,8 @@ directiveCrisp: aBool
 	"http://processingjs.org/reference/pjs%20directive/"
 
 	aBool 
-    	ifTrue:[ < p.externals.sketch.options.crispLines = true > ]
-  		ifFalse:[ < p.externals.sketch.options.crispLines = false > ]
+    	ifTrue:[ self setCrispLinesTrue ]
+  		ifFalse:[ self setCrispLinesFalse ]
 !
 
 directiveFont: aFileName
@@ -2657,9 +2707,9 @@ directivePauseOnBlur: aBool
 
 	"http://processingjs.org/reference/globalKeyEvents/"
 
-	aBool 
-    	ifTrue:[ < p.externals.sketch.options.globalKeyEvents  = true > ]
-  		ifFalse:[ < p.externals.sketch.options.globalKeyEvents  = false > ]
+	aBool
+    	ifTrue:[ self setSketchGlobalKeyEventsTrue ]
+  		ifFalse:[ self setSketchGlobalKeyEventsFalse ]
 !
 
 directivePreload: aFileName
@@ -2667,6 +2717,24 @@ directivePreload: aFileName
 	"http://processingjs.org/reference/pjs%20directive/"
 
 	  < p.externals.sketch.options.preload = aFileName >
+!
+
+setCrispLinesFalse
+
+   < p.externals.sketch.options.crispLines = false >
+!
+
+setCrispLinesTrue
+
+   < p.externals.sketch.options.crispLines = true >
+!
+
+setSketchGlobalKeyEventsFalse
+< p.externals.sketch.options.globalKeyEvents  = false >
+!
+
+setSketchGlobalKeyEventsTrue
+< p.externals.sketch.options.globalKeyEvents  = false >
 ! !
 
 !PjsInterface methodsFor: 'sketch keyboard'!
@@ -2675,7 +2743,7 @@ isKeyPressed
     
    "The boolean system variable keyPressed is true if any key is pressed and false if no keys are pressed."
 
-	^ < processing.keyPressed >
+	< return  processing.keyPressed >
 !
 
 key 
@@ -2683,7 +2751,7 @@ key
    "The system variable key always contains the value of the most recently pressed key on the keyboard. 
    For detecting the arrow keys, the keyCode variable is set to either UP, DOWN, LEFT, or RIGHT."
 
-	^< processing.key >
+	< return  processing.key >
 !
 
 keyCode 
@@ -2697,7 +2765,7 @@ keyCode
     note that the ENTER key is commonly used on PCs and Unix and the RETURN key is used instead on Macintosh. 
     Check for both ENTER and RETURN to make sure your program will work for all platforms."
 
-	^< processing.keyCode >
+	< return  processing.keyCode >
 !
 
 keyPressed 
@@ -2731,7 +2799,7 @@ isMousePressed
    "Variable storing if a mouse button is pressed. 
     The value of the system variable mousePressed is true if a mouse button is pressed and false if a button is not pressed."
 
-	^ < processing.mousePressed >
+	< return  processing.mousePressed >
 !
 
 mouseButton 
@@ -2819,7 +2887,7 @@ pmouseY
    "The system variable pmouseY always contains the previous vertical coordinate of the mouse. 
      This is the vertical position of the mouse in the frame previous to the current frame."
 
-	^< processing.pmouseY >
+	< return  processing.pmouseY >
 ! !
 
 !PjsInterface methodsFor: 'sketch structure'!
@@ -3383,12 +3451,16 @@ height: aValue
 
 initialize
 
-	pjsShape := < new p.Shape() >
+	pjsShape := self newShapeInstance
 !
 
 isVisible
 
 	^pjsShape isVisible
+!
+
+newShapeInstance
+ < return new p.Shape() >
 !
 
 pjsShape
@@ -3500,11 +3572,16 @@ activateFunctions
 	self pjsInterface override: 'draw' with: [self draw].
 !
 
+getGlobalProcessingInstance
+
+  <return Processing.instances[0]>
+!
+
 initialize
  
 	|  mProcessingInstance |
 
-	mProcessingInstance := <Processing.instances[0]>.
+	mProcessingInstance := self getGlobalProcessingInstance.
 
 	pjsInterface := PjsInterface on: mProcessingInstance.
 ! !
@@ -3525,7 +3602,7 @@ new
 
 overrideFunctions
 
-	 < processing.draw = function() {}; >.
+	 < processing.draw = function() {}; >
 !
 
 start
@@ -3612,9 +3689,14 @@ get: aTarget
 	^pjsVector get: aTarget
 !
 
+getNewVectorInstance
+
+        < return new p.PVector(); >
+!
+
 initPjsVector
 
-	pjsVector := <new p.PVector(); >
+	pjsVector := self getNewVectorInstance
 !
 
 initPjsVector: aPVector
@@ -3624,12 +3706,12 @@ initPjsVector: aPVector
 
 initPjsVectorX: aX y: aY 
 
-	pjsVector :=   <new p.PVector(aX, aY) >.
+	pjsVector :=  self newVectorXJs: aX y: aY
 !
 
 initPjsVectorX: x y: y z: z
 
-	pjsVector := <new p.PVector(x, y, z); >
+	pjsVector := self newVectorXJs: x y: y
 !
 
 limit: aMaxFloat
@@ -3655,6 +3737,15 @@ mult: aScalarFloat vector: aPjsVector
 multVector: aPjsVector
 
 	pjsVector mult: aPjsVector pjsVector
+!
+
+newVectorXJs: aX y: aY
+
+ <return new p.PVector(aX, aY); >
+!
+
+newVectorXJs: x y: y z: z
+ <return new p.PVector(x, y, z); >
 !
 
 normalize

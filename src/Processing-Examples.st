@@ -1,4 +1,4 @@
-Smalltalk current createPackage: 'Processing-Examples' properties: #{}!
+Smalltalk createPackage: 'Processing-Examples'!
 PjsSketch subclass: #ProcessingCircles
 	instanceVariableNames: 'radius x y nY nX roty delay'
 	package: 'Processing-Examples'!
@@ -121,11 +121,23 @@ y: aValue
 
 !ProcessingCircles class methodsFor: 'not yet classified'!
 
+overrideDraw
+            < processing.draw = function() {}; >
+!
+
 overrideFunctions
 
-	 < processing.setup = function() {}; >.
-	 < processing.draw = function() {}; >.
-      < processing.mouseMoved = function() {}; >.
+	 self overrideSetup.
+	 self overrideDraw.
+	 self overrideMouseMoved.
+!
+
+overrideMouseMoved
+                  < processing.mouseMoved = function() {}; >
+!
+
+overrideSetup
+             < processing.setup = function() {}; >
 ! !
 
 PjsSketch subclass: #ProcessingClock
@@ -186,10 +198,18 @@ setup
 
 !ProcessingClock class methodsFor: 'not yet classified'!
 
+overrideDraw
+            < processing.draw = function() {}; >
+!
+
 overrideFunctions
 
-	 < processing.setup = function() {}; >.
-	 < processing.draw = function() {}; >.
+	 self overrideSetup.
+	 self overrideDraw.
+!
+
+overrideSetup
+             < processing.setup = function() {}; >
 ! !
 
 PjsSketch subclass: #ProcessingVector
@@ -226,7 +246,7 @@ activateFunctions
 
 	self pjsInterface override: 'setup' with: [self setup].
 	self pjsInterface override: 'draw' with: [self draw].
-    
+
     self pjsInterface pjsSetup.
 !
 
@@ -240,9 +260,17 @@ setup
 
 !ProcessingVector class methodsFor: 'not yet classified'!
 
+overrideDraw
+            < processing.draw = function() {}; >
+!
+
 overrideFunctions
 
-	 < processing.setup = function() {}; >.
-	 < processing.draw = function() {}; >.
+	 self overrideSetup.
+	 self overrideDraw.
+!
+
+overrideSetup
+             < processing.setup = function() {}; >
 ! !
 

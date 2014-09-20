@@ -1,4 +1,4 @@
-Smalltalk current createPackage: 'Processing-HTML' properties: #{}!
+Smalltalk createPackage: 'Processing-HTML'!
 Widget subclass: #PjsSketchContainer
 	instanceVariableNames: 'p width height sketchClass canvasId pjsSketch'
 	package: 'Processing-HTML'!
@@ -22,9 +22,14 @@ height
 	^height
 !
 
-height: aHInt		
+height: aHInt
 
 	height := aHInt
+!
+
+initProcessingInstance: canvas withProc: sketchProc
+
+     < p =  new Processing(canvas, sketchProc); >
 !
 
 p		
@@ -46,18 +51,25 @@ renderOn: html
     canvas height: self height.
     canvas id: self canvasId.
     
-    
-    sketchProc :=( [:processing | < processing.setup = function() {}; > .
-							< processing.draw = function() {}; >   ] appendToJQuery: 'body' asJQuery ).
+    sketchProc :=( [ :processing | self resetSetupFunction.
+				  self resetDrawFunction ] appendToJQuery: 'body' asJQuery ).
 
 	canvas := document getElementById: self canvasId.
 		
-	< p =  new Processing(canvas, sketchProc); >.
+	self initProcessingInstance: canvas withProc: sketchProc.
         
-      self startPjsSketch
+        self startPjsSketch
 !
 
-sketchClass		
+resetDrawFunction
+ 	< Processing.draw = function() {}; >
+!
+
+resetSetupFunction
+        < Processing.setup = function() {}; >
+!
+
+sketchClass
 
 	^sketchClass
 !

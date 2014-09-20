@@ -3,12 +3,12 @@
   <head> 
     <title>using Processing.js with Amber Smalltalk</title>
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="Sebastian Heidbrink" />     
-
-     <script type="text/javascript" src="lib/processing-1.4.1.js"></script>
+    <meta name="author" content="Sebastian Heidbrink" />
 
     <script type='text/javascript' src='bower_components/amber/support/requirejs/require.min.js'></script>
     <script type='text/javascript' src='bower_components/amber/support/amber.js'></script>
+    
+     <script type="text/javascript" src="lib/processing-1.4.1.js"></script>
 
   </head>
   <body> 
@@ -17,25 +17,26 @@
         <b>
 	A Clock made with <a href="http://processingjs.org">Processing.js</a> and Amber
 	<p>Examine the <button onClick="smalltalk.Browser._openOn_(smalltalk.ProcessingClock)"> ProcessingClock class</button></p>
-        <p>
+        <b>
         Vector sample made with <a href="http://processingjs.org">Processing.js</a> and Amber
 	<p>Examine the <button onClick="smalltalk.Browser._openOn_(smalltalk.ProcessingVector)"> ProcessingVector class</button></p>
-
+        <b>
 
   <script type='text/javascript'>
       require.config({ paths: {
           'amber-processingJS': 'src', //mapping compiled .js files and smalltalk source files
+          'processing': [ 'lib/processing-1.4.1' ]
       }});
 
       require(['amber/devel',
                'amber-processingJS/Processing-HTML',
                'amber-processingJS/Processing-Core',
-               'amber-processingJS/Processing-Examples'
-
+               'amber-processingJS/Processing-Examples',
+               'processing'
       ], function (smalltalk) {
           //used for all new packages in IDE
           smalltalk.initialize({ 'transport.defaultAmdNamespace': "amber-processingJS"   });
-          $(function() { smalltalk.globals.PjsSketchContainer._newWidth_height_sketchClass_canvasId_(500, 500, 'ProcessingClock', 'canvas1');
+          $(function() { smalltalk.globals.PjsSketchContainer._newWidth_height_sketchClass_canvasId_(500, 500, 'ProcessingCircles', 'canvas1');
                           require('amber/helpers').globals.Browser._open()});
       });
     </script>
