@@ -51,22 +51,30 @@ renderOn: html
     canvas height: self height.
     canvas id: self canvasId.
     
-    sketchProc :=( [ :processing | self resetSetupFunction.
-				  self resetDrawFunction ] appendToJQuery: 'body' asJQuery ).
+    sketchProc :=( [ :processing | self resetSetupFunction: processing.
+													 self resetDrawFunction: processing ] appendToJQuery: 'body' asJQuery ).
 
 	canvas := document getElementById: self canvasId.
 		
 	self initProcessingInstance: canvas withProc: sketchProc.
         
-        self startPjsSketch
+    self startPjsSketch
 !
 
 resetDrawFunction
  	< Processing.draw = function() {}; >
 !
 
+resetDrawFunction: aProcessing
+ 	< aProcessing.draw = function() {}; >
+!
+
 resetSetupFunction
-        < Processing.setup = function() {}; >
+        < processing.setup = function() {}; >
+!
+
+resetSetupFunction: aProcessing
+        < aProcessing.setup = function() {}; >
 !
 
 sketchClass

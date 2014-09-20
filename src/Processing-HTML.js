@@ -142,16 +142,16 @@ $ctx1.sendIdx["canvasId"]=1;
 _st($1)._id_($2);
 sketchProc=_st((function(processing){
 return smalltalk.withContext(function($ctx2) {
-self._resetSetupFunction();
-return self._resetDrawFunction();
+self._resetSetupFunction_(processing);
+return self._resetDrawFunction_(processing);
 }, function($ctx2) {$ctx2.fillBlock({processing:processing},$ctx1,1)})}))._appendToJQuery_("body"._asJQuery());
 canvas=_st(document)._getElementById_(self._canvasId());
 self._initProcessingInstance_withProc_(canvas,sketchProc);
 self._startPjsSketch();
 return self}, function($ctx1) {$ctx1.fill(self,"renderOn:",{html:html,canvas:canvas,sketchProc:sketchProc},globals.PjsSketchContainer)})},
 args: ["html"],
-source: "renderOn: html\x0a\x0a\x09| canvas  sketchProc |\x0a    \x0a    canvas := html canvas.\x0a    canvas width: self width.\x0a    canvas height: self height.\x0a    canvas id: self canvasId.\x0a    \x0a    sketchProc :=( [ :processing | self resetSetupFunction.\x0a\x09\x09\x09\x09  self resetDrawFunction ] appendToJQuery: 'body' asJQuery ).\x0a\x0a\x09canvas := document getElementById: self canvasId.\x0a\x09\x09\x0a\x09self initProcessingInstance: canvas withProc: sketchProc.\x0a        \x0a        self startPjsSketch",
-messageSends: ["canvas", "width:", "width", "height:", "height", "id:", "canvasId", "appendToJQuery:", "resetSetupFunction", "resetDrawFunction", "asJQuery", "getElementById:", "initProcessingInstance:withProc:", "startPjsSketch"],
+source: "renderOn: html\x0a\x0a\x09| canvas  sketchProc |\x0a    \x0a    canvas := html canvas.\x0a    canvas width: self width.\x0a    canvas height: self height.\x0a    canvas id: self canvasId.\x0a    \x0a    sketchProc :=( [ :processing | self resetSetupFunction: processing.\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09 self resetDrawFunction: processing ] appendToJQuery: 'body' asJQuery ).\x0a\x0a\x09canvas := document getElementById: self canvasId.\x0a\x09\x09\x0a\x09self initProcessingInstance: canvas withProc: sketchProc.\x0a        \x0a    self startPjsSketch",
+messageSends: ["canvas", "width:", "width", "height:", "height", "id:", "canvasId", "appendToJQuery:", "resetSetupFunction:", "resetDrawFunction:", "asJQuery", "getElementById:", "initProcessingInstance:withProc:", "startPjsSketch"],
 referencedClasses: []
 }),
 globals.PjsSketchContainer);
@@ -174,15 +174,47 @@ globals.PjsSketchContainer);
 
 smalltalk.addMethod(
 smalltalk.method({
+selector: "resetDrawFunction:",
+protocol: 'not yet classified',
+fn: function (aProcessing){
+var self=this;
+return smalltalk.withContext(function($ctx1) { 
+ aProcessing.draw = function() {}; ;
+return self}, function($ctx1) {$ctx1.fill(self,"resetDrawFunction:",{aProcessing:aProcessing},globals.PjsSketchContainer)})},
+args: ["aProcessing"],
+source: "resetDrawFunction: aProcessing\x0a \x09< aProcessing.draw = function() {}; >",
+messageSends: [],
+referencedClasses: []
+}),
+globals.PjsSketchContainer);
+
+smalltalk.addMethod(
+smalltalk.method({
 selector: "resetSetupFunction",
 protocol: 'not yet classified',
 fn: function (){
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
- Processing.setup = function() {}; ;
+ processing.setup = function() {}; ;
 return self}, function($ctx1) {$ctx1.fill(self,"resetSetupFunction",{},globals.PjsSketchContainer)})},
 args: [],
-source: "resetSetupFunction\x0a        < Processing.setup = function() {}; >",
+source: "resetSetupFunction\x0a        < processing.setup = function() {}; >",
+messageSends: [],
+referencedClasses: []
+}),
+globals.PjsSketchContainer);
+
+smalltalk.addMethod(
+smalltalk.method({
+selector: "resetSetupFunction:",
+protocol: 'not yet classified',
+fn: function (aProcessing){
+var self=this;
+return smalltalk.withContext(function($ctx1) { 
+ aProcessing.setup = function() {}; ;
+return self}, function($ctx1) {$ctx1.fill(self,"resetSetupFunction:",{aProcessing:aProcessing},globals.PjsSketchContainer)})},
+args: ["aProcessing"],
+source: "resetSetupFunction: aProcessing\x0a        < aProcessing.setup = function() {}; >",
 messageSends: [],
 referencedClasses: []
 }),
