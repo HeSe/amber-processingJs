@@ -14,27 +14,39 @@ About
 * ProcessingJs Web Site:          http://processingjs.org
 * ProcessingJs Github Repo:       http://github.com/jeresig/processing-js
 
-Getting started
-===============
 
-To get started you must first get the tools for this project:
+## Prerequisites
 
-    npm install -g amber-cli
-    npm install -g bower
+1. A web browser with reasonably good support for HTML5 canvas.
+2. [nodejs](http://www.nodejs.org/). This will give you the node package manager `npm` as well.
+3. A global install of the [`amber`](http://amber-lang.net/) [npm](http://npmjs.org/) package
+4. A global install of the [`bower`](http://bower.io/) client side package manager in order to install the dependencies
 
- and dependencies of this project:
- 
-    git submodule update --init --recursive
-    npm install
-    bower install
+The `amber` and `bower` packages can be installed with the following command (In some cases you have to call `npm` with `sudo npm`):
 
-Afterwards execute the server:
+    npm install --global amber-cli bower
 
-`amber serve`
+or the same thing, but less typing:
 
-and point your browser to
+    npm i -g amber-cli bower
 
-`http://localhost:4000/`
+## Getting Started
+
+Clone the repo, and start the amber server:
+
+    git clone https://github.com/HeSe/amber-processingJs.git
+    cd amber-processingJs
+    amber serve
+
+Point your browser to:
+
+    http://localhost:4000/index.html
+
+Enjoy!
+
+The default port is 4000. Use --port to specify a custom port:
+
+    amber serve --port 9000
 
 
 

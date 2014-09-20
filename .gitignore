@@ -1,4 +1,2 @@
-/node_modules/
-/bower_components/
+bower_components
 
-/test_runner.js
