@@ -36,7 +36,7 @@ Clone the repo, and start the amber server:
 
     git clone https://github.com/HeSe/amber-processingJs.git
     cd amber-processingJs
-    bower isntall
+    bower install
     amber serve
 
 Point your browser to:
