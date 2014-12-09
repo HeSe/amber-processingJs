@@ -11,16 +11,8 @@
      <script type="text/javascript" src="lib/processing-1.4.1.js"></script>
 
   </head>
-  <body> 
-	Moving Circles made with <a href="http://processingjs.org">Processing.js</a> and Amber
-	<p>Examine the <button onClick="smalltalk.globals.Browser._openOn_(smalltalk.ProcessingCircles)"> ProcessingCircles class</button></p>
-        <b>
-	A Clock made with <a href="http://processingjs.org">Processing.js</a> and Amber
-	<p>Examine the <button onClick="smalltalk.Browser._openOn_(smalltalk.ProcessingClock)"> ProcessingClock class</button></p>
-        <b>
-        Vector sample made with <a href="http://processingjs.org">Processing.js</a> and Amber
-	<p>Examine the <button onClick="smalltalk.Browser._openOn_(smalltalk.ProcessingVector)"> ProcessingVector class</button></p>
-        <b>
+  <body>
+
 
   <script type='text/javascript'>
       require.config({ paths: {
@@ -40,5 +32,16 @@
                           require('amber/helpers').globals.Browser._open()});
       });
     </script>
+
+    Moving Circles made with <a href="http://processingjs.org">Processing.js</a> and Amber
+	<p>Examine the <button onClick="require('amber/helpers').globals.Browser._openOn_(require('amber/helpers').globals.ProcessingCircles)">ProcessingCircles class</button></p>
+        <b>
+	A Clock made with <a href="http://processingjs.org">Processing.js</a> and Amber
+	<p>Examine the <button onClick="require('amber/helpers').globals.Browser._openOn_(require('amber/helpers').globals.ProcessingClock)">ProcessingClock class</button></p>
+        <b>
+        Vector sample made with <a href="http://processingjs.org">Processing.js</a> and Amber
+	<p>Examine the <button onClick="require('amber/helpers').globals.Browser._openOn_(require('amber/helpers').globals.ProcessingVector)">ProcessingVector class</button></p>
+        <b>
+
   </body>
 </html>
