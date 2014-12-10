@@ -1,31 +1,36 @@
 {
-  "name": "amber-processingJs",
-  "description": "An API layer for processingJs in Amber",
-  "version": "0.1.0",
-  "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "/test_runner.js",
-        "test",
-        "tests"
-    ],
-    "authors": [
-        {
-            "name": "Sebastian Heidbrink",
-            "email": "sebastian_heidbrink@yahoo.de"
-        }
-    ],
-    "homepage": "https://github.com/HeSe/amber-processingJs",
-    "keywords": [
-        "Amber",
-        "Smalltalk"
-    ],
-    "license": [
-        "MIT"
-    ],
-    "private": false,
-    "dependencies": {
-        "amber": "0.12.6"
-    }
+"name": "amber-processingJs",
+"description": "An API layer for processingJs in Amber",
+"version": "0.1.0",
+"ignore": [
+"**/.*",
+"node_modules",
+"bower_components",
+"/test_runner.js",
+"test",
+"tests"
+],
+"authors": [
+{
+"name": "Sebastian Heidbrink",
+"email": "sebastian_heidbrink@yahoo.de"
+}
+],
+"homepage": "https://github.com/HeSe/amber-processingJs",
+"keywords": [
+"Amber",
+"Smalltalk"
+],
+"license": [
+"MIT"
+],
+  "private": false,
+  "dependencies": {
+    "amber": "^0.13.2",
+    "processing": "~1.4.8"
+  },
+  "devDependencies": {
+    "amber-ide-starter-dialog": "^0.1.0",
+    "helios": "^0.3.0"
+  }
 }

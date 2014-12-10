@@ -1,0 +1,10 @@
+{
+    "paths": {
+        "jquery-ui": ["jquery-ui", "ui/jquery-ui"]
+    },
+    "shim": {
+        "jquery-ui": {
+            "deps": [ "jquery" ]
+        }
+    }
+}

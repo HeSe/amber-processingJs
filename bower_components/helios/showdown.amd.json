@@ -1,0 +1,5 @@
+{
+    "paths": {
+        "helios/showdown": "src/showdown"
+    }
+}

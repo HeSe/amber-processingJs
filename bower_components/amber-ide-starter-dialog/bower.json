@@ -1,0 +1,36 @@
+{
+  "name": "amber-ide-starter-dialog",
+  "description": "Hidden modal dialog to open Amber IDEs",
+  "version": "0.1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/index.html",
+    "/config.js",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    {
+      "name": "Herbert Vojčík",
+      "email": "herby@mailbox.sk"
+    }
+  ],
+  "homepage": "https://github.com/amber-smalltalk/amber-ide-starter",
+  "keywords": [
+    "Amber",
+    "Smalltalk"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "private": false,
+  "dependencies": {
+    "mousetrap": "^1.4.6",
+    "blockui": "2.65"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.15"
+  }
+}
