@@ -24,11 +24,11 @@ About
 
 The `amber` and `bower` packages can be installed with the following command (In some cases you have to call `npm` with `sudo npm`):
 
-    npm install --global amber-cli bower
+    npm install --global amber-cli bower grunt-cli
 
 or the same thing, but less typing:
 
-    npm i -g amber-cli bower
+    npm i -g amber-cli bower grunt-cli
 
 ## Getting Started
 
@@ -36,7 +36,9 @@ Clone the repo, and start the amber server:
 
     git clone https://github.com/HeSe/amber-processingJs.git
     cd amber-processingJs
+    npm install
     bower install
+    grunt devel
     amber serve
 
 Point your browser to:
