@@ -700,21 +700,20 @@ function $Date(){return $globals.Date||(typeof Date=="undefined"?nil:Date)}
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) { 
 //>>excludeEnd("ctx");
-var $3,$4,$2,$1,$7,$8,$6,$5;
+var $3,$2,$1,$6,$5,$4;
 $recv(self._pjsInterface())._backgroundGray_((224));
 now=$recv($Date())._new();
-$3=$recv($recv(now)._hours()).__backslash_backslash((12));
-$4=$recv(now)._minutes();
+$3=$recv(now)._minutes();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["minutes"]=1;
 //>>excludeEnd("ctx");
-$2=$recv($3).__plus($4);
-//>>excludeStart("ctx", pragmas.excludeDebugContexts);
-$ctx1.sendIdx["+"]=1;
-//>>excludeEnd("ctx");
-$1=$recv($2).__slash((60));
+$2=$recv($3).__slash((60));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["/"]=2;
+//>>excludeEnd("ctx");
+$1=$recv($2).__plus($recv($recv(now)._hours()).__backslash_backslash((12)));
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["+"]=1;
 //>>excludeEnd("ctx");
 hoursPosition=$recv($1).__slash((12));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -724,17 +723,16 @@ self._drawArm_lengthScale_weight_(hoursPosition,(0.5),(5));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["drawArm:lengthScale:weight:"]=1;
 //>>excludeEnd("ctx");
-$7=$recv(now)._minutes();
-$8=$recv(now)._seconds();
+$6=$recv(now)._seconds();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["seconds"]=1;
 //>>excludeEnd("ctx");
-$6=$recv($7).__plus($8);
 $5=$recv($6).__slash((60));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["/"]=4;
 //>>excludeEnd("ctx");
-minutesPosition=$recv($5).__slash((60));
+$4=$recv($5).__plus($recv(now)._minutes());
+minutesPosition=$recv($4).__slash((60));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["/"]=3;
 //>>excludeEnd("ctx");
@@ -751,10 +749,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "draw\x0a\x0a  | now hoursPosition minutesPosition secondsPosition |  \x0a  \x0a  self pjsInterface backgroundGray: 224.\x0a  \x0a  now := Date new.\x0a  \x0a  \x22Moving hours arm by small increments\x22\x0a   hoursPosition := now hours \x5c\x5c 12 + now minutes / 60 / 12.\x0a   self drawArm: hoursPosition lengthScale: 0.5 weight: 5.\x0a   \x0a   \x22Moving minutes arm by small increments\x22\x0a    minutesPosition := now minutes + now seconds / 60 / 60.\x0a    self drawArm: minutesPosition lengthScale: 0.80 weight: 3.\x0a\x0a    \x22Moving hour arm by second increments\x22\x0a    secondsPosition := now seconds / 60.\x0a    self drawArm: secondsPosition lengthScale: 0.90 weight: 1.",
+source: "draw\x0a\x0a  | now hoursPosition minutesPosition secondsPosition |  \x0a  \x0a  self pjsInterface backgroundGray: 224.\x0a  \x0a  now := Date new.\x0a  \x0a  \x22Moving hours arm by small increments\x22\x0a   hoursPosition := now minutes / 60 + (now hours \x5c\x5c 12)  / 12.\x0a   self drawArm: hoursPosition lengthScale: 0.5 weight: 5.\x0a   \x0a   \x22Moving minutes arm by small increments\x22\x0a    minutesPosition := now seconds / 60 + now minutes / 60.\x0a    self drawArm: minutesPosition lengthScale: 0.80 weight: 3.\x0a\x0a    \x22Moving hour arm by second increments\x22\x0a    secondsPosition := now seconds / 60.\x0a    self drawArm: secondsPosition lengthScale: 0.90 weight: 1.",
 referencedClasses: ["Date"],
 //>>excludeEnd("ide");
-messageSends: ["backgroundGray:", "pjsInterface", "new", "/", "+", "\x5c\x5c", "hours", "minutes", "drawArm:lengthScale:weight:", "seconds"]
+messageSends: ["backgroundGray:", "pjsInterface", "new", "/", "+", "minutes", "\x5c\x5c", "hours", "drawArm:lengthScale:weight:", "seconds"]
 }),
 $globals.ProcessingClock);
 
